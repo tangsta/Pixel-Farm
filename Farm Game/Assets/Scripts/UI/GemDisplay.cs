@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelDisplay : MonoBehaviour
+public class GemDisplay : MonoBehaviour
 {
 	/*
-		Placed this component in LevelText Object under UI
+		Placed this component in GemText Object under UI
 
-		Displays the player's level amount
+		Displays the player's gem amount
 		All stats changed in GameManager should effect here
 	*/
 	// Remember to reference the Text Component here 
-    public Text levelText;
+    public Text gemText;
     ReferencePlayerData PlayerData;
 
     void Start()
@@ -22,6 +22,6 @@ public class LevelDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        levelText.text = this.GetComponentInParent<ReferencePlayerData>().levelText;
+        gemText.text = this.GetComponentInParent<ReferencePlayerData>().gemText;
     }
 }

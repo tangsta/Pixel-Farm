@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelDisplay : MonoBehaviour
+public class GoldDisplay : MonoBehaviour
 {
 	/*
-		Placed this component in LevelText Object under UI
+		Placed this component in GoldText Object under UI
 
-		Displays the player's level amount
+		Displays the player's gold amount
 		All stats changed in GameManager should effect here
 	*/
 	// Remember to reference the Text Component here 
-    public Text levelText;
+    public Text goldText;
     ReferencePlayerData PlayerData;
 
     void Start()
     {
     	ReferencePlayerData PlayerData = this.GetComponentInParent<ReferencePlayerData>();
     }
-    // Update is called once per frame
+
     void Update()
     {
-        levelText.text = this.GetComponentInParent<ReferencePlayerData>().levelText;
+        goldText.text = this.GetComponentInParent<ReferencePlayerData>().goldText;
     }
 }

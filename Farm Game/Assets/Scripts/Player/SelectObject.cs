@@ -8,9 +8,6 @@ public class SelectObject : MonoBehaviour
     public GameObject selectedObject;
     public GameObject plantButton;
 
-    // maybe add
-    public GameObject selectOutLine; // look for a sprite for it 
-
     // Start is called before the first frame update
     void Start()
     {
