@@ -8,17 +8,10 @@ public class SelectObject : MonoBehaviour
     public GameObject selectedObject;
     public GameObject plantButton;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         // this top function works for PC/Mobile however only one finger will work
         // selects the gameobject that the user wants to fiddle with
-
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -38,7 +31,6 @@ public class SelectObject : MonoBehaviour
             else
             {
                 selectedObject = null;
-                Debug.Log("Unselected");
             }
         }
 
