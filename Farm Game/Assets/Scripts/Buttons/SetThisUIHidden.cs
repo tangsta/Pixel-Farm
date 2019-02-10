@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetButtonHidden : MonoBehaviour
+public class SetThisUIHidden : MonoBehaviour
 {
 	/*
 		Set the current button to hide once the game starts 
 		Can be placed on any buttons
 	*/
-    GameObject button;
+    GameObject thisUI;
     void Start()
     {
-    	button = this.gameObject;
-        button.SetActive(false);
+    	thisUI = this.gameObject;
+        thisUI.SetActive(false);
     }
 }

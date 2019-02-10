@@ -6,7 +6,7 @@ using UnityEngine;
 public class SelectObject : MonoBehaviour
 {
     public GameObject selectedObject;
-    public GameObject plantButton;
+    public GameObject bottomSeedBar;
 
     void Update()
     {
@@ -44,12 +44,18 @@ public class SelectObject : MonoBehaviour
 			*/
 	        if(selectedObject != null && selectedObject.tag =="Plot")
 	        {
-	        	plantButton.SetActive(true);
+	        	bottomSeedBar.SetActive(true);
 	        	// Debug.Log("Plot selected");
 	        }
 	        else
 	        {
-	        	plantButton.SetActive(false);
+	        	/*
+	        		Bar disappears when user clicks it 
+
+	        		Bug - considered a bug for now because what if user click the bar for another seed
+	        				and want to keep planting  
+				*/
+	        	// bottomSeedBar.SetActive(false);
 	        }
         }
 
