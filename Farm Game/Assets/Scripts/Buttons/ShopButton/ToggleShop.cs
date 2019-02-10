@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ToggleShop : MonoBehaviour
 {
+
+	/*
+		Place this script on any button that you want to toggle the shop with
+		remember to link it with the button and use the function below
+	*/
 	private GameObject shopButton;
 	private bool isShowing = false;
 
@@ -11,16 +16,6 @@ public class ToggleShop : MonoBehaviour
 	{
 		shopButton = GameObject.Find("ShopCanvas");
 	}
-
-  //   // Update is called once per frame
-  //   void Update()
-  //   {
-		// if (Input.GetKeyDown("escape"))
-		// {
-		// 	isShowing = !isShowing;
-		// 	shopButton.SetActive(false) ;
-		// }   
-  //   }
 
     public void ToggleShopFunction()
     {

@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-/*
-	This templete is used with Scriptable Obejects created 
-	in the Prefab/Plant/* folder
-*/
 public class PlantDisplay : MonoBehaviour
 {
+	/*
+		Script works in pairs with BuyPlantButton component
+		that means this script and BuyPlantButton have to be on the same
+		buy button
+	
+		This templete is used with Scriptable Obejects created 
+		in the Prefab/Plant/* folder
+	*/
+		
 	// Takes in a Scriptable Object called plant
 	public Plant plant;
 

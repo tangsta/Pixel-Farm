@@ -6,6 +6,7 @@ public class SetButtonHidden : MonoBehaviour
 {
 	/*
 		Set the current button to hide once the game starts 
+		Can be placed on any buttons
 	*/
     GameObject button;
     void Start()

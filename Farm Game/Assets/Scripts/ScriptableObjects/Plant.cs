@@ -13,6 +13,7 @@ public class Plant : ScriptableObject
 	public Sprite artwork;
 
 	public int goldCost;
+	public int sellPrice;
 	[Header("Seconds")]
 	public double harvestTime;
 	// water time should be half of harvestTime
