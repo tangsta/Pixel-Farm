@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class InventoryScript : MonoBehaviour
 {
-	public Inventory inventory;
+	public List<Plant> plantInventory = new List<Plant>();
+	public int maxInventorySize = 20;
 }

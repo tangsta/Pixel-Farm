@@ -10,13 +10,12 @@ public class BuyPlantButton : MonoBehaviour
 		buy button
 	*/
 	Plant plantInfo;
-	Inventory inventory;
 	private int maxInventorySize;
 
 	void Start()
 	{
 		plantInfo = this.gameObject.GetComponent<PlantDisplay>().plant;
-		maxInventorySize = GameObject.Find("GameManager").GetComponent<InventoryScript>().inventory.maxInventorySize;
+		maxInventorySize = GameObject.Find("GameManager").GetComponent<InventoryScript>().maxInventorySize;
 	}
 
 
@@ -31,21 +30,21 @@ public class BuyPlantButton : MonoBehaviour
 
 
 			// // adding seed to inventory 
-			List<Plant> plantInventory = GameObject.Find("GameManager").GetComponent<InventoryScript>().inventory.plantInventory;
+			List<Plant> plantInventory = GameObject.Find("GameManager").GetComponent<InventoryScript>().plantInventory;
 
 			// // this is correct 
 	    	Plant plant = this.gameObject.GetComponent<PlantDisplay>().plant;
 	    	string plantName = plant.name;
 
-	        if(plantInventory.Find(plantObj => plantObj.name == plant.name))
+	        if(plantInventory.Find(plantObj => plantObj == plant))
 	        {
 	        	// Debug.Log("inside "+plantInventory.Find(plantObj => plant.name == plantName));
-	        	plantInventory.Find(plantObj => plantObj.name == plant.name).amount++;
+	        	plantInventory.Find(plantObj => plantObj == plant).amount++;
 
 	        }
 	        else if(plantInventory.Count < maxInventorySize)
 	        {
-	        	plantInventory.Add(Instantiate(plant));
+	        	plantInventory.Add(plant);
 	        	Debug.Log("New plant added");
 	        }
 	        else
@@ -53,7 +52,7 @@ public class BuyPlantButton : MonoBehaviour
 	        	Debug.Log("Sorry you are out of space");
 	        }
 
-	        GameObject.Find("GameManager").GetComponent<InventoryScript>().inventory.plantInventory = plantInventory;
+	        GameObject.Find("GameManager").GetComponent<InventoryScript>().plantInventory = plantInventory;
 		}
 		else
 		{
