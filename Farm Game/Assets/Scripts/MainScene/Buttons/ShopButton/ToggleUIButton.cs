@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleShop : MonoBehaviour
+public class ToggleUIButton : MonoBehaviour
 {
 
 	/*
@@ -11,12 +11,12 @@ public class ToggleShop : MonoBehaviour
 
 		shopButton - requires you to link the shop canvas to toggle the button
 	*/
-	public GameObject shopButton;
+	public GameObject thisButton;
 	private bool isShowing = false;
 
     public void ToggleShopFunction()
     {
     	isShowing = !isShowing;
-		shopButton.SetActive(isShowing) ;
+		thisButton.SetActive(isShowing) ;
     }
 }

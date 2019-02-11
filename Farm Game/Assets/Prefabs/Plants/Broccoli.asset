@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Broccoli
   description: 'little trees c:'
-  requriedLevel: 0
   artwork: {fileID: 21300000, guid: 93766bc9e3297f74e874105f625a6b19, type: 3}
+  requriedLevel: 0
+  amount: 0
   goldCost: 10
   sellPrice: 20
   harvestTime: 200

@@ -27,6 +27,8 @@ public class InventoryUI : MonoBehaviour
 		UpdateUI();
     }
 
+
+    // Change in the future to only update want a button is clicked or something
     void UpdateUI()
     {
     	for(int i = 0; i < slots.Length; i++)
@@ -40,7 +42,7 @@ public class InventoryUI : MonoBehaviour
     			slots[i].ClearSlot();
     		}
     	}
-    	Debug.Log("UPDATING UI");
+    	//Debug.Log("UPDATING UI");
     }
 
 }
