@@ -4,32 +4,35 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
+
 	public GameObject GameManager;
 	private List<Plant> plantList; // link the scriptable object inventory here 
-
 	public Transform itemsParent;
+
 	InventorySlot[] slots;
-
-    // Start is called before the first frame update
-    void Start()
+    /*
+        InventorySlot provides two functions 
+            AddItem - takes the plant sciptable object and paste it into the slot attributes
+            ClearSlot - turns the image off if there is no item
+    */
+    void Awake()
     {
-        // inventory = Inventory.instance;
         plantList = GameManager.GetComponent<InventoryScript>().plantInventory;
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-		UpdateUI();
-    }
-
-    void Update()
-    {
-    	        // inventory = Inventory.instance;
-        plantList = GameManager.GetComponent<InventoryScript>().plantInventory;
-        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-		UpdateUI();
+        UpdateUI();
     }
 
 
-    // Change in the future to only update want a button is clicked or something
-    void UpdateUI()
+    // For some reason Awake() works better than start lol
+  //   void Start()
+  //   {
+  //       plantList = GameManager.GetComponent<InventoryScript>().plantInventory;
+  //       slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+		// UpdateUI();
+  //   }
+
+    // Updates the UI if the user clicks the switch button
+    public void UpdateUI()
     {
     	for(int i = 0; i < slots.Length; i++)
     	{
@@ -42,7 +45,5 @@ public class InventoryUI : MonoBehaviour
     			slots[i].ClearSlot();
     		}
     	}
-    	//Debug.Log("UPDATING UI");
     }
-
 }

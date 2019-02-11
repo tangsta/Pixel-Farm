@@ -18,7 +18,6 @@ public class AlternateBetweenUI : MonoBehaviour
 		// thisButton.SetActive(isShowing) ;
     	if(shopPanel.activeSelf)
     	{
-    		Debug.Log("yo");
     		shopPanel.SetActive(false);
     		inventoryPanel.SetActive(true);
     	}
