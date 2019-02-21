@@ -22,7 +22,6 @@ public class SpawnDirtSquares : MonoBehaviour
                 plots[x, y] = freePlot;
                 GameObject child = Instantiate(plots[x, y], pos, this.gameObject.transform.rotation);
                 child.transform.parent = this.transform;
-
             }
         }
 
