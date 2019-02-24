@@ -15,7 +15,7 @@ TagManager:
   - 
   - 
   - Shop
-  - 
+  - Background
   - 
   - 
   - 
@@ -41,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 897434969
+    locked: 0
+  - name: Yard
+    uniqueID: 808234787
     locked: 0
