@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera_DragClick : MonoBehaviour {
+public class DragClick : MonoBehaviour {
 
 	private Vector3 ResetCamera;
 	private Vector3 Origin;
