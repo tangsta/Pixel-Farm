@@ -201,8 +201,10 @@ GameObject:
   m_Component:
   - component: {fileID: 669709577}
   - component: {fileID: 669709576}
+  - component: {fileID: 669709579}
+  - component: {fileID: 669709578}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Grid_Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,6 +237,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &669709578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669709575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7071d4bd4b7e1349a8abdf9543584f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &669709579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669709575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ad50306db45054eb4aded7168b9913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tilemap: {fileID: 1053105997}
 --- !u!1 &817635710
 GameObject:
   m_ObjectHideFlags: 0
