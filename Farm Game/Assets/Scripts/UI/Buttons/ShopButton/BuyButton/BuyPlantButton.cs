@@ -19,31 +19,34 @@ public class BuyPlantButton : MonoBehaviour
 	}
 
 
-	// add a conditional where the gold cost can not be highest than the gold currently
+	// add a conditional where the golds cost can not be highest than the golds currently
 	// issues here - we can referencing alot so runtime might slow down
 	public void BuyPlant()
 	{
 		if(plantInfo.goldCost <= GameObject.Find("GameManager").GetComponent<PlayerData>().gold)
 		{	
-			// calculate new gold
+			// calculate new golds
 			GameObject.Find("GameManager").GetComponent<PlayerData>().gold -= plantInfo.goldCost;
 
 
-			// // adding seed to inventory 
+			// Looks for GameManager and then saves the plantInventory to this variable
 			List<Plant> plantInventory = GameObject.Find("GameManager").GetComponent<InventoryScript>().plantInventory;
 
-			// // this is correct 
+			// Gets the current plant that the user clicked on and saves tit's name
 	    	Plant plant = this.gameObject.GetComponent<PlantDisplay>().plant;
 	    	string plantName = plant.name;
 
+	    	// now while loop through the list to find if the plant is in the user's inventory 
 	        if(plantInventory.Find(plantObj => plantObj == plant))
 	        {
 	        	// Debug.Log("inside "+plantInventory.Find(plantObj => plant.name == plantName));
 	        	plantInventory.Find(plantObj => plantObj == plant).amount++;
 
 	        }
+	        // if plant does not exist then add new plant to inventory 
 	        else if(plantInventory.Count < maxInventorySize)
 	        {
+	        	// adding plant to inventory 
 	        	plantInventory.Add(plant);
 	        	Debug.Log("New plant added");
 	        }
@@ -52,6 +55,7 @@ public class BuyPlantButton : MonoBehaviour
 	        	Debug.Log("Sorry you are out of space");
 	        }
 
+	        // saves the new updated inventory back to the GameManager
 	        GameObject.Find("GameManager").GetComponent<InventoryScript>().plantInventory = plantInventory;
 		}
 		else

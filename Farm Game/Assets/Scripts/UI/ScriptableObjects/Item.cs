@@ -4,5 +4,6 @@ using UnityEngine;
 
 public abstract class Item : ScriptableObject {
     public string itemName;
-    public GameObject physicalRepresentation;
+    // change name physicalRepresentation to artwork later 
+    public Sprite physicalRepresentation;
 }
