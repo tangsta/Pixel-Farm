@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[CreateAssetMenu(menuName = "Items/Inventory", fileName = "Inventory.asset")]
 [System.Serializable]
+[CreateAssetMenu(fileName = "Inventory.asset", menuName = "Items/Inventory")]
 public class Inventory : ScriptableObject 
 {
     // Saving using unity dev example.
@@ -26,7 +25,6 @@ public class Inventory : ScriptableObject
                     SaveManager.LoadOrInitializeInventory();
                 }
             }
-
             return _instance;
         }
     }
