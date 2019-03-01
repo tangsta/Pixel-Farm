@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Tile_Scenes/Backyard.unity
+    guid: df2a639b9d251f040851afaa9e8af483
+  - enabled: 1
+    path: Assets/Scenes/Gamplay/MainScene.unity
+    guid: 1ec9b9f854e3b4448818b3ddecaf7d75
   m_configObjects: {}
