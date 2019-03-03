@@ -7,11 +7,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Plant.asset", menuName = "Items/Plant")]
 public class Plant : Item
 {
-	public string plantName;
 	public string description;
 
-	public Sprite artwork;
-	
 	[Header("Attributes")]
 	// required level to buy/plant?
 	public int requriedLevel;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuyPlantButton : MonoBehaviour
+public class OldBuyPlantButton : MonoBehaviour
 {	
 	/*
 		Script works in pairs with PlantDisplay component
@@ -15,6 +15,8 @@ public class BuyPlantButton : MonoBehaviour
 	void Start()
 	{
 		plantInfo = this.gameObject.GetComponent<PlantDisplay>().plant;
+
+		// instead of getting the inventory from gamemanager, we should get the new scriptbale object from assest 
 		maxInventorySize = GameObject.Find("GameManager").GetComponent<InventoryScript>().maxInventorySize;
 	}
 

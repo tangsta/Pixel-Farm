@@ -8,13 +8,16 @@ public class InventorySlot : MonoBehaviour
 
 
 	public Image icon;
-	Plant plant; // this only takes in plants so you have to redo this later to accept any item like decos
+	Item plant; // this only takes in plants so you have to redo this later to accept any item like decos
 
-	public void AddItem(Plant newPlant)
+	public void AddItem(Item newPlant)
 	{
-		plant = newPlant;
-		icon.sprite = plant.artwork;
-		icon.enabled = true;
+		if(newPlant != null)
+		{
+			plant = newPlant;
+			icon.sprite = plant.artwork;
+			icon.enabled = true;
+		}
 	}
 
 	public void ClearSlot()

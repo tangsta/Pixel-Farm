@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b9625d215b12d4a9f3302114487827, type: 3}
   m_Name: Carrot
   m_EditorClassIdentifier: 
-  itemName: 
-  physicalRepresentation: {fileID: 0}
-  plantName: Carrot
-  description: orange and sharp
+  itemName: Carrot
   artwork: {fileID: 21300000, guid: 6aff83c5897d1794297dac3c3489e83c, type: 3}
+  description: orange and sharp
   requriedLevel: 0
   amount: 1
   goldCost: 10
