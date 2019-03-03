@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -33,16 +32,13 @@ public class LandPlotManager : MonoBehaviour
             if (!Tilemap.HasTile(localPlace)) continue;
             LandPlot land = new LandPlot
             {
-                sand = 175,
-                silt = 175,
-                clay = 175,
-                orgScore = 100,
-                tolerance = 25,
-                stone = 25,
+                Sand = 0,
+                Silt = 0,
+                Clay = 0,
 
                 LocalPlace = localPlace,
                 WorldLocation = Tilemap.CellToWorld(localPlace),
-                tile = Tilemap.GetTile<Tile>(localPlace),
+                Tile = Tilemap.GetTile(localPlace),
                 Name = localPlace.x + " , " + localPlace.y,
             };
             LandPlots.Add(land.WorldLocation, land);

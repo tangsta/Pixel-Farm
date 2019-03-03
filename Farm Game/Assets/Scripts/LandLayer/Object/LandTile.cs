@@ -62,7 +62,7 @@ public class StoneTile : Tile
     }
 #if UNITY_EDITOR
     //Adds it to the Create menu in the Tiles section
-    [MenuItem("Assets/Create/LandTiles/StoneTile")]
+    [MenuItem("Assets/Create/Tiles/StoneTile")]
     public static void CreateStoneTile ()
     {
         string path = EditorUtility.SaveFilePanelInProject(
