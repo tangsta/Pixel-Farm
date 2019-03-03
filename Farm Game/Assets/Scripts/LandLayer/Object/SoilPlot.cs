@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class LandPlot : MonoBehaviour
+public class SoilPlot
 {
     public byte Sand { get; set; }
     public byte Silt { get; set; }
@@ -13,7 +13,7 @@ public class LandPlot : MonoBehaviour
     public Vector3Int LocalPlace { get; set; }
     public Vector3 WorldLocation { get; set; }
 
-    public LandPlot()
+    public SoilPlot()
     {
         Sand = 0;
         Silt = 0;
@@ -48,6 +48,7 @@ public class LandPlot : MonoBehaviour
             if (perClay >= 0.40)
             {
                 Debug.Log("Clay");
+                //
             }
             else if (perSilt >= 0.80)
             {

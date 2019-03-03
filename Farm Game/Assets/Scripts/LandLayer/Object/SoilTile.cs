@@ -2,12 +2,14 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class StoneTile : Tile
+public class SoilTile : Tile
 {
     [SerializeField]
     private Sprite[] sprites;
     [SerializeField]
     private Sprite preview;
+
+    private SoilPlot SoilPlot;
 
     //Able to refresh (8) tiles relative to click
     public override void RefreshTile(Vector3Int position, ITilemap tilemap)
@@ -69,7 +71,7 @@ public class StoneTile : Tile
             "Save StoneTile", "New StoneTile", "Asset",
             "Save StoneTile", "Assets");
         if (path == "") { return; }
-        AssetDatabase.CreateAsset(ScriptableObject.CreateInstance<StoneTile>(), path);
+        AssetDatabase.CreateAsset(ScriptableObject.CreateInstance<SoilTile>(), path);
     }
 #endif
 }

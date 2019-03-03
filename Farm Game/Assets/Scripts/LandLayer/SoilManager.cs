@@ -2,12 +2,12 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class LandPlotManager : MonoBehaviour
+public class SoilManager : MonoBehaviour // Tilemap
 {
-    public static LandPlotManager instance;
+    public static SoilManager instance;
     public Tilemap Tilemap;
 
-    public Dictionary<Vector3, LandPlot> LandPlots;
+    public Dictionary<Vector3, SoilPlot> LandPlots;
 
     private void Awake()
     {
@@ -25,12 +25,12 @@ public class LandPlotManager : MonoBehaviour
 
     private void GetLandPlots()
     {
-        LandPlots = new Dictionary<Vector3, LandPlot>();
+        LandPlots = new Dictionary<Vector3, SoilPlot>();
         foreach(Vector3Int pos in Tilemap.cellBounds.allPositionsWithin)
         {
             Vector3Int localPlace = new Vector3Int(pos.x, pos.y, pos.z);
             if (!Tilemap.HasTile(localPlace)) continue;
-            LandPlot land = new LandPlot
+            SoilPlot land = new SoilPlot
             {
                 Sand = 0,
                 Silt = 0,
