@@ -15,7 +15,46 @@ public class SoilManager : MonoBehaviour
     {
         foreach (KeyValuePair<Vector3, SoilPlot> entry in SoilPlots)
         {
-            entry.Value.Tile = Tiles[entry.Value.UpdateTile()];
+            entry.Value.Sand = (byte)Random.Range(0, 255);
+            entry.Value.Silt = (byte)Random.Range(0, 255);
+            entry.Value.Clay = (byte)Random.Range(0, 255);
+        }
+        foreach (KeyValuePair<Vector3, SoilPlot> entry in SoilPlots)
+        {
+            int tileType = entry.Value.UpdateTile();
+            entry.Value.Tile = Tiles[tileType];
+            switch(tileType)
+            {
+                case 0:             //Stone
+                    entry.Value.Name = "stone";
+                    break;
+                case 1:             //Clay
+                    entry.Value.Name = "clay";
+                    break;
+                case 2:             //Silt
+                    entry.Value.Name = "silt";
+                    break;
+                case 3:             //Sand
+                    entry.Value.Name = "sand";
+                    break;
+                case 4:             //Sand_Clay
+                    entry.Value.Name = "sand_clay";
+                    break;
+                case 5:             //Silt_Clay
+                    entry.Value.Name = "silt_clay";
+                    break;
+                case 6:             //Sand_Silt
+                    entry.Value.Name = "sand_silt";
+                    break;
+                case 7:             //Loam
+                    entry.Value.Name = "loam";
+                    break;
+                default:
+                    name = "NULL";
+                    Debug.Log("TILE DOES NOT EXIST, Are you using the right one?");
+                    break;
+
+            }
             Tilemap.SetTile(entry.Value.LocalPlace, entry.Value.Tile);
         }
     }
