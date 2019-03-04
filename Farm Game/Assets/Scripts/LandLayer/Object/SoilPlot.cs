@@ -13,21 +13,8 @@ public class SoilPlot
     public Vector3Int LocalPlace { get; set; }
     public Vector3 WorldLocation { get; set; }
 
-    public SoilPlot()
-    {
-        Sand = 0;
-        Silt = 0;
-        Clay = 0;
-        OrgScore = 0;
-    }
-
-    public void Update()
-    {
-        UpdateTile();
-    }
-
-    //Updates the tiles according to land attributes
-    private void UpdateTile()
+    //Updates the Tile using SoilManager's Tile Array
+    public int UpdateTile()
     {
         int total = Sand + Silt + Clay;
 
@@ -37,7 +24,8 @@ public class SoilPlot
  
         if (total < 125)
         {
-            Debug.Log("Stone");
+            //Stone
+            return 0;
         }
         else
         {
@@ -47,32 +35,38 @@ public class SoilPlot
 
             if (perClay >= 0.40)
             {
-                Debug.Log("Clay");
-                //
+                //Clay
+                return 1;
             }
             else if (perSilt >= 0.80)
             {
-                Debug.Log("Silt");
+                //Silt
+                return 2;
             }
             else if (perSand >= 0.90)
             {
-                Debug.Log("Sand");
+                //Sand
+                return 3;
             }
             else if ((perSilt < 0.30) && (perClay < 0.40 && perSand > 0.50))
             {
-                Debug.Log("Sand_Clay");
+                //Sand_Clay
+                return 4;
             }
             else if ((perSand < 0.30) && (perClay < 0.40 && perSilt > 0.50))
             {
-                Debug.Log("Silt_Clay");
+                //Silt_clay
+                return 5;
             }
             else if ((perClay < 0.10) && (perSilt > 0.30 && perSand < 0.70))
             {
-                Debug.Log("Sand_Silt");
+                //Sand_silt
+                return 6;
             }
             else
             {
-                Debug.Log("Loam");
+                //Loam
+                return 7;
             }
         }
     }
