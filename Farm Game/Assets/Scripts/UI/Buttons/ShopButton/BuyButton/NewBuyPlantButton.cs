@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NewBuyPlantButton : MonoBehaviour
 {
@@ -15,24 +16,26 @@ public class NewBuyPlantButton : MonoBehaviour
 
 	*/
 
-
-
-
-
-
-
-
-
-
 	//***************************************************************************
-    public Item item;
+    public ItemInstance itemInstance;
 	public Inventory userInventory; 
+	
+	private Image icon;
 
-
-
-	void Start()
+	void Awake()
 	{
-
+		icon = this.transform.Find("Image").GetComponent<Image>();
+		if(itemInstance.item != null)
+		{
+			icon.sprite = itemInstance.item.artwork;
+			icon.enabled = true;
+		}
+		else
+		{
+			itemInstance.item = null;
+			icon.sprite = null;
+			icon.enabled = false;
+		}
 	}
 
 
@@ -41,27 +44,28 @@ public class NewBuyPlantButton : MonoBehaviour
 	public void BuyPlant()
 	{
 		// calculates if the cost of this plant is higher than the amount the player has
-		if(item.goldCost <= GameObject.Find("GameManager").GetComponent<PlayerData>().gold)
+		if(itemInstance.item.goldCost <= GameObject.Find("GameManager").GetComponent<PlayerData>().gold)
 		{	
 			// calculate new golds
-			GameObject.Find("GameManager").GetComponent<PlayerData>().gold -= item.goldCost;
-
-			// Gets the current plant that the user clicked on and saves it's name
-			// for(int x = 0; x < userInventory.inventory.length(); x++)
-			// {
-			// 	if(GetItem(x, item) == true)
-			// 	{
-			// 		break;
-			// 	}
-			// }
-
-
-	    	// now while loop through the list to find if the plant is in the user's inventory 
-
-	        // if plant does not exist then add new plant to inventory 
-	        	// adding plant to inventory 
-
-	        // else out of space
+			if(userInventory.FindItem(itemInstance))
+			{
+				GameObject.Find("GameManager").GetComponent<PlayerData>().gold -= itemInstance.item.goldCost;
+				userInventory.IncreaseQuantityItem(1,itemInstance);
+				// also increase the amount of seeds the user has
+			}
+			// check if the user ran out of room or add new plant to inventory
+			// DOESN'T CHECK IF USER RAN OUT OF ROOM YET 
+			else
+			{
+				userInventory.InsertItem(itemInstance);
+				userInventory.IncreaseQuantityItem(1,itemInstance);
+				GameObject.Find("GameManager").GetComponent<PlayerData>().gold -= itemInstance.item.goldCost;
+			}
+		}
+		else
+		{
+			// here tell the user that he does not have enough golds
+			Debug.Log("Not enough golds");
 		}
 	}
 }
