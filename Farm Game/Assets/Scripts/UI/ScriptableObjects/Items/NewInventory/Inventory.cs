@@ -61,6 +61,19 @@ public class Inventory : ScriptableObject
         return false;
     }
 
+    // Find an item in the inventory array
+    public bool FindItem(ItemInstance item)
+    {
+        for(int x = 0; x < inventory.Length; x++)
+        {
+            if(inventory[x] == item)
+            {
+                return true;
+            }   
+        }
+        return false;
+    }
+
     // Get an item if it exists.
     public bool GetItem(int index, out ItemInstance item) 
     {

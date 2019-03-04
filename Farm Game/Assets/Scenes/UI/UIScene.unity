@@ -1459,8 +1459,6 @@ GameObject:
   - component: {fileID: 532691349}
   - component: {fileID: 532691348}
   - component: {fileID: 532691347}
-  - component: {fileID: 532691346}
-  - component: {fileID: 532691345}
   m_Layer: 8
   m_Name: BuySlot (2)
   m_TagString: Untagged
@@ -1488,32 +1486,6 @@ RectTransform:
   m_AnchoredPosition: {x: 120, y: -45}
   m_SizeDelta: {x: 80, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &532691345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532691343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0d79a71f15af1048aa31af0cfeeaa82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &532691346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532691343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef11021d4b7e63c41a818ddf9ccf84cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plant: {fileID: 11400000, guid: 502932cfb5202554ebdf45e85dc3369a, type: 2}
-  artworkImage: {fileID: 402634653}
 --- !u!114 &532691347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1554,7 +1526,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 532691345}
+      - m_Target: {fileID: 0}
         m_MethodName: BuyPlant
         m_Mode: 1
         m_Arguments:
@@ -1728,7 +1700,6 @@ GameObject:
   - component: {fileID: 592176011}
   - component: {fileID: 592176013}
   - component: {fileID: 592176014}
-  - component: {fileID: 592176015}
   m_Layer: 8
   m_Name: BuySlot
   m_TagString: Untagged
@@ -1833,7 +1804,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 592176015}
+      - m_Target: {fileID: 0}
         m_MethodName: BuyPlant
         m_Mode: 1
         m_Arguments:
@@ -1855,23 +1826,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 592176009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef11021d4b7e63c41a818ddf9ccf84cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 42671e97ca6b3ec42ba38c0117e6e825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plant: {fileID: 11400000, guid: 1c6fcccb8d603ed47b6e2428ff23f536, type: 2}
-  artworkImage: {fileID: 1668214756}
---- !u!114 &592176015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592176009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0d79a71f15af1048aa31af0cfeeaa82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 502932cfb5202554ebdf45e85dc3369a, type: 2}
+  userInventory: {fileID: 11400000, guid: 16abef044dbd9134888fd887e4f1188b, type: 2}
 --- !u!1 &599405686
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,7 +2398,6 @@ GameObject:
   - component: {fileID: 896537364}
   - component: {fileID: 896537363}
   - component: {fileID: 896537362}
-  - component: {fileID: 896537365}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -2546,20 +2504,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896537360}
   m_CullTransparentMesh: 0
---- !u!114 &896537365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896537360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef11021d4b7e63c41a818ddf9ccf84cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plant: {fileID: 11400000, guid: 1c6fcccb8d603ed47b6e2428ff23f536, type: 2}
-  artworkImage: {fileID: 523951756}
 --- !u!1 &901460800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,7 +2686,6 @@ GameObject:
   - component: {fileID: 969389414}
   - component: {fileID: 969389413}
   - component: {fileID: 969389412}
-  - component: {fileID: 969389415}
   m_Layer: 5
   m_Name: HotKey3
   m_TagString: Untagged
@@ -2849,20 +2792,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969389410}
   m_CullTransparentMesh: 0
---- !u!114 &969389415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969389410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef11021d4b7e63c41a818ddf9ccf84cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plant: {fileID: 11400000, guid: 1c6fcccb8d603ed47b6e2428ff23f536, type: 2}
-  artworkImage: {fileID: 1476120366}
 --- !u!1 &971989707
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,7 +3353,6 @@ GameObject:
   - component: {fileID: 1246829508}
   - component: {fileID: 1246829507}
   - component: {fileID: 1246829506}
-  - component: {fileID: 1246829509}
   m_Layer: 5
   m_Name: HotKey1
   m_TagString: Untagged
@@ -3531,20 +3459,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246829504}
   m_CullTransparentMesh: 0
---- !u!114 &1246829509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246829504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef11021d4b7e63c41a818ddf9ccf84cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plant: {fileID: 11400000, guid: 1c6fcccb8d603ed47b6e2428ff23f536, type: 2}
-  artworkImage: {fileID: 86034165}
 --- !u!1 &1251271948
 GameObject:
   m_ObjectHideFlags: 0
@@ -3794,7 +3708,6 @@ GameObject:
   - component: {fileID: 1452000244}
   - component: {fileID: 1452000243}
   - component: {fileID: 1452000242}
-  - component: {fileID: 1452000245}
   m_Layer: 5
   m_Name: HotKey5
   m_TagString: Untagged
@@ -3901,20 +3814,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452000240}
   m_CullTransparentMesh: 0
---- !u!114 &1452000245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452000240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef11021d4b7e63c41a818ddf9ccf84cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plant: {fileID: 11400000, guid: 1c6fcccb8d603ed47b6e2428ff23f536, type: 2}
-  artworkImage: {fileID: 1900565265}
 --- !u!1 &1476120364
 GameObject:
   m_ObjectHideFlags: 0
@@ -4820,7 +4719,6 @@ GameObject:
   - component: {fileID: 1743600243}
   - component: {fileID: 1743600242}
   - component: {fileID: 1743600241}
-  - component: {fileID: 1743600244}
   m_Layer: 5
   m_Name: HotKey2
   m_TagString: Untagged
@@ -4927,20 +4825,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743600239}
   m_CullTransparentMesh: 0
---- !u!114 &1743600244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743600239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef11021d4b7e63c41a818ddf9ccf84cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plant: {fileID: 11400000, guid: 1c6fcccb8d603ed47b6e2428ff23f536, type: 2}
-  artworkImage: {fileID: 290468311}
 --- !u!1 &1761251306
 GameObject:
   m_ObjectHideFlags: 0
@@ -6005,7 +5889,6 @@ GameObject:
   - component: {fileID: 2071665737}
   - component: {fileID: 2071665736}
   - component: {fileID: 2071665735}
-  - component: {fileID: 2071665738}
   m_Layer: 5
   m_Name: HotKey4
   m_TagString: Untagged
@@ -6112,20 +5995,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071665733}
   m_CullTransparentMesh: 0
---- !u!114 &2071665738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2071665733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef11021d4b7e63c41a818ddf9ccf84cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  plant: {fileID: 11400000, guid: 1c6fcccb8d603ed47b6e2428ff23f536, type: 2}
-  artworkImage: {fileID: 625466185}
 --- !u!1 &2081158499
 GameObject:
   m_ObjectHideFlags: 0
