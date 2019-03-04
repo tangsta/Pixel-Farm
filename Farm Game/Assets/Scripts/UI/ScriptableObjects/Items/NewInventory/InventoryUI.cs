@@ -5,10 +5,10 @@ using UnityEngine;
 public class InventoryUI : MonoBehaviour
 {
 
-	public GameObject GameManager;
-	private List<Plant> plantList; // link the scriptable object inventory here 
 	public Transform itemsParent;
+    public Inventory userInventory;
 
+    // Slots take all the children under the InventoryParent and assigns a plant to it if a plant exist
 	InventorySlot[] slots;
     /*
         InventorySlot provides two functions 
@@ -17,28 +17,22 @@ public class InventoryUI : MonoBehaviour
     */
     void Awake()
     {
-        plantList = GameManager.GetComponent<InventoryScript>().plantInventory;
+        // gets all the slots || change this to the inventory array from the script object
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         UpdateUI();
     }
 
 
     // For some reason Awake() works better than start lol
-  //   void Start()
-  //   {
-  //       plantList = GameManager.GetComponent<InventoryScript>().plantInventory;
-  //       slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-		// UpdateUI();
-  //   }
 
     // Updates the UI if the user clicks the switch button
     public void UpdateUI()
     {
     	for(int i = 0; i < slots.Length; i++)
     	{
-    		if(i < plantList.Count)
+    		if(userInventory.inventory[i].item != null)
     		{
-    			slots[i].AddItem(plantList[i]);
+    			slots[i].AddItem(userInventory.inventory[i].item);
     		}
     		else
     		{
