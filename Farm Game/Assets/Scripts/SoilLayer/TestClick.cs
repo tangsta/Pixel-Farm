@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TestClick : MonoBehaviour
 {
@@ -13,10 +11,11 @@ public class TestClick : MonoBehaviour
         {
             Vector3 PointClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
-                Mathf.FloorToInt(PointClick.y), 0);
+                                        Mathf.FloorToInt(PointClick.y), 0);
 
             var soilPlots = SoilManager.instance.SoilPlots;
 
+            //Obtains from SoilPlot Dictionary
             if (soilPlots.TryGetValue(worldPoint, out plot))
             {
                 Debug.Log(plot.Name);

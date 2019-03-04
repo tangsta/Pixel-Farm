@@ -3,11 +3,13 @@ using UnityEngine.Tilemaps;
 
 public class SoilPlot
 {
+    //Basic Soil attributes
     public byte Sand { get; set; }
     public byte Silt { get; set; }
     public byte Clay { get; set; }
     public byte OrgScore { get; set; }
 
+    //Technical attributes
     public string Name { get; set; }
     public TileBase Tile { get; set; }  
     public Vector3Int LocalPlace { get; set; }
@@ -16,12 +18,12 @@ public class SoilPlot
     //Updates the Tile using SoilManager's Tile Array
     public int UpdateTile()
     {
-        int total = Sand + Silt + Clay;
+        float total = Sand + Silt + Clay;
 
         float perSand = 0;
         float perSilt = 0;
         float perClay = 0;
- 
+
         if (total < 125)
         {
             //Stone

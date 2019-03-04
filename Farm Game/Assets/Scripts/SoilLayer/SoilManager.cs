@@ -10,20 +10,21 @@ public class SoilManager : MonoBehaviour
 
     public Dictionary<Vector3, SoilPlot> SoilPlots;
 
-    //Updates the soil types every frame
-    public void Update()
+    public void Start()
     {
+        //Randomly generates Soil attributes
         foreach (KeyValuePair<Vector3, SoilPlot> entry in SoilPlots)
         {
             entry.Value.Sand = (byte)Random.Range(0, 255);
             entry.Value.Silt = (byte)Random.Range(0, 255);
             entry.Value.Clay = (byte)Random.Range(0, 255);
         }
+        //Updates the Tile Sprite based on Soil attributes 
         foreach (KeyValuePair<Vector3, SoilPlot> entry in SoilPlots)
         {
             int tileType = entry.Value.UpdateTile();
             entry.Value.Tile = Tiles[tileType];
-            switch(tileType)
+            switch (tileType)
             {
                 case 0:             //Stone
                     entry.Value.Name = "stone";
@@ -103,6 +104,7 @@ public class SoilManager : MonoBehaviour
             }
         }
         
+        //Defaults soil data from Tile Sprite
         switch (TileType)
         {
             case 0:             //Stone
