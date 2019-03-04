@@ -7,18 +7,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Plant.asset", menuName = "Items/Plant")]
 public class Plant : Item
 {
-	public string plantName;
-	public string description;
-
-	public Sprite artwork;
-	
-	[Header("Attributes")]
+	[Header("Plant Attributes")]
 	// required level to buy/plant?
+	public string description;
 	public int requriedLevel;
 	public int amount;
-	public int goldCost;
 	public int sellPrice;
-	[Header("Seconds")]
 	public double harvestTime;
 	// water time should be half of harvestTime
 }

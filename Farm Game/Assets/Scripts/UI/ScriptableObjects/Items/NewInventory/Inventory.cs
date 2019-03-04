@@ -61,6 +61,38 @@ public class Inventory : ScriptableObject
         return false;
     }
 
+    // Find an item in the inventory array
+    public bool FindItem(ItemInstance itemInstance)
+    {
+        for(int x = 0; x < inventory.Length; x++)
+        {
+            if(!SlotEmpty(x))
+            {
+                if(inventory[x].item.itemName == itemInstance.item.itemName)
+                {
+                    return true;
+                }
+            }    
+        }
+        return false;
+    }
+
+    // Increase the Quanity of an item 
+    public void IncreaseQuantityItem(int amount, ItemInstance itemInstance)
+    {
+        for(int x = 0; x < inventory.Length; x++)
+        {
+            if(!SlotEmpty(x))
+            {
+                if(inventory[x].item.itemName == itemInstance.item.itemName)
+                {
+                    inventory[x].Quantity += amount;
+                    break;
+                }
+            }    
+        }
+    }
+
     // Get an item if it exists.
     public bool GetItem(int index, out ItemInstance item) 
     {
