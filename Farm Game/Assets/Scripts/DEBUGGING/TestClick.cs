@@ -18,7 +18,7 @@ public class TestClick : MonoBehaviour
             //Obtains from SoilPlot Dictionary
             if (soilPlots.TryGetValue(worldPoint, out ground))
             {
-                Debug.Log(ground.Type);
+                Debug.Log(ground.Type + " " + ground.Sand + " " + ground.Silt + " " + ground.Clay);
             }
         }
     }

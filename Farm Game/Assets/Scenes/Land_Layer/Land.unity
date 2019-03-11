@@ -627,13 +627,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1e00d0066bb840b4a86545f0d8f43966, type: 2}
   dimension: {fileID: 11400000, guid: b5a5301d49fc3304db2954d50f807063, type: 2}
   hasMap: 0
-  Width: 10
-  Height: 10
-  Baseline: 0
-  xFreq: 0.012
-  yFreq: 0.012
-  xOffset: 0
-  yOffset: 0
+  Variance: 20
+  xFreq: 0.5
+  yFreq: 0.5
+  xOffset: 1000
+  yOffset: 5000
   Amp: 100
   SandOffset: 800
   SiltOffset: 300

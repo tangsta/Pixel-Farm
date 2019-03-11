@@ -12,9 +12,7 @@ public class GroundMap : MonoBehaviour
     public bool hasMap;
 
     //Procedural variables
-    public int Width;
-    public int Height;  
-    public byte Baseline;           //Smallest ground stat
+    public byte Variance;
     public float xFreq;             //Varies x
     public float yFreq;             //Varies y
     public float xOffset;           //Noise Pos of x
@@ -36,8 +34,6 @@ public class GroundMap : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Width = dimension.Width;
-        Height = dimension.Height;
 
         if (hasMap)
         {
@@ -53,18 +49,48 @@ public class GroundMap : MonoBehaviour
     {
         Grounds = new Dictionary<Vector3, GroundStats>();
 
-        for (int x = 0; x < Width; x++)
+        for (int x = 0; x < dimension.Width; x++)
         {
-            for (int y = 0; y < Height; y++)
+            for (int y = 0; y < dimension.Height; y++)
             {
                 Vector3Int pos = new Vector3Int(x, y, 0);
 
-                float xCord = (float)x/Width * xFreq + xOffset;
-                float yCord = (float)y/Height * yFreq + yOffset;
+                float xCord = x * xFreq + xOffset;
+                float yCord = y * yFreq + yOffset;
 
-                byte sand = (byte)((Mathf.PerlinNoise(xCord + SandOffset, yCord + SandOffset) * Amp) + Baseline);
-                byte silt = (byte)((Mathf.PerlinNoise(xCord + SiltOffset, yCord + SiltOffset) * Amp) + Baseline);
-                byte clay = (byte)((Mathf.PerlinNoise(xCord + ClayOffset, yCord + ClayOffset) * Amp) + Baseline);
+                byte sample = (byte)Random.Range(-Variance, Variance);
+                byte sand = (byte)((Mathf.PerlinNoise(xCord + SandOffset, yCord + SandOffset) * Amp));
+                if (sample > 0 && sample < sand)
+                {
+                    sand += sample;
+                }
+                else if (sample < 0 && Mathf.Abs(sample) < sand)
+                {
+                    sand -= sample;
+                }
+
+                sample = (byte)Random.Range(-Variance, Variance);
+                byte silt = (byte)((Mathf.PerlinNoise(xCord + SiltOffset, yCord + SiltOffset) * Amp));
+                if (sample > 0 && sample < silt)
+                {
+                    silt += sample;
+                }
+                else if (sample < 0 && Mathf.Abs(sample) < silt)
+                {
+                    silt -= sample;
+                }
+
+                sample = (byte)Random.Range(-Variance, Variance);
+                byte clay = (byte)((Mathf.PerlinNoise(xCord + ClayOffset, yCord + ClayOffset) * Amp));
+                if (sample > 0 && sample < clay)
+                {
+                    clay += sample;
+                }
+                else if (sample < 0 && Mathf.Abs(sample) < clay)
+                {
+                    clay -= sample;
+                }
+
                 GroundStats ground = new GroundStats(sand, silt, clay);
 
                 Grounds.Add(pos, ground);
