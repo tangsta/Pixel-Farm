@@ -2,8 +2,8 @@
 
 public class TestClick : MonoBehaviour
 {
-    public SoilManager SoilManager;
-    private SoilPlot plot;
+    public GroundMap Map;
+    private GroundStats ground;
 
     void Update()
     {
@@ -13,12 +13,12 @@ public class TestClick : MonoBehaviour
             Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
                                         Mathf.FloorToInt(PointClick.y), 0);
 
-            var soilPlots = SoilManager.instance.SoilPlots;
+            var soilPlots = Map.Grounds;
 
             //Obtains from SoilPlot Dictionary
-            if (soilPlots.TryGetValue(worldPoint, out plot))
+            if (soilPlots.TryGetValue(worldPoint, out ground))
             {
-                Debug.Log(plot.Name);
+                Debug.Log(ground.Type + " " + ground.Sand + " " + ground.Silt + " " + ground.Clay);
             }
         }
     }

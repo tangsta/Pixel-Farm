@@ -14,9 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Broccoli
   artwork: {fileID: 21300000, guid: 93766bc9e3297f74e874105f625a6b19, type: 3}
+  goldCost: 10
   description: 'little trees c:'
   requriedLevel: 0
   amount: 1
-  goldCost: 10
   sellPrice: 20
-  harvestTime: 200
+  baseGrowth: 0
+  phases:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
