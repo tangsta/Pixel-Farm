@@ -8,10 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Tile_Scenes/Backyard.unity
-    guid: df2a639b9d251f040851afaa9e8af483
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/UI/UIScene.unity
     guid: 1ec9b9f854e3b4448818b3ddecaf7d75
+  - enabled: 1
+    path: Assets/Scenes/Menu/MainMenu.unity
+    guid: 8e621e994d873fe4e9ea36cf314831b2
+  - enabled: 1
+    path: Assets/Scenes/Land_Layer/Land.unity
+    guid: 75950f4416d4d8b498a65eeadb4d1444
   m_configObjects: {}
