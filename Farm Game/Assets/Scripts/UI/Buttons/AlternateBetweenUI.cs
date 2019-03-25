@@ -11,23 +11,21 @@ public class AlternateBetweenUI : MonoBehaviour
 
 	public GameObject shopPanel;
 	public GameObject inventoryPanel;
-    public bool toggle = false;
 
     public void AlternateFunction()
     {
-    	// isShowing = !isShowing;
-		// thisButton.SetActive(isShowing) ;
-    	if(toggle)
-    	{
-            toggle = false;
-    		shopPanel.transform.localScale = new Vector3(0, 0, 0);
-    		inventoryPanel.transform.localScale = new Vector3(1, 1, 1);
-    	}
-    	else
-    	{
-            toggle = true;
-    		shopPanel.transform.localScale = new Vector3(1, 1, 1);
+        Vector3 zero = new Vector3(0, 0, 0);
+        Vector3 full = new Vector3(1, 1, 1);
+        if(shopPanel.transform.localScale == zero && inventoryPanel.transform.localScale == full)
+        {
+            shopPanel.transform.localScale = new Vector3(1, 1, 1);
             inventoryPanel.transform.localScale = new Vector3(0, 0, 0);
-    	}
+
+        }
+        else
+        {
+            shopPanel.transform.localScale = new Vector3(0, 0, 0);
+            inventoryPanel.transform.localScale = new Vector3(1, 1, 1);
+        } 
     }
 }
