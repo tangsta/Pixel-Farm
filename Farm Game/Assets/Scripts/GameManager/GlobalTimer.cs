@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantTimer : MonoBehaviour
+public class GlobalTimer : MonoBehaviour
 {
 	public double cycleTime; // the cycle time you want to loop around 
 	public double currentTimer;
@@ -10,10 +10,10 @@ public class PlantTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	GlobalTimer();   
+    	PhaseTimer();   
     }
 
-    public void GlobalTimer()
+    public void PhaseTimer()
     {
     	currentTimer = currentTimer - Time.deltaTime;
     	if(currentTimer < 0)

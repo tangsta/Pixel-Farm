@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleUIButton : MonoBehaviour
+public class HideToggleUIButton : MonoBehaviour
 {
 
 	/*
@@ -11,12 +11,17 @@ public class ToggleUIButton : MonoBehaviour
 
 		shopButton - requires you to link the shop canvas to toggle the button
 	*/
-	public GameObject thisButton;
-	private bool isShowing = false;
+	public GameObject gameobjectToHideShow;
 
-    public void ToggleShopFunction()
+    public void HideToggleFunction()
     {
-    	isShowing = !isShowing;
-		thisButton.SetActive(isShowing) ;
+    	if(gameobjectToHideShow.activeSelf)
+    	{
+    		gameobjectToHideShow.SetActive(false);
+    	}
+    	else
+    	{
+    		gameobjectToHideShow.SetActive(true);
+    	}
     }
 }

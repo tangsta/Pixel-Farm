@@ -29,7 +29,8 @@ public class CropStats
     }
  
     public void Grow()
-    {
+    {   
+        // is state is in final stage don't grow 
         if (State == GrowthState.Producing)
         {
             Debug.Log("Cant grow a producing plant");
