@@ -12,6 +12,6 @@ public class SetThisUIHidden : MonoBehaviour
     void Start()
     {
     	thisUI = this.gameObject;
-        thisUI.SetActive(false);
+        thisUI.transform.localScale = new Vector3(0, 0, 0);
     }
 }
