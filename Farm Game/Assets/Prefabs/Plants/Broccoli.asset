@@ -24,3 +24,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  crop: {fileID: 11400000, guid: bb3d72d5eaa8d4e4982b138b5efafe72, type: 2}

@@ -824,6 +824,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: {fileID: 1366185722}
+  item: {fileID: 0}
+  plant: {fileID: 0}
+  Grid: {fileID: 1271806814}
+  crop: {fileID: 0}
 --- !u!1 &1308251072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,6 +1701,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1144594425, guid: 3289af2816f29464f85c85d3e56d36c2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290798462, guid: 3289af2816f29464f85c85d3e56d36c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290798462, guid: 3289af2816f29464f85c85d3e56d36c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290798462, guid: 3289af2816f29464f85c85d3e56d36c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290798462, guid: 3289af2816f29464f85c85d3e56d36c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1290798460}
+    - target: {fileID: 1290798462, guid: 3289af2816f29464f85c85d3e56d36c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290798462, guid: 3289af2816f29464f85c85d3e56d36c2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents:
