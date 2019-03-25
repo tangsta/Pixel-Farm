@@ -7,6 +7,7 @@ public class InventoryUI : MonoBehaviour
 
 	public Transform itemsParent;
     public Inventory userInventory;
+    public Item currentSelectedItem;
 
     // Slots take all the children under the InventoryParent and assigns a plant to it if a plant exist
 	InventorySlot[] slots;

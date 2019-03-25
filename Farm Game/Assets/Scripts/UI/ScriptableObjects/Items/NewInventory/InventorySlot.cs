@@ -8,14 +8,15 @@ public class InventorySlot : MonoBehaviour
 
 
 	public Image icon;
-	Item item; // this only takes in items so you have to redo this later to accept any item like decos
+	public Item item; // this only takes in items so you have to redo this later to accept any item like decos
 
-	public void AddItem(Item item)
+	public void AddItem(Item initem)
 	{
-		if(item != null)
+		if(initem != null)
 		{
-			icon.sprite = item.artwork;
+			icon.sprite = initem.artwork;
 			icon.enabled = true;
+			item = initem;
 		}
 	}
 
@@ -25,5 +26,6 @@ public class InventorySlot : MonoBehaviour
 		icon.sprite = null;
 		icon.enabled = false;
 	}
+
 
 }
