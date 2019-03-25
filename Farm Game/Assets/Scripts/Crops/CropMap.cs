@@ -7,6 +7,7 @@ public class CropMap : MonoBehaviour
     public CropMap instance;
     public Tilemap Tilemap;
     public Dimensions dimension;
+    public SceneDictions dicts;
 
     public bool hasMap;
 
@@ -28,6 +29,15 @@ public class CropMap : MonoBehaviour
         {
             GetMap();
         }
+    }
+
+    public void GrowAll()
+    {
+        foreach (Vector3 pos in Crops.Keys)
+        {
+            Crops[pos].Grow();
+        }
+        updateDicts();
     }
 
     private void GetMap()
@@ -55,5 +65,10 @@ public class CropMap : MonoBehaviour
             }
         }
         return new CropStats(Types[0]);
+    }
+
+    public void updateDicts()
+    {
+        dicts.Crops = Crops;
     }
 }

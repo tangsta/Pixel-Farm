@@ -8,6 +8,7 @@ public class GroundMap : MonoBehaviour
     public Tilemap Tilemap;
     public Tile[] Tiles = new Tile[8];
     public Dimensions dimension;
+    public SceneDictions dicts;
 
     public bool hasMap;
 
@@ -134,5 +135,10 @@ public class GroundMap : MonoBehaviour
                 Debug.Log("GroundStats creation error: Does not exist");
                 return new GroundStats();
         } 
+    }
+
+    public void updateDicts()
+    {
+        dicts.Grounds = Grounds;
     }
 }

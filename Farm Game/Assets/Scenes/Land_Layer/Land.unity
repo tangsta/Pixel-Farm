@@ -654,6 +654,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fdbfb25018f9d4547869437c07458f9a, type: 2}
   - {fileID: 11400000, guid: 1e00d0066bb840b4a86545f0d8f43966, type: 2}
   dimension: {fileID: 11400000, guid: b5a5301d49fc3304db2954d50f807063, type: 2}
+  dicts: {fileID: 11400000, guid: f43e2d425eacbcd48b40d0871027a8ee, type: 2}
   hasMap: 0
   Variance: 20
   xFreq: 0.5
@@ -692,7 +693,8 @@ MonoBehaviour:
   instance: {fileID: 0}
   Tilemap: {fileID: 938877499}
   dimension: {fileID: 11400000, guid: b5a5301d49fc3304db2954d50f807063, type: 2}
-  hasMap: 1
+  dicts: {fileID: 11400000, guid: f43e2d425eacbcd48b40d0871027a8ee, type: 2}
+  hasMap: 0
   Types:
   - {fileID: 11400000, guid: bb3d72d5eaa8d4e4982b138b5efafe72, type: 2}
 --- !u!1 &1308251072
