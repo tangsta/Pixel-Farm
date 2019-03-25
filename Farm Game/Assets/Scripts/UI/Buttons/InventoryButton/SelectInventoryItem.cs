@@ -1,9 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectInventoryItem : MonoBehaviour
 {
+	// How to use: add onto InventorySlot gameobject 
+	// Purpose 
  	
  	private GameObject InventoryUI; // you can just go up the hierachy tree and get the parent 
  	// get the inventoryUI conponent and then change the currently select object value 

@@ -11,7 +11,7 @@ public class AlternateBetweenUI : MonoBehaviour
 
 	public GameObject shopPanel;
 	public GameObject inventoryPanel;
-    public bool toggle = true;
+    public bool toggle = false;
 
     public void AlternateFunction()
     {
@@ -27,7 +27,7 @@ public class AlternateBetweenUI : MonoBehaviour
     	{
             toggle = true;
     		shopPanel.transform.localScale = new Vector3(1, 1, 1);
-            inventoryPanel.transform.localScale = new Vector3(1, 1, 1);
+            inventoryPanel.transform.localScale = new Vector3(0, 0, 0);
     	}
     }
 }
