@@ -17,4 +17,7 @@ public class Plant : Item
 	[Header("Plant Phases")]
 	public Sprite[] phases = new Sprite[3];
 	// water time should be half of harvestTime
+
+	[Header("Plant Attributes")]
+	public Crop crop;
 }
