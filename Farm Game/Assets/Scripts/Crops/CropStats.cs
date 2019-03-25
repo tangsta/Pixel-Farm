@@ -15,7 +15,8 @@ public class CropStats
     public int Produce;
     public float GrowthTime;
     public float WaterTime;
-    public float GrowthChance; 
+    public float GrowthChance;
+    public AOE[] Specials;
 
     public CropStats(Crop Crop)
     {
@@ -26,18 +27,22 @@ public class CropStats
         GrowthTime = Crop.GrowthTime;
         WaterTime = Crop.WaterTime;
         GrowthChance = Crop.GrowthChance;
+        Specials = Crop.Specials;
     }
  
     public void Grow()
     {   
-        // is state is in final stage don't grow 
-        if (State == GrowthState.Producing)
-        {
-            Debug.Log("Cant grow a producing plant");
-        }
-        else if (Random.Range(0, 1) > GrowthChance)
+        if (State != GrowthState.Producing && Random.Range(0, 1) > GrowthChance)
         {
             State = State + 1;
+        }
+    }
+
+    public void TriggerSpecials()
+    {
+        foreach (AOE aoe in Specials)
+        {
+            aoe.Trigger();
         }
     }
 }

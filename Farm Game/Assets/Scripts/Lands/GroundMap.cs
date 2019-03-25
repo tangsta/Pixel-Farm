@@ -4,11 +4,12 @@ using UnityEngine.Tilemaps;
 
 public class GroundMap : MonoBehaviour
 {
-    public GroundMap instance;
+    private GroundMap instance;
+
     public Tilemap Tilemap;
     public Tile[] Tiles = new Tile[8];
     public Dimensions dimension;
-    public SceneDictions dicts;
+    public SceneData scene;
 
     public bool hasMap;
 
@@ -23,7 +24,7 @@ public class GroundMap : MonoBehaviour
     public float SiltOffset;        //Noise Pos for Silt
     public float ClayOffset;        //Noise Pos for Clay
 
-    public Dictionary<Vector3, GroundStats> Grounds;
+    public Dictionary<Vector3Int, GroundStats> Grounds;
 
     public void Awake()
     {
@@ -35,6 +36,8 @@ public class GroundMap : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        Grounds = new Dictionary<Vector3Int, GroundStats>();
+
 
         if (hasMap)
         {
@@ -48,8 +51,6 @@ public class GroundMap : MonoBehaviour
 
     public void SetMap()
     {
-        Grounds = new Dictionary<Vector3, GroundStats>();
-
         for (int x = 0; x < dimension.Width; x++)
         {
             for (int y = 0; y < dimension.Height; y++)
@@ -92,18 +93,14 @@ public class GroundMap : MonoBehaviour
                     clay -= sample;
                 }
 
-                GroundStats ground = new GroundStats(sand, silt, clay);
-
-                Grounds.Add(pos, ground);
-                Tilemap.SetTile(pos, Tiles[(int)ground.Type]);
+                Grounds.Add(pos, new GroundStats(sand, silt, clay));
+                Tilemap.SetTile(pos, Tiles[(int)Grounds[pos].Type]);
             }
         }
     }
 
     public void GetMap()
     {
-        Grounds = new Dictionary<Vector3, GroundStats>();
-        
         foreach (Vector3Int pos in Tilemap.cellBounds.allPositionsWithin)
         {
             if (!Tilemap.HasTile(pos)) continue;
@@ -111,7 +108,7 @@ public class GroundMap : MonoBehaviour
         }
     }
 
-    public GroundStats GetGround(Vector3Int pos)
+    private GroundStats GetGround(Vector3Int pos)
     {
         TileBase check = Tilemap.GetTile(pos);
         int Type;
@@ -139,6 +136,48 @@ public class GroundMap : MonoBehaviour
 
     public void updateDicts()
     {
-        dicts.Grounds = Grounds;
+        scene.Grounds = Grounds;
+    }
+
+    public void AOESand (Vector3Int pos, int range, int increment)
+    {
+        for (int x = pos.x - range; x < pos.x + range; x++)
+        {
+            for (int y = pos.y - range; y < pos.y + range; y++)
+            {
+                if (Tilemap.GetTile(new Vector3Int(x, y, 0)) != null)
+                {
+                    Grounds[pos].Sand = (byte)(Grounds[pos].Sand + increment);
+                }
+            }
+        }
+    }
+
+    public void AOESilt (Vector3Int pos, int range, int increment)
+    {
+        for (int x = pos.x - range; x < pos.x + range; x++)
+        {
+            for (int y = pos.y - range; y < pos.y + range; y++)
+            {
+                if (Tilemap.GetTile(new Vector3Int(x, y, 0)) != null)
+                {
+                    Grounds[pos].Silt = (byte)(Grounds[pos].Silt + increment);
+                }
+            }
+        }
+    }
+
+    public void AOEClay (Vector3Int pos, int range, int increment)
+    {
+        for (int x = pos.x - range; x < pos.x + range; x++)
+        {
+            for (int y = pos.y - range; y < pos.y + range; y++)
+            {
+                if (Tilemap.GetTile(new Vector3Int(x, y, 0)) != null)
+                {
+                    Grounds[pos].Clay = (byte)(Grounds[pos].Clay + increment);
+                }
+            }
+        }
     }
 }
