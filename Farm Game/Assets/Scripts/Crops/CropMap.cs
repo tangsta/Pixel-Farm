@@ -71,4 +71,11 @@ public class CropMap : MonoBehaviour
     {
         dicts.Crops = Crops;
     }
+
+    public void SetTile(Vector3 pos, Crop crop)
+    {
+        Vector3Int point = new Vector3Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y), 0);
+        Crops.Add(pos, new CropStats(crop));
+        Tilemap.SetTile(point, crop.Stages[0]);
+    }
 }
