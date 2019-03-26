@@ -14,13 +14,13 @@ public class Clock : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("print.");
+            // Debug.Log("print.");
             CMap.GrowAll();
             CMap.TriggerCropEffects();
 
             yield return new WaitForSeconds(waitTime);
             //Second Log show passed waitTime (waitTime is float type value ) 
-            Debug.Log("print1.");
+            // Debug.Log("print1.");
         }
     }
 }

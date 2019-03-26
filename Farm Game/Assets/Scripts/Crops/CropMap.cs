@@ -30,6 +30,7 @@ public class CropMap : MonoBehaviour
         if (hasMap)
         {
             GetMap();
+            Debug.Log("getmap");
         }
     }
 

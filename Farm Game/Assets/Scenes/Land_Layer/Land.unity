@@ -5967,7 +5967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemInstance:
-    item: {fileID: 0}
+    item: {fileID: 11400000, guid: 1c6fcccb8d603ed47b6e2428ff23f536, type: 2}
     Quantity: 0
   userInventory: {fileID: 11400000, guid: 16abef044dbd9134888fd887e4f1188b, type: 2}
 --- !u!114 &2031888005
