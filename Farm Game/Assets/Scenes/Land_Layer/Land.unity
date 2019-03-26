@@ -3753,6 +3753,7 @@ GameObject:
   - component: {fileID: 1271806817}
   - component: {fileID: 1271806818}
   - component: {fileID: 1271806819}
+  - component: {fileID: 1271806820}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -3810,8 +3811,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d4c5e4162e9ec8240bbc45c1d35ccb09, type: 2}
   - {fileID: 11400000, guid: fdbfb25018f9d4547869437c07458f9a, type: 2}
   - {fileID: 11400000, guid: 1e00d0066bb840b4a86545f0d8f43966, type: 2}
-  dimension: {fileID: 11400000, guid: b5a5301d49fc3304db2954d50f807063, type: 2}
-  scene: {fileID: 0}
+  dimension: {fileID: 11400000, guid: 7f9cfe8d62812d14f90ef3664a438d74, type: 2}
+  scene: {fileID: 11400000, guid: 0ecbec749ea256642b30b8a656566030, type: 2}
   hasMap: 0
   Variance: 20
   xFreq: 0.5
@@ -3848,11 +3849,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tilemap: {fileID: 938877499}
-  dimension: {fileID: 11400000, guid: b5a5301d49fc3304db2954d50f807063, type: 2}
-  scene: {fileID: 0}
-  hasMap: 0
+  dimension: {fileID: 11400000, guid: 7f9cfe8d62812d14f90ef3664a438d74, type: 2}
+  scene: {fileID: 11400000, guid: 0ecbec749ea256642b30b8a656566030, type: 2}
+  hasMap: 1
   Types:
   - {fileID: 11400000, guid: bb3d72d5eaa8d4e4982b138b5efafe72, type: 2}
+--- !u!114 &1271806820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271806814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 640c1fa7d4536e144858bb3a523ef15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CMap: {fileID: 1271806819}
 --- !u!1 &1298821014
 GameObject:
   m_ObjectHideFlags: 0
