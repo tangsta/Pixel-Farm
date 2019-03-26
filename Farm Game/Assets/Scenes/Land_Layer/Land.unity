@@ -801,19 +801,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &432108110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432108119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c59bdafea286f846b0780113cd59cb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlantButton: {fileID: 273507461}
 --- !u!1 &432108119
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,7 +815,6 @@ GameObject:
   - component: {fileID: 6157488962604475801}
   - component: {fileID: 278712947698983048}
   - component: {fileID: 1603103556458459794}
-  - component: {fileID: 432108110}
   m_Layer: 5
   m_Name: DoneButton
   m_TagString: Untagged
@@ -8311,7 +8297,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 432108110}
+      - m_Target: {fileID: 273507458}
         m_MethodName: StopPlanting
         m_Mode: 1
         m_Arguments:
@@ -9289,6 +9275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1137495176114771166}
+  - component: {fileID: 8349336060227606125}
   m_Layer: 5
   m_Name: PlantInfo
   m_TagString: Untagged
@@ -9296,6 +9283,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!222 &8349336060227606125
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8349336060227606124}
+  m_CullTransparentMesh: 0
 --- !u!222 &8383584152254851027
 CanvasRenderer:
   m_ObjectHideFlags: 0

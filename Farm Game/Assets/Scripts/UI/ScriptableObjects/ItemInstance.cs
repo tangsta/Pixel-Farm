@@ -8,7 +8,7 @@ public class ItemInstance {
     // Reference to scriptable object "template".
     public Item item;
     // Object-specific data.
-    public int Quantity;
+    public int Quantity;		
 
 
     /* How to use 

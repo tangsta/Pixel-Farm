@@ -18,7 +18,7 @@ public class InventoryUI : MonoBehaviour
     */
     void Awake()
     {
-        // gets all the slots || change this to the inventory array from the script object
+        // gets all the slots 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         UpdateUI();
     }
@@ -37,7 +37,7 @@ public class InventoryUI : MonoBehaviour
     {
     	for(int i = 0; i < slots.Length; i++)
     	{
-    		if(userInventory.inventory[i].item != null)
+    		if(userInventory.inventory[i] != null)
     		{
     			slots[i].AddItem(userInventory.inventory[i].item);
     		}

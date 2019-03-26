@@ -64,4 +64,11 @@ public class PlantButton : MonoBehaviour
 		plantingMode = true;
 		ScriptableInventory = Inventory.GetComponent<InventoryUI>().userInventory;
 	}
+
+
+	// reference the plant button and call this function to activate it 
+	public void StopPlanting()
+	{
+		plantingMode = false;
+	}
 }
