@@ -11,15 +11,16 @@ public class BuyPlantButton : MonoBehaviour
 		How to use
 		----------
 		Attach the script to a buy slot
-		Drag the desired item that you want to be sold into the script - onto the variable item
+		Drag the desired item that you want to be sold into the script - onto the variable called 'item'
 		Done 
 
 	*/
 
 	//***************************************************************************
-    public ItemInstance itemInstance;
+    public ItemInstance itemInstance; // the ItemInstance was added in manually 
 	public Inventory userInventory; 
-	
+	// in the future you can create a Inventory shop - which you can loop through and create sprites / set data to each slot
+
 	private Image icon;
 
 	void Awake()

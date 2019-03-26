@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 	Purpose
+		After a button is clicked the user will enter planting mode and every click will plant something
+
+		*** requires another button to go into this script and turn planting mode to false 	
+*/
 public class PlantButton : MonoBehaviour
 {
 
-	public GameObject Inventory; // this will give us the reference we need to start planting 
-	public Item item;
+	public GameObject Inventory; // reference to Inventory under ShopInventoryCanvas
+	public Item item; // store the currentSelectedItem into here 
 	public Plant plant;
+	private Inventory ScriptableInventory; //  Found under Inventory as one of its public variables 
+	private ItemInstance itemInstance; // create an ItemInstance so you can use Inventory functions
 
 	public GameObject Grid; // used to get function
-	public Crop crop; // how to get a crop??
+	public Crop crop; // Crop is taken from Plant 
 
-	//for clicking
+	//Donny's script idk what this does or need for 
     private GroundStats ground;
 
     public bool plantingMode = false;
@@ -20,19 +27,34 @@ public class PlantButton : MonoBehaviour
     // optimize this later
     void Update()
     {
-    	Debug.Log("yo");
     	if(plantingMode)
     	{
     		if (Input.GetMouseButtonDown(0))
 	        {
+	        	// we need to check with the inventory if the user has the plant 
 	        	item = Inventory.GetComponent<InventoryUI>().currentSelectedItem;
-				plant = (Plant) item;
-				crop = plant.crop ;
-	            Vector3 PointClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-	            Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
-	                                        Mathf.FloorToInt(PointClick.y), 0);
+	        	if(item != null)
+	        	{
+	        		itemInstance = new ItemInstance(item);
+	        		if(ScriptableInventory.FindItem(itemInstance))
+	        		{
+	        			ScriptableInventory.DecreaseQuantityItem(1, itemInstance);
 
-	            Grid.GetComponent<CropMap>().SpawnCrop(PointClick, plant.crop );
+	        			// below spawns the plant according to what was currently selected by the user from the inventory 
+						plant = (Plant) item;
+						crop = plant.crop;
+			            Vector3 PointClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			            Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
+			                                        Mathf.FloorToInt(PointClick.y), 0);
+
+			            Grid.GetComponent<CropMap>().SpawnCrop(PointClick, plant.crop );
+	        		}
+	        	}
+	        	else if(item == null)
+	        	{
+	        		// Bug - debug not being called 3/26/2019
+	        		Debug.Log("You have no selected an item yet from inventory. Click done and go back.");
+	        	}
 			}
     	}
     }
@@ -40,5 +62,6 @@ public class PlantButton : MonoBehaviour
 	public void Plant()
 	{
 		plantingMode = true;
+		ScriptableInventory = Inventory.GetComponent<InventoryUI>().userInventory;
 	}
 }

@@ -7,10 +7,13 @@ using UnityEngine;
 public class ItemInstance {
     // Reference to scriptable object "template".
     public Item item;
-    public int Quantity;
     // Object-specific data.
-    // public Quality.QualityGrade quality;
+    public int Quantity;
 
+
+    /* How to use 
+    		How to use you need to added the object in manually 
+    */
     public ItemInstance(Item item) {
         this.item = item;
     }

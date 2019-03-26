@@ -93,6 +93,33 @@ public class Inventory : ScriptableObject
         }
     }
 
+    public bool DecreaseQuantityItem(int amount, ItemInstance itemInstance)
+    {
+        for(int x = 0; x < inventory.Length; x++)
+        {
+            if(!SlotEmpty(x))
+            {
+                if(inventory[x].item.itemName == itemInstance.item.itemName)
+                {
+                	if(inventory[x].Quantity > 0)
+                	{
+                    	inventory[x].Quantity -= amount;
+                    	if(inventory[x].Quantity == 0)
+                    	{
+                    		RemoveItem(x);
+                    	}
+                    	return true;
+                	}
+                	else
+                	{
+                		return false;
+                	}
+                }
+            }
+        }
+        return false; // false means item wasn't found or the Quantity was 0
+    }
+
     // Get an item if it exists.
     public bool GetItem(int index, out ItemInstance item) 
     {
@@ -107,7 +134,7 @@ public class Inventory : ScriptableObject
         return true;
     }
 
-    // Remove an item at an index if one exists at that index.
+    // Remove all of an item at an index if one exists at that index.
     public bool RemoveItem(int index) 
     {
         if (SlotEmpty(index)) 

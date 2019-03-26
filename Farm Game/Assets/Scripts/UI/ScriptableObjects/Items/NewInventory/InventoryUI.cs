@@ -24,9 +24,15 @@ public class InventoryUI : MonoBehaviour
     }
 
 
-    // For some reason Awake() works better than start lol
 
-    // Updates the UI if the user clicks the switch button
+    /* 
+        Call this function to update UI 
+
+        Way One (Buttons) - '+' another command then add the desired GameObject with this script onto the Object box
+                            then select this function from the dropdown list  
+        
+    
+    */
     public void UpdateUI()
     {
     	for(int i = 0; i < slots.Length; i++)
