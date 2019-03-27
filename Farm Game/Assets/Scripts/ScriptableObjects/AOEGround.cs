@@ -24,5 +24,6 @@ public class AOEGround : AOE
                 Debug.Log("AOE GROUNDVALUE NOT DEFINED");
                 break;
         }
+        Ground.GroundUpdate();
     }
 }

@@ -180,4 +180,13 @@ public class GroundMap : MonoBehaviour
             }
         }
     }
+
+    public void GroundUpdate()
+    {
+        foreach (Vector3Int pos in Grounds.Keys)
+        {
+            Grounds[pos].UpdateType();
+            Tilemap.SetTile(pos, Tiles[(int)Grounds[pos].Type]);
+        }
+    }
 }

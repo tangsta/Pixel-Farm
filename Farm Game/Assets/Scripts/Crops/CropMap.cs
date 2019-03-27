@@ -32,15 +32,35 @@ public class CropMap : MonoBehaviour
             GetMap();
             Debug.Log("getmap");
         }
+        else
+        {
+            SetMap();
+        }
     }
 
     public void GrowAll()
     {
         foreach (Vector3Int pos in Crops.Keys)
         {
-            Crops[pos].Grow();
+            if (Crops[pos] != null)
+            {
+                Crops[pos].Grow();
+                Tilemap.SetTile(pos, Crops[pos].Crop.Stages[(int)Crops[pos].State]);
+            }
         }
         updateDicts();
+    }
+
+    private void SetMap()
+    {
+        for (int x = 0; x < dimension.Width; x++)
+        {
+            for (int y = 0; y < dimension.Height; y++)
+            {
+                Vector3Int pos = new Vector3Int(x, y, 0);
+                Crops.Add(pos, null);
+            }
+        }
     }
 
     private void GetMap()
@@ -73,18 +93,22 @@ public class CropMap : MonoBehaviour
         scene.Crops = Crops;
     }
 
-    public void SpawnCrop(Vector3 pos, Crop crop)
+    public bool SpawnCrop(Vector3 pos, Crop crop)
     {
         Vector3Int point = new Vector3Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y), 0);
-        if (Crops.ContainsKey(point))
+        if (Crops.ContainsKey(point) && Crops[point] == null)
         {
-            Debug.Log("There is already a plant here");
+            Crops[point] =  new CropStats(crop);
+            Tilemap.SetTile(new Vector3Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y), 0), crop.Stages[0]);
+            return true;
         }
         else
         {
-            Crops.Add(point, new CropStats(crop));
-            Tilemap.SetTile(new Vector3Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y), 0), crop.Stages[0]);
+            //Tell user that it is an invalid action
+            Debug.Log("Cant plant here BRO");
+            return false;
         }
+ 
     }
 
     public void DeleteCrop(Vector3 pos)
@@ -99,7 +123,10 @@ public class CropMap : MonoBehaviour
     {
         foreach (Vector3Int pos in Crops.Keys)
         {
-            Crops[pos].TriggerSpecials();
+            if (Crops[pos] != null)
+            {
+                Crops[pos].TriggerSpecials();
+            }
         }
     }
      

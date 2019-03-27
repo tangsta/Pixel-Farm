@@ -16,9 +16,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 04ef50c5d4eae2f4dba93c857650bb99, type: 2}
   - {fileID: 11400000, guid: 90d0a723d02a50349a1e9128eadb3cf3, type: 2}
   - {fileID: 11400000, guid: 06cedf5581ab73443a95ecd0fad93dc6, type: 2}
+  Specials: []
   Produce: 3
-  Range: 0
   GrowthTime: 10
   WaterTime: 6
-  GrowthChance: 0.01
-  Specials: []
+  GrowthChance: 0.2

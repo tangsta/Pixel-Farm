@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public enum GrowthState
 {
@@ -11,12 +10,12 @@ public class CropStats
     public GrowthState State;
     public Crop Crop;
 
-    public Tile[] Stages;
+    //Local Crop Values
     public int Produce;
     public float GrowthTime;
     public float WaterTime;
+    //Must be between 0 - 0.99999...
     public float GrowthChance;
-    public AOE[] Specials;
 
     public CropStats(Crop Crop)
     {
@@ -27,12 +26,12 @@ public class CropStats
         GrowthTime = Crop.GrowthTime;
         WaterTime = Crop.WaterTime;
         GrowthChance = Crop.GrowthChance;
-        Specials = Crop.Specials;
     }
  
     public void Grow()
-    {   
-        if (State != GrowthState.Producing && Random.Range(0, 1) > GrowthChance)
+    {
+        float randValue = Random.value;
+        if (State != GrowthState.Producing && randValue < GrowthChance) //&& Random.Range(0, 1) > GrowthChance)
         {
             State = State + 1;
         }
@@ -40,7 +39,7 @@ public class CropStats
 
     public void TriggerSpecials()
     {
-        foreach (AOE aoe in Specials)
+        foreach (AOE aoe in Crop.Specials)
         {
             aoe.Trigger();
         }

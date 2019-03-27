@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
-    public CropMap CMap; 
+    public CropMap CMap;
+    public float WaitTime;
 
     public void Start()
     {
-        StartCoroutine(LoopFunction(1));
+        StartCoroutine(LoopFunction(WaitTime));
     }
 
     private IEnumerator LoopFunction(float waitTime)

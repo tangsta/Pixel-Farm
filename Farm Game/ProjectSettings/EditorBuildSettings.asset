@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/MainMenu.unity
     guid: 8e621e994d873fe4e9ea36cf314831b2
   - enabled: 1
-    path: Assets/Scenes/Land_Layer/Land.unity
+    path: Assets/Scenes/Farm/Farm.unity
     guid: 3b04031b3dbdcf74f8d9dbeae8166c22
   - enabled: 1
     path: Assets/Scenes/UI/UIScene.unity
