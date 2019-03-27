@@ -51,6 +51,8 @@ public class Inventory : ScriptableObject
     }
 
     /* Inventory START */
+    	// honestly I just make a new object and store it into the array
+    	// ex/ ItemInstance item = new ItemInstance(item);
     public ItemInstance[] inventory;
 
     public bool SlotEmpty(int index) 

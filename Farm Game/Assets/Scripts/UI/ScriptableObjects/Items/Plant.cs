@@ -6,17 +6,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Plant.asset", menuName = "Items/Plant")]
 public class Plant : Item
 {
+	/*
+		Plant class should be used in inventory only
+	*/
 	[Header("Plant Attributes")]
 	// required level to buy/plant?
 	public string description;
 	public int requriedLevel;
 	public int amount;
-	public int sellPrice;
-	public double baseGrowth;
-
-	[Header("Plant Phases")]
-	public Sprite[] phases = new Sprite[3];
-	// water time should be half of harvestTime
 
 	[Header("Plant Attributes")]
 	public Crop crop;
