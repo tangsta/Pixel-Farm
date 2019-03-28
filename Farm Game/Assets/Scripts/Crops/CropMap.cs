@@ -12,9 +12,10 @@ public class CropMap : MonoBehaviour
 
     public bool hasMap;
 
-    public Crop[] Types;
+    public ContentManager content;
     public Dictionary<Vector3Int, CropStats> Crops;
 
+    //Preinitialize
     public void Awake()
     {
         if (instance == null)
@@ -38,6 +39,7 @@ public class CropMap : MonoBehaviour
         }
     }
 
+    //Forces each plant to attempt to grow
     public void GrowAll()
     {
         foreach (Vector3Int pos in Crops.Keys)
@@ -51,6 +53,7 @@ public class CropMap : MonoBehaviour
         updateDicts();
     }
 
+    //Sets map based on dimensions given
     private void SetMap()
     {
         for (int x = 0; x < dimension.Width; x++)
@@ -63,6 +66,7 @@ public class CropMap : MonoBehaviour
         }
     }
 
+    //Reads the current Tilemap to create Map
     private void GetMap()
     {
         foreach (Vector3Int pos in Tilemap.cellBounds.allPositionsWithin)
@@ -72,33 +76,35 @@ public class CropMap : MonoBehaviour
         }
     }
 
-    public CropStats GetCrop(Vector3Int pos)
+    //helper for GetMap()
+    private CropStats GetCrop(Vector3Int pos)
     {
         TileBase check = Tilemap.GetTile(pos);
-        int crop;
-        int stage;
 
-        for (crop = 0; crop < Types.Length; crop++)
+        foreach (Definition def in content.ContentDiction.Values)
         {
-            for (stage = 0; stage < Types[crop].Stages.Length; stage++)
+            for (int i = 0; i < def.Crop.Stages.Length; i++)
             {
-                if (Types[crop].Stages[stage] == check) return new CropStats(Types[crop]);
+                if (def.Crop.Stages[i] == check) return new CropStats(def.Crop);
             }
         }
-        return new CropStats(Types[0]);
+        return null;
     }
 
+    //Updates global dictionaries
     public void updateDicts()
     {
         scene.Crops = Crops;
     }
 
-    public bool SpawnCrop(Vector3 pos, Crop crop)
+    //Plant crop while checking availablity 
+    public bool PlantCrop(Vector3 pos, int ID)
     {
         Vector3Int point = new Vector3Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y), 0);
         if (Crops.ContainsKey(point) && Crops[point] == null)
         {
-            Crops[point] =  new CropStats(crop);
+            Crop crop = ((Definition)content.ContentDiction[ID]).Crop;
+            Crops[point] = new CropStats(crop);
             Tilemap.SetTile(new Vector3Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y), 0), crop.Stages[0]);
             return true;
         }
@@ -111,14 +117,17 @@ public class CropMap : MonoBehaviour
  
     }
 
-    public void DeleteCrop(Vector3 pos)
+    //Removes full grown plants and gives its stats before being deleted
+    public CropStats HarvestCrop(Vector3 pos)
     {
         Vector3Int point = new Vector3Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y), 0);
-        Crops.Remove(point);
+        CropStats output = Crops[point];
+        Crops[point] = null;
         Tilemap.SetTile(point, null);
+        return output;
     }
 
-    //for the soil layer only for now
+    //Preemptive AOE functionality 
     public void TriggerCropEffects()
     {
         foreach (Vector3Int pos in Crops.Keys)
@@ -130,6 +139,7 @@ public class CropMap : MonoBehaviour
         }
     }
      
+    //Preemptive AOE helpers 
     public void AOEProduce (Vector3Int pos, int range, float multiplier)
     {
         for (int x = pos.x - range; x < pos.x + range; x++)

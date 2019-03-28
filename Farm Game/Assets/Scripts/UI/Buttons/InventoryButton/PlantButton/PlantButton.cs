@@ -47,7 +47,7 @@ public class PlantButton : MonoBehaviour
 			            Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
 			                                        Mathf.FloorToInt(PointClick.y), 0);
 
-			            Grid.GetComponent<CropMap>().SpawnCrop(PointClick, plant.crop );
+			            //Grid.GetComponent<CropMap>().PlantCrop(PointClick, plant.crop );
 	        		}
 	        	}
 	        	else if(item == null)

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//Used to control avaliable plant states
 public enum GrowthState
 {
     Seedling, Mature, Producing
@@ -28,6 +29,7 @@ public class CropStats
         GrowthChance = Crop.GrowthChance;
     }
  
+    //Grow based on chances of Random.value
     public void Grow()
     {
         float randValue = Random.value;
@@ -37,6 +39,7 @@ public class CropStats
         }
     }
 
+    //Preemptive AOE functionality
     public void TriggerSpecials()
     {
         foreach (AOE aoe in Crop.Specials)
