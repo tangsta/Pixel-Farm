@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a530e7df92678214892979c2a873d04f, type: 3}
   m_Name: SceneData
   m_EditorClassIdentifier: 
+  Dimensions: {fileID: 11400000, guid: 7f9cfe8d62812d14f90ef3664a438d74, type: 2}

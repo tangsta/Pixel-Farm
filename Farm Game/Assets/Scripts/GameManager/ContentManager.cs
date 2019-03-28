@@ -6,7 +6,7 @@ using UnityEngine;
 public class ContentManager : ScriptableObject
 {
     public static int ID = 0;
-    public Dictionary<int, ScriptableObject> ContentDiction;
+    public Dictionary<int, ScriptableObject> IDDictionary;
 
     //Array used to preinitialize data 
     public Definition[] CropDefinition;
@@ -14,13 +14,14 @@ public class ContentManager : ScriptableObject
     //Preinitialize item
     public void Awake()
     {
+        IDDictionary = new Dictionary<int, ScriptableObject>();
         for (int i = 0; i < CropDefinition.Length; i++)
         {
             Definition def = CropDefinition[i];
             if (def != null)
             {
                 ID = def.ID;
-                ContentDiction.Add(def.ID, def);
+                IDDictionary.Add(def.ID, def);
                 ID++;
             }
         }

@@ -8,8 +8,7 @@ public class GroundMap : MonoBehaviour
 
     public Tilemap Tilemap;
     public Tile[] Tiles = new Tile[8];
-    public Dimensions dimension;
-    public SceneData scene;
+    public SceneData Scene;
 
     public bool hasMap;
 
@@ -53,9 +52,9 @@ public class GroundMap : MonoBehaviour
     //Create map with given dimensions
     public void SetMap()
     {
-        for (int x = 0; x < dimension.Width; x++)
+        for (int x = 0; x < Scene.Dimensions.Width; x++)
         {
-            for (int y = 0; y < dimension.Height; y++)
+            for (int y = 0; y < Scene.Dimensions.Height; y++)
             {
                 Vector3Int pos = new Vector3Int(x, y, 0);
 
@@ -141,7 +140,7 @@ public class GroundMap : MonoBehaviour
     //Updates global dictionaries
     public void updateDicts()
     {
-        scene.Grounds = Grounds;
+        Scene.Grounds = Grounds;
     }
 
     //Checks the current ground values and updates textures accordingly

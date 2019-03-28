@@ -16,8 +16,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8b886ea0ba09eca4b9fe49d1d500e272, type: 2}
   - {fileID: 11400000, guid: c873062e30c2c0046b888933b129e601, type: 2}
   - {fileID: 11400000, guid: 0b15cca231319564dbaa748e8a33a326, type: 2}
+  - {fileID: 11400000, guid: 779e5b811303f004cb6ab4d55943f29d, type: 2}
+  - {fileID: 11400000, guid: d4cdfb1cc9270ac4ba502fdc8ce9a647, type: 2}
   Specials: []
   Produce: 5
-  GrowthTime: 10
-  WaterTime: 5
+  GrowthTime: 20
+  ThirstTime: 8
   GrowthChance: 0.1

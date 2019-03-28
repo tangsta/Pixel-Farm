@@ -3770,8 +3770,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d4c5e4162e9ec8240bbc45c1d35ccb09, type: 2}
   - {fileID: 11400000, guid: fdbfb25018f9d4547869437c07458f9a, type: 2}
   - {fileID: 11400000, guid: 1e00d0066bb840b4a86545f0d8f43966, type: 2}
-  dimension: {fileID: 11400000, guid: 7f9cfe8d62812d14f90ef3664a438d74, type: 2}
-  scene: {fileID: 11400000, guid: 0ecbec749ea256642b30b8a656566030, type: 2}
+  Scene: {fileID: 11400000, guid: 0ecbec749ea256642b30b8a656566030, type: 2}
   hasMap: 0
   Variance: 20
   xFreq: 0.5
@@ -3808,11 +3807,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tilemap: {fileID: 938877499}
-  dimension: {fileID: 11400000, guid: 7f9cfe8d62812d14f90ef3664a438d74, type: 2}
-  scene: {fileID: 11400000, guid: 0ecbec749ea256642b30b8a656566030, type: 2}
+  Scene: {fileID: 11400000, guid: 0ecbec749ea256642b30b8a656566030, type: 2}
   hasMap: 0
-  Types:
-  - {fileID: 11400000, guid: bb3d72d5eaa8d4e4982b138b5efafe72, type: 2}
+  Content: {fileID: 11400000, guid: 77a8f83ff963a47478ab57b737304dc8, type: 2}
 --- !u!114 &1271806820
 MonoBehaviour:
   m_ObjectHideFlags: 0

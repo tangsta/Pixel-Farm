@@ -7,12 +7,11 @@ public class CropMap : MonoBehaviour
     private CropMap instance;
 
     public Tilemap Tilemap;
-    public Dimensions dimension;
-    public SceneData scene;
+    public SceneData Scene;
 
     public bool hasMap;
 
-    public ContentManager content;
+    public ContentManager Content;
     public Dictionary<Vector3Int, CropStats> Crops;
 
     //Preinitialize
@@ -56,9 +55,9 @@ public class CropMap : MonoBehaviour
     //Sets map based on dimensions given
     private void SetMap()
     {
-        for (int x = 0; x < dimension.Width; x++)
+        for (int x = 0; x < Scene.Dimensions.Width; x++)
         {
-            for (int y = 0; y < dimension.Height; y++)
+            for (int y = 0; y < Scene.Dimensions.Height; y++)
             {
                 Vector3Int pos = new Vector3Int(x, y, 0);
                 Crops.Add(pos, null);
@@ -81,7 +80,7 @@ public class CropMap : MonoBehaviour
     {
         TileBase check = Tilemap.GetTile(pos);
 
-        foreach (Definition def in content.ContentDiction.Values)
+        foreach (Definition def in Content.IDDictionary.Values)
         {
             for (int i = 0; i < def.Crop.Stages.Length; i++)
             {
@@ -94,7 +93,7 @@ public class CropMap : MonoBehaviour
     //Updates global dictionaries
     public void updateDicts()
     {
-        scene.Crops = Crops;
+        Scene.Crops = Crops;
     }
 
     //Plant crop while checking availablity 
@@ -103,7 +102,7 @@ public class CropMap : MonoBehaviour
         Vector3Int point = new Vector3Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y), 0);
         if (Crops.ContainsKey(point) && Crops[point] == null)
         {
-            Crop crop = ((Definition)content.ContentDiction[ID]).Crop;
+            Crop crop = ((Definition)Content.IDDictionary[ID]).Crop;
             Crops[point] = new CropStats(crop);
             Tilemap.SetTile(new Vector3Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.y), 0), crop.Stages[0]);
             return true;
