@@ -2114,6 +2114,7 @@ GameObject:
   - component: {fileID: 938877497}
   - component: {fileID: 938877499}
   - component: {fileID: 938877498}
+  - component: {fileID: 938877500}
   m_Layer: 0
   m_Name: Crops
   m_TagString: Untagged
@@ -2249,6 +2250,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &938877500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938877496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec52a32f47df2904784314dbf2eeddb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &958300068
 GameObject:
   m_ObjectHideFlags: 0
@@ -3709,10 +3722,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1271806816}
   - component: {fileID: 1271806815}
-  - component: {fileID: 1271806817}
   - component: {fileID: 1271806818}
-  - component: {fileID: 1271806819}
-  - component: {fileID: 1271806820}
+  - component: {fileID: 1271806821}
+  - component: {fileID: 1271806817}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -3757,30 +3769,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1271806814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ff2fd0458a0e0644ad3eb17204b7803, type: 3}
+  m_Script: {fileID: 11500000, guid: c4f2f925e294ffe4b871aec7e55eb5d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tilemap: {fileID: 1308251075}
-  Tiles:
-  - {fileID: 11400000, guid: 2a55428421fa26a42aaf195400d67271, type: 2}
-  - {fileID: 11400000, guid: cd3b28e4d03cc4142bdad4b3eb80333f, type: 2}
-  - {fileID: 11400000, guid: 8ae868a3f36167b4e96e86183b52447a, type: 2}
-  - {fileID: 11400000, guid: a5af1a9d9e66f6640b9217e1ebd9e63a, type: 2}
-  - {fileID: 11400000, guid: 7ca47b0759497a740aee3199aa84bda9, type: 2}
-  - {fileID: 11400000, guid: d4c5e4162e9ec8240bbc45c1d35ccb09, type: 2}
-  - {fileID: 11400000, guid: fdbfb25018f9d4547869437c07458f9a, type: 2}
-  - {fileID: 11400000, guid: 1e00d0066bb840b4a86545f0d8f43966, type: 2}
+  Generate: 1
+  Load: 0
   Scene: {fileID: 11400000, guid: 0ecbec749ea256642b30b8a656566030, type: 2}
-  hasMap: 0
-  Variance: 20
-  xFreq: 0.5
-  yFreq: 0.5
-  xOffset: 1000
-  yOffset: 5000
-  Amp: 100
-  SandOffset: 800
-  SiltOffset: 300
-  ClayOffset: 50
+  xFreq: 0.355
+  xOffset: 0.421
+  yFreq: 1231231
+  yOffset: 15166
+  Variance: 75
+  Amp: 90
+  ClayOffset: 12341
+  SiltOffset: 14324
+  SandOffset: 21342
 --- !u!114 &1271806818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3793,24 +3796,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34640412efb47cf4abf5a55643491aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Map: {fileID: 1271806817}
---- !u!114 &1271806819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271806814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec52a32f47df2904784314dbf2eeddb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tilemap: {fileID: 938877499}
   Scene: {fileID: 11400000, guid: 0ecbec749ea256642b30b8a656566030, type: 2}
-  hasMap: 0
-  Content: {fileID: 11400000, guid: 77a8f83ff963a47478ab57b737304dc8, type: 2}
---- !u!114 &1271806820
+--- !u!114 &1271806821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3819,11 +3806,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1271806814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 640c1fa7d4536e144858bb3a523ef15f, type: 3}
+  m_Script: {fileID: 11500000, guid: eaf84290496fecc4381a7e16177458f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CMap: {fileID: 1271806819}
-  WaitTime: 1
+  Load: 0
+  Scene: {fileID: 11400000, guid: 0ecbec749ea256642b30b8a656566030, type: 2}
 --- !u!1 &1298821014
 GameObject:
   m_ObjectHideFlags: 0
@@ -3981,6 +3968,7 @@ GameObject:
   - component: {fileID: 1308251073}
   - component: {fileID: 1308251075}
   - component: {fileID: 1308251074}
+  - component: {fileID: 1308251076}
   m_Layer: 0
   m_Name: Lands
   m_TagString: Untagged
@@ -4138,6 +4126,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1308251076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308251072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff2fd0458a0e0644ad3eb17204b7803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type:
+  - {fileID: 11400000, guid: 2a55428421fa26a42aaf195400d67271, type: 2}
+  - {fileID: 11400000, guid: cd3b28e4d03cc4142bdad4b3eb80333f, type: 2}
+  - {fileID: 11400000, guid: 8ae868a3f36167b4e96e86183b52447a, type: 2}
+  - {fileID: 11400000, guid: a5af1a9d9e66f6640b9217e1ebd9e63a, type: 2}
+  - {fileID: 11400000, guid: 7ca47b0759497a740aee3199aa84bda9, type: 2}
+  - {fileID: 11400000, guid: d4c5e4162e9ec8240bbc45c1d35ccb09, type: 2}
+  - {fileID: 11400000, guid: fdbfb25018f9d4547869437c07458f9a, type: 2}
+  - {fileID: 11400000, guid: 1e00d0066bb840b4a86545f0d8f43966, type: 2}
 --- !u!1 &1345804206
 GameObject:
   m_ObjectHideFlags: 0

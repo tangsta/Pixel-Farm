@@ -1,6 +1,14 @@
-﻿using UnityEngine;
+﻿/*  Last Edit:  [3/28/2019] - Donny
+ *  Reason:     Simplify Timers and make it revolve around the Grow function
+ * 
+ *  POTENTIAL CAPABILITIES ARE:
+ *    
+ *      
+ *  CLASS PURPOSE:
+ *      Defines what are crops and what they can do.
+ */
+using UnityEngine;
 
-//Used to control avaliable plant states
 public enum GrowthState
 {
     Seedling, ThirstySeedling, Mature, ThirstyMature, Producing
@@ -11,14 +19,11 @@ public class CropStats
     public GrowthState State;
     public Crop Crop;
 
-    //Local Crop Values
     public int Produce;
-    public int GrowthTime;
-    //ThirstTime must be smaller than GrowthTime
-    public int ThirstTime;
-    //Must be between 0 - 0.99999...
-    public float GrowthChance;
-    //Count chance cycles, use as a base for growth and water stages
+    public int GrowthTime;          //Should be largest Value
+    public int ThirstTime;          
+    public int CoolDown;            
+    public float GrowthChance;      //Values [0, 1)
     public int Timer = 0;
 
     public CropStats(Crop Crop)
@@ -29,26 +34,33 @@ public class CropStats
         Produce = Crop.Produce;
         GrowthTime = Crop.GrowthTime;
         ThirstTime = Crop.ThirstTime;
+        CoolDown = Crop.CoolDown;
         GrowthChance = Crop.GrowthChance;
     }
  
-    //Grow based on conditions of crop
-    public void Grow()
+    //Updates the Crop 
+    public bool Grow()
     {
         Timer++;
         if (State != GrowthState.Producing && (int)State % 2 == 0)
         {
+            if (Timer % CoolDown == 0)
+            {
+                Trigger();
+            }
+
             if (Timer % ThirstTime == 0)
             {
                 State = State + 1;
             }
 
-            float randValue = Random.value;
-            if (((State == GrowthState.Mature && Timer > GrowthTime) || State != GrowthState.Mature) && randValue < GrowthChance)
+            if (((State == GrowthState.Mature && Timer > GrowthTime) || State != GrowthState.Mature) && Random.value < GrowthChance)
             {
                 State = State + 2;
             }
+            return true;
         }
+        return false;
     }
 
     public bool Water()
@@ -65,8 +77,7 @@ public class CropStats
         }
     }
 
-    //Preemptive AOE functionality
-    public void TriggerSpecials()
+    public void Trigger()
     {
         foreach (AOE aoe in Crop.Specials)
         {

@@ -2,7 +2,7 @@
 
 public class TestClick : MonoBehaviour
 {
-    public GroundMap Map;
+    public SceneData Scene;
     private GroundStats ground;
 
     void Update()
@@ -13,7 +13,7 @@ public class TestClick : MonoBehaviour
             Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
                                         Mathf.FloorToInt(PointClick.y), 0);
 
-            var soilPlots = Map.Grounds;
+            var soilPlots = Scene.Grounds;
 
             //Obtains from SoilPlot Dictionary
             if (soilPlots.TryGetValue(worldPoint, out ground))

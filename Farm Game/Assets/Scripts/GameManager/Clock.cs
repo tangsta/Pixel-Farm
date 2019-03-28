@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
-    public CropMap CMap;
+    public CropHandler CMap;
     public float WaitTime;
 
     public void Start()
@@ -17,8 +17,8 @@ public class Clock : MonoBehaviour
         while (true)
         {
             // Debug.Log("print.");
-            CMap.GrowAll();
-            CMap.TriggerCropEffects();
+            //CMap.GrowAll();
+            //CMap.TriggerAllCrop();
 
             yield return new WaitForSeconds(waitTime);
             //Second Log show passed waitTime (waitTime is float type value ) 

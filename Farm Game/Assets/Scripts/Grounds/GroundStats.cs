@@ -1,4 +1,12 @@
-﻿//Restrict texture types
+﻿/*  Last Edit:  [3/28/2019] - Donny
+ *  Reason:     Add Documentation
+ * 
+ *  POTENTIAL CAPABILITIES ARE:
+ *  
+ *      
+ *  CLASS PURPOSE:
+ *      Describes what is a ground and what it can do
+ */
 public enum GroundType
 {
     Stone, Sand, Silt, Clay, SandyClay, SiltyClay, SandySilt, Loam
@@ -27,7 +35,6 @@ public class GroundStats
         Type = 0;
     }
 
-    //Determines what texture to use based on current values
     public void UpdateType()
     {
         float total = Sand + Silt + Clay;
