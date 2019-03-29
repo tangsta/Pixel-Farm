@@ -94,7 +94,7 @@ public class CropHandler : MonoBehaviour
 
     public void TriggerCrop(Vector3Int pos)
     {
-        if (Scene.Crops.ContainsKey(pos))
+        if (Scene.Crops.ContainsKey(pos) && Scene.Crops[pos] != null)
         {
             Scene.Crops[pos].Trigger();
         }
@@ -121,7 +121,7 @@ public class CropHandler : MonoBehaviour
 
     public void Grow(Vector3Int pos)
     {
-        if (Scene.Crops.ContainsKey(pos) && Scene.Crops[pos].Grow())
+        if (Scene.Crops.ContainsKey(pos) && Scene.Crops[pos] != null && Scene.Crops[pos].Grow())
         {
             Field.Replace(pos, Scene.Crops[pos].Crop, Scene.Crops[pos].State);
         }
@@ -148,7 +148,7 @@ public class CropHandler : MonoBehaviour
 
     public void Water(Vector3Int pos)
     {
-        if (Scene.Crops.ContainsKey(pos) && Scene.Crops[pos].Water())
+        if (Scene.Crops[pos] != null &&Scene.Crops.ContainsKey(pos) && Scene.Crops[pos].Water())
         {
             Field.Replace(pos, Scene.Crops[pos].Crop, Scene.Crops[pos].State);
         }

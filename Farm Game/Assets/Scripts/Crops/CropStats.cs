@@ -20,10 +20,10 @@ public class CropStats
     public Crop Crop;
 
     public int Produce;
-    public int GrowthTime;          //Should be largest Value
-    public int ThirstTime;          
-    public int CoolDown;            
-    public float GrowthChance;      //Values [0, 1)
+    public int GrowthTime = 2;          //Should be largest Value
+    public int ThirstTime = 1;          
+    public int CoolDown = 1;            
+    public float GrowthChance = 0.5f;      //Values [0, 1)
     public int Timer = 0;
 
     public CropStats(Crop Crop)
@@ -44,17 +44,17 @@ public class CropStats
         Timer++;
         if (State != GrowthState.Producing && (int)State % 2 == 0)
         {
-            if (Timer % CoolDown == 0)
+            if (CoolDown > 0 && Timer % CoolDown == 0)
             {
                 Trigger();
             }
 
-            if (Timer % ThirstTime == 0)
+            if (ThirstTime > 0 && Timer % ThirstTime == 0)
             {
                 State = State + 1;
             }
 
-            if (((State == GrowthState.Mature && Timer > GrowthTime) || State != GrowthState.Mature) && Random.value < GrowthChance)
+            if ((int)State % 2 == 0 && ((State == GrowthState.Mature && Timer > GrowthTime) || State != GrowthState.Mature) && Random.value < GrowthChance)
             {
                 State = State + 2;
             }

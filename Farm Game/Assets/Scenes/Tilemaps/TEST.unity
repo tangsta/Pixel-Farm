@@ -152,6 +152,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d4c5e4162e9ec8240bbc45c1d35ccb09, type: 2}
   - {fileID: 11400000, guid: fdbfb25018f9d4547869437c07458f9a, type: 2}
   - {fileID: 11400000, guid: 1e00d0066bb840b4a86545f0d8f43966, type: 2}
+  Map: {fileID: 0}
 --- !u!114 &13381481
 MonoBehaviour:
   m_ObjectHideFlags: 0

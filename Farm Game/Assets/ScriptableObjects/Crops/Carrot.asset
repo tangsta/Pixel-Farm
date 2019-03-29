@@ -28,5 +28,5 @@ MonoBehaviour:
   Produce: 2
   GrowthTime: 15
   ThirstTime: 6
-  CoolDown: 0
+  CoolDown: 1
   GrowthChance: 0.3
