@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3488b759c92544886955ee60400bfe, type: 3}
   m_Name: Carrot
   m_EditorClassIdentifier: 
+  itemName: 
+  artwork: {fileID: 21300000, guid: 6aff83c5897d1794297dac3c3489e83c, type: 3}
+  goldCost: 10
+  description: 
+  requriedLevel: 0
+  amount: 0
   Stages:
   - {fileID: 11400000, guid: ad19a22ed3b5e5a47861913b2cae6851, type: 2}
   - {fileID: 11400000, guid: 03c6ed48704f5ca449f40f0a3898967d, type: 2}
@@ -22,4 +28,5 @@ MonoBehaviour:
   Produce: 2
   GrowthTime: 15
   ThirstTime: 6
+  CoolDown: 0
   GrowthChance: 0.3

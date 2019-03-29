@@ -11,8 +11,16 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [CreateAssetMenu]
-public class Crop : ScriptableObject
+public class Crop : Item
 {
+	[Header("Plant Attributes")]
+	// required level to buy/plant?
+	public string description;
+	public int requriedLevel;
+	public int amount;
+
+
+	[Header("Donny's Attributes")]
     public Tile[] Stages;
     public AOE[] Specials;
 
@@ -21,4 +29,6 @@ public class Crop : ScriptableObject
     public int ThirstTime;
     public int CoolDown;
     public float GrowthChance;
+
+
 }

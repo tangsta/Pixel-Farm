@@ -5,8 +5,6 @@
 public class Definition : ScriptableObject
 {
     public int ID;
-    //Inventory data
-    public Plant Plant;
     //Field data
     public Crop Crop;
 }

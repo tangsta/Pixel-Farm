@@ -668,7 +668,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory: {fileID: 231945988}
   item: {fileID: 0}
-  plant: {fileID: 0}
   Grid: {fileID: 1271806814}
   crop: {fileID: 0}
   plantingMode: 0
@@ -2885,7 +2884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemInstance:
-    item: {fileID: 0}
+    item: {fileID: 11400000, guid: c1770282fcbe5f049a7dc14df40707fb, type: 2}
     Quantity: 0
   userInventory: {fileID: 11400000, guid: 16abef044dbd9134888fd887e4f1188b, type: 2}
 --- !u!114 &1002627312
@@ -3864,7 +3863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemInstance:
-    item: {fileID: 11400000, guid: 1bb3f1156c639024197a29c460ae80d6, type: 2}
+    item: {fileID: 11400000, guid: 35fe52daab6a6674ab50a0c38f295195, type: 2}
     Quantity: 0
   userInventory: {fileID: 11400000, guid: 16abef044dbd9134888fd887e4f1188b, type: 2}
 --- !u!114 &1298821017
@@ -5949,7 +5948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemInstance:
-    item: {fileID: 11400000, guid: 1c6fcccb8d603ed47b6e2428ff23f536, type: 2}
+    item: {fileID: 11400000, guid: bb3d72d5eaa8d4e4982b138b5efafe72, type: 2}
     Quantity: 0
   userInventory: {fileID: 11400000, guid: 16abef044dbd9134888fd887e4f1188b, type: 2}
 --- !u!114 &2031888005
@@ -6897,7 +6896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemInstance:
-    item: {fileID: 11400000, guid: 502932cfb5202554ebdf45e85dc3369a, type: 2}
+    item: {fileID: 11400000, guid: eee8b6c6340dd5b459193135cf40c5c9, type: 2}
     Quantity: 0
   userInventory: {fileID: 11400000, guid: 16abef044dbd9134888fd887e4f1188b, type: 2}
 --- !u!114 &1780514815913486540

@@ -12,12 +12,11 @@ public class PlantButton : MonoBehaviour
 
 	public GameObject Inventory; // reference to Inventory under ShopInventoryCanvas
 	public Item item; // store the currentSelectedItem into here 
-	public Plant plant;
 	private Inventory ScriptableInventory; //  Found under Inventory as one of its public variables 
 	private ItemInstance itemInstance; // create an ItemInstance so you can use Inventory functions
 
 	public GameObject Grid; // used to get function
-	public Crop crop; // Crop is taken from Plant 
+	public Crop crop; // Crop 
 
 	//Donny's script idk what this does or need for 
     private GroundStats ground;
@@ -41,13 +40,12 @@ public class PlantButton : MonoBehaviour
 	        			ScriptableInventory.DecreaseQuantityItem(1, itemInstance);
 
 	        			// below spawns the plant according to what was currently selected by the user from the inventory 
-						plant = (Plant) item;
-						crop = plant.crop;
+						crop = (Crop) item;
 			            Vector3 PointClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			            Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
 			                                        Mathf.FloorToInt(PointClick.y), 0);
 
-			            //Grid.GetComponent<CropMap>().PlantCrop(PointClick, plant.crop );
+			            Grid.GetComponent<CropHandler>().Plant(worldPoint, crop );
 	        		}
 	        	}
 	        	else if(item == null)

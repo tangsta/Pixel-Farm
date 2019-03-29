@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3488b759c92544886955ee60400bfe, type: 3}
   m_Name: Radish
   m_EditorClassIdentifier: 
+  itemName: 
+  artwork: {fileID: 21300000, guid: 3243228297c81d04694e101907a178d4, type: 3}
+  goldCost: 10
+  description: 
+  requriedLevel: 0
+  amount: 0
   Stages:
   - {fileID: 11400000, guid: 04ef50c5d4eae2f4dba93c857650bb99, type: 2}
   - {fileID: 11400000, guid: 90d0a723d02a50349a1e9128eadb3cf3, type: 2}
@@ -22,4 +28,5 @@ MonoBehaviour:
   Produce: 3
   GrowthTime: 10
   ThirstTime: 4
+  CoolDown: 0
   GrowthChance: 0.2
