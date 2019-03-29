@@ -143,27 +143,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff2fd0458a0e0644ad3eb17204b7803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tilemap: {fileID: 934682463}
-  Tiles:
+  Type:
   - {fileID: 11400000, guid: 2a55428421fa26a42aaf195400d67271, type: 2}
   - {fileID: 11400000, guid: cd3b28e4d03cc4142bdad4b3eb80333f, type: 2}
   - {fileID: 11400000, guid: 8ae868a3f36167b4e96e86183b52447a, type: 2}
   - {fileID: 11400000, guid: a5af1a9d9e66f6640b9217e1ebd9e63a, type: 2}
   - {fileID: 11400000, guid: 7ca47b0759497a740aee3199aa84bda9, type: 2}
-  - {fileID: 11400000, guid: fdbfb25018f9d4547869437c07458f9a, type: 2}
   - {fileID: 11400000, guid: d4c5e4162e9ec8240bbc45c1d35ccb09, type: 2}
+  - {fileID: 11400000, guid: fdbfb25018f9d4547869437c07458f9a, type: 2}
   - {fileID: 11400000, guid: 1e00d0066bb840b4a86545f0d8f43966, type: 2}
-  Scene: {fileID: 11400000, guid: 0ecbec749ea256642b30b8a656566030, type: 2}
-  hasMap: 0
-  Variance: 0
-  xFreq: 0
-  yFreq: 0
-  xOffset: 0
-  yOffset: 0
-  Amp: 0
-  SandOffset: 0
-  SiltOffset: 0
-  ClayOffset: 0
 --- !u!114 &13381481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,10 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec52a32f47df2904784314dbf2eeddb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tilemap: {fileID: 1375635650}
-  Scene: {fileID: 0}
-  hasMap: 0
-  Content: {fileID: 0}
 --- !u!156049354 &13381482
 Grid:
   m_ObjectHideFlags: 0

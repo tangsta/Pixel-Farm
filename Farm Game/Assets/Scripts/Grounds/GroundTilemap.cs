@@ -16,15 +16,10 @@ using UnityEngine.Tilemaps;
 public class GroundTilemap : MonoBehaviour
 {
     public Tile[] Type = new Tile[8];
-    private Tilemap Tilemap;
-
-    public void Awake()
-    {
-        Tilemap = GetComponent<Tilemap>();
-    }
+    public Tilemap Map;
 
     public void Replace(Vector3Int pos, GroundType type)
     {
-        Tilemap.SetTile(pos, Type[(int)type]);
+        Map.SetTile(pos, Type[(int)type]);
     }
 }
