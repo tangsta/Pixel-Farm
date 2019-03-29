@@ -23,7 +23,7 @@ public class CropTilemap : MonoBehaviour
     }
 
     public void Replace(Vector3Int pos, Crop crop, GrowthState state)
-    {
+    { 
         Tilemap.SetTile(pos, crop.Stages[(int)state]);
     }
 
