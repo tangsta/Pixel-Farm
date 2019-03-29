@@ -17,8 +17,8 @@ public class Clock : MonoBehaviour
         while (true)
         {
             // Debug.Log("print.");
-            //CMap.GrowAll();
-            //CMap.TriggerAllCrop();
+            CMap.GrowAll();
+            CMap.TriggerAllCrop();
 
             yield return new WaitForSeconds(waitTime);
             //Second Log show passed waitTime (waitTime is float type value ) 

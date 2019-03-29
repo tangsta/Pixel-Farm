@@ -37,15 +37,17 @@ public class PlantButton : MonoBehaviour
 	        		itemInstance = new ItemInstance(item);
 	        		if(ScriptableInventory.FindItem(itemInstance))
 	        		{
-	        			ScriptableInventory.DecreaseQuantityItem(1, itemInstance);
-
 	        			// below spawns the plant according to what was currently selected by the user from the inventory 
 						crop = (Crop) item;
 			            Vector3 PointClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			            Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
 			                                        Mathf.FloorToInt(PointClick.y), 0);
 
-			            Grid.GetComponent<CropHandler>().Plant(worldPoint, crop );
+			            // checks if a plant is in the same spot - true = no plant || false = plant
+			            if(Grid.GetComponent<CropHandler>().Plant(worldPoint, crop ))
+			            {
+			            	ScriptableInventory.DecreaseQuantityItem(1, itemInstance);
+			            }
 	        		}
 	        	}
 	        	else if(item == null)
