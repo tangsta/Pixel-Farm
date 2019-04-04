@@ -88,6 +88,7 @@ public class Inventory : ScriptableObject
             {
                 if(inventory[x].item.itemName == itemInstance.item.itemName)
                 {
+                	Debug.Log(inventory[x].item.itemName);
                     inventory[x].Quantity += amount;
                     break;
                 }
