@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3488b759c92544886955ee60400bfe, type: 3}
   m_Name: Broccoli
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Broccoli
   artwork: {fileID: 21300000, guid: 93766bc9e3297f74e874105f625a6b19, type: 3}
   goldCost: 10
   description: 
   requriedLevel: 0
-  amount: 0
+  amount: 1
   Stages:
   - {fileID: 11400000, guid: 9b1e7e0617c82a14ba202828a25b6ebf, type: 2}
   - {fileID: 11400000, guid: a0a51cd7f94f45c43b5e52d8e3420216, type: 2}
