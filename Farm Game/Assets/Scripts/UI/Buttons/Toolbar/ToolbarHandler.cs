@@ -16,16 +16,14 @@ using UnityEngine;
 public class ToolbarHandler : MonoBehaviour
 {
 
-
-	GameObject[] UIDisplays; 	// the different UIs (shpo, inventory, etc)
-	GameObject[] Tabs;	 		// tabs on the side 
-	int active = 0; 			// set default active UI to Shop
-
+	private GameObject[] UIDisplays; 	// the different UIs (shpo, inventory, etc)
+	private GameObject[] Tabs;	 		// tabs on the side 
+	private int active = 0; 			// set default active UI to Shop
 
 	void Awake()
-    {
+    {	
         SetTabs();
-        DisplayActiveTab();
+        DisplayActiveUI();
     }
 
     public void SetTabs()
@@ -35,11 +33,11 @@ public class ToolbarHandler : MonoBehaviour
     	int UIChildren = this.gameObject.transform.parent.childCount;
     	UIDisplays = new GameObject[UIChildren-1];
 
-    	// start at 1 to skip the toolbar gameobject
+    		// start at 1 to skip the toolbar gameobject
 		for (int i = 1; i < UIChildren; i++)
 		{
 			UIDisplays[i-1] = this.gameObject.transform.parent.GetChild(i).gameObject;
-			Debug.Log(UIDisplays[i-1]);
+			// Debug.Log(UIDisplays[i-1]);
 		}
 
 
@@ -56,17 +54,21 @@ public class ToolbarHandler : MonoBehaviour
 
     // close all tabs that is not active
     // checks to make sure active is never 0 because 0 is the toolhander
-    public void DisplayActiveTab()
+    public void DisplayActiveUI()
     {
-    	for(int x = 0; x < UIDisplays.Length; x++)
+    	for(int i = 0; i < UIDisplays.Length; i++)
     	{
-    		if(x != active)
+    		if(i != active)
     		{
-    			UIDisplays[x].transform.localScale = new Vector3(0,0,0);
+    			UIDisplays[i].transform.localScale = new Vector3(0,0,0);
     		}
     		else
     		{
-    			UIDisplays[x].transform.localScale = new Vector3(1,1,1);
+    			if(UIDisplays[i].GetComponent<InventoryUI>() != null)
+    			{
+    				UIDisplays[i].GetComponent<InventoryUI>().UpdateUI();
+    			}
+    			UIDisplays[i].transform.localScale = new Vector3(1,1,1);
     		}
     	}
     }
@@ -74,24 +76,7 @@ public class ToolbarHandler : MonoBehaviour
     public void UpdateActive(int set)
     {
     	active = set;
-    	DisplayActiveTab();
+    	DisplayActiveUI();
     }
-
-
-
-    // public void HideToggleFunction()
-    // {
-    //     Vector3 zero = new Vector3(0, 0, 0);
-    //     Vector3 full = new Vector3(0, 0, 0);
-    //     if(gameobjectToHideShow.transform.localScale == zero)
-    //     {
-    //         gameobjectToHideShow.transform.localScale = new Vector3(1, 1, 1);
-    //     }
-    //     else
-    //     {
-    //         gameobjectToHideShow.transform.localScale = new Vector3(0, 0, 0);
-
-    //     }    		
-    // }
 
 }
