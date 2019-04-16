@@ -8530,7 +8530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsParent: {fileID: 586095612}
-  userInventory: {fileID: 11400000, guid: 16abef044dbd9134888fd887e4f1188b, type: 2}
+  userInventory: {fileID: 11400000, guid: 8eccef453f9c59e4b95e5cf6d8ec0e4d, type: 2}
   currentSelectedItem: {fileID: 0}
 --- !u!114 &1644404583
 MonoBehaviour:
@@ -12334,7 +12334,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1260, y: 780}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6070820710879513845
@@ -12794,7 +12794,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -700, y: 260}
+  m_AnchoredPosition: {x: -625, y: 260}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6797457443788526756
