@@ -12,4 +12,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ca06ad169216942b4219106839e916, type: 3}
   m_Name: SeedInventory
   m_EditorClassIdentifier: 
-  inventory: []
+  inventory:
+  - item: {fileID: 0}
+    Quantity: 0
+  - item: {fileID: 0}
+    Quantity: 0
+  - item: {fileID: 0}
+    Quantity: 0
+  - item: {fileID: 0}
+    Quantity: 0
+  - item: {fileID: 0}
+    Quantity: 0
+  - item: {fileID: 0}
+    Quantity: 0
+  - item: {fileID: 0}
+    Quantity: 0
+  - item: {fileID: 0}
+    Quantity: 0
+  - item: {fileID: 0}
+    Quantity: 0
+  - item: {fileID: 0}
+    Quantity: 0
+  - item: {fileID: 0}
+    Quantity: 0
+  - item: {fileID: 0}
+    Quantity: 0
