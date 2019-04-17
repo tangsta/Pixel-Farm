@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3488b759c92544886955ee60400bfe, type: 3}
   m_Name: Strawberry
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Strawberry
   artwork: {fileID: 21300000, guid: 9297a3a9211202c4f8b0e19a55b2a9d5, type: 3}
   goldCost: 10
   description: 
   requriedLevel: 0
-  amount: 0
+  amount: 1
   Stages:
   - {fileID: 11400000, guid: 8b886ea0ba09eca4b9fe49d1d500e272, type: 2}
   - {fileID: 11400000, guid: c873062e30c2c0046b888933b129e601, type: 2}
