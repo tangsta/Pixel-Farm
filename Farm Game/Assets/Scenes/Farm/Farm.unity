@@ -3810,7 +3810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CMap: {fileID: 1271806821}
-  WaitTime: 5
+  WaitTime: 1
 --- !u!114 &1271806821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5164,7 +5164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f08a6f40d2ec4de981f811bfc829f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TexturePixelsPerWorldUnit: 32
+  TexturePixelsPerWorldUnit: 64
 --- !u!1 &1572743715
 GameObject:
   m_ObjectHideFlags: 0

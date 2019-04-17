@@ -19,7 +19,7 @@ public class PlantButton : MonoBehaviour
 	public Crop crop; // Crop 
 
 	//Donny's script idk what this does or need for 
-    private GroundStats ground;
+    private Land ground;
 
     public bool plantingMode = false;
 

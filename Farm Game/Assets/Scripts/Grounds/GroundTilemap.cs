@@ -18,7 +18,7 @@ public class GroundTilemap : MonoBehaviour
     public Tile[] Type = new Tile[8];
     public Tilemap Map;
 
-    public void Replace(Vector3Int pos, GroundType type)
+    public void Replace(Vector3Int pos, GroundState type)
     {
         Map.SetTile(pos, Type[(int)type]);
     }

@@ -15,12 +15,13 @@ using UnityEngine;
 public class GroundHandler : MonoBehaviour
 {
     private GroundTilemap Field;
+    public Fog b;
 
     public bool Generate;   //Generate a noise based Dictionary
     public bool Load;       //Build Dictionary from saved values
 
     public SceneData Scene;
-    public Dictionary<Vector3Int, GroundStats> Grounds;
+    public Dictionary<Vector3Int, Land> Grounds;
 
     public float xFreq, xOffset;
     public float yFreq, yOffset;
@@ -41,7 +42,7 @@ public class GroundHandler : MonoBehaviour
         }
         else if (Generate)
         {
-            Scene.Grounds = new Dictionary<Vector3Int, GroundStats>();
+            Scene.Grounds = new Dictionary<Vector3Int, Land>();
             for (int x = 0; x < Scene.Dimensions.Width; x++)
             {
                 for (int y = 0; y < Scene.Dimensions.Height; y++)
@@ -84,32 +85,33 @@ public class GroundHandler : MonoBehaviour
                         clay -= sample;
                     }
 
-                    Scene.Grounds.Add(point, new GroundStats(sand, silt, clay));
-                    Field.Replace(point, Scene.Grounds[point].Type);
+                    Scene.Grounds.Add(point, new Land(sand, silt, clay));
+                    Field.Replace(point, Scene.Grounds[point].GetState());
                 }
             }
         }
         else
         {
-            Scene.Grounds = new Dictionary<Vector3Int, GroundStats>();
+            Scene.Grounds = new Dictionary<Vector3Int, Land>();
             for (int x = 0; x < Scene.Dimensions.Width; x++)
             {
                 for (int y = 0; y < Scene.Dimensions.Height; y++)
                 {
                     Vector3Int point = new Vector3Int(x, y, 0);
-                    Scene.Grounds.Add(point, new GroundStats(0, 0, 0));
+                    Scene.Grounds.Add(point, new Land(0, 0, 0));
                     //Send Tilemap update
                 }
             }
         }
+        b.Try();
     }
 
     public void TypeUpdate(Vector3Int pos)
     {
         if (Scene.Grounds.ContainsKey(pos))
         {
-            Scene.Grounds[pos].UpdateType();
-            Field.Replace(pos, Scene.Grounds[pos].Type);
+            Scene.Grounds[pos].UpdateState();
+            Field.Replace(pos, Scene.Grounds[pos].GetState());
         }
     }
 
@@ -125,8 +127,8 @@ public class GroundHandler : MonoBehaviour
     {
         if (Scene.Grounds.ContainsKey(pos))
         {
-            Scene.Grounds[pos] = new GroundStats(sand, silt, clay);
-            Field.Replace(pos, Scene.Grounds[pos].Type);
+            Scene.Grounds[pos] = new Land(sand, silt, clay);
+            Field.Replace(pos, Scene.Grounds[pos].GetState());
         }
     }
 
@@ -142,8 +144,8 @@ public class GroundHandler : MonoBehaviour
     {
         if (Scene.Grounds.ContainsKey(pos))
         {
-            Scene.Grounds[pos] = new GroundStats();
-            Field.Replace(pos, Scene.Grounds[pos].Type);
+            Scene.Grounds[pos] = new Land();
+            Field.Replace(pos, Scene.Grounds[pos].GetState());
         }
     }
 
@@ -155,7 +157,7 @@ public class GroundHandler : MonoBehaviour
         }
     }
 
-    public GroundStats GetGround(Vector3Int pos)
+    public Land GetGround(Vector3Int pos)
     {
         if (Scene.Grounds.ContainsKey(pos))
         {

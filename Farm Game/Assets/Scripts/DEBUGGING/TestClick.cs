@@ -3,7 +3,7 @@
 public class TestClick : MonoBehaviour
 {
     public SceneData Scene;
-    private GroundStats ground;
+    private Land ground;
 
     void Update()
     {
@@ -18,7 +18,7 @@ public class TestClick : MonoBehaviour
             //Obtains from SoilPlot Dictionary
             if (soilPlots.TryGetValue(worldPoint, out ground))
             {
-                Debug.Log(ground.Type + " " + ground.Sand + " " + ground.Silt + " " + ground.Clay);
+                Debug.Log(ground.GetState());
             }
         }
     }
