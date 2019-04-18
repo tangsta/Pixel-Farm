@@ -9,37 +9,25 @@
  *  CLASS PURPOSE:
  *      Determines the ground type and what it does in it states
  */
-/*
-public enum GroundType
-{
-   Stone, Sand, Silt, Clay, SandyClay, SiltyClay, SandySilt, Loam
-}
-*/
-
-public enum GroundState
-{
-    Stone, Sand, Dirt, Water
-}
-
 public class Land
 {
     private int GrainAmount;              //Range 0 - 4096
     private int OrganicLevel;             //Range 0 - 100
     private int MoistureLevel;            //Range 0 - 100
-    private GroundState State;
-    
-    //public byte Sand;
-    //public byte Silt;
-    //public byte Clay;
-    //public GroundType Type;
-    
+    private byte? State;
+    /*  Type List
+    *  0   -Stone
+    *  1   -Sand
+    *  2   -Dirt
+    *  3   -Water
+    */
+
     public Land(int GrainAmount, int OrganicLevel, int MoistureLevel)
     {
         this.GrainAmount = GrainAmount;
         this.OrganicLevel = OrganicLevel;
         this.MoistureLevel = MoistureLevel;
-        State = GroundState.Dirt;
-        UpdateState();
+        State = UpdateState();
     }
 
     public Land()
@@ -47,26 +35,8 @@ public class Land
         GrainAmount = 0;
         OrganicLevel = 0;
         MoistureLevel = 0;
-        State = GroundState.Stone;
+        State = null;
     }
-
-    /*
-    public GroundStats(byte Sand, byte Silt, byte Clay)
-    {
-        this.Sand = Sand;
-        this.Silt = Silt;
-        this.Clay = Clay;
-        UpdateType();
-    }
-
-    public GroundStats()
-    {
-        Sand = 0;
-        Silt = 0;
-        Clay = 0;
-        Type = 0;
-    }
-   */
 
     public void GrainAdd(int val)
     {
@@ -98,35 +68,35 @@ public class Land
             MoistureLevel += val;
     }
 
-    public void UpdateState()
+    public byte UpdateState()
     {
         switch(State)
         {
-            case GroundState.Dirt:
+            case 2:
                 if (GrainAmount < 410)
-                    State = GroundState.Stone;
+                    State = 0;
                 else if (OrganicLevel < 20)
-                    State = GroundState.Sand;
+                    State = 1;
                 else if (GrainAmount > 3891 && OrganicLevel > 80 && MoistureLevel > 80)
-                    State = GroundState.Water;
+                    State = 3;
                 break;
-            case GroundState.Stone:
+            case 0:
                 if (GrainAmount >= 410)
-                    State = GroundState.Sand;
+                    State = 1;
                 break;
-            case GroundState.Sand:
+            case 1:
                 if (GrainAmount < 410)
-                    State = GroundState.Stone;
+                    State = 0;
                 else if (OrganicLevel >= 20)
-                    State = GroundState.Dirt;
+                    State = 2;
                 break;
-            case GroundState.Water:
+            case 3:
                 if (GrainAmount < 3891 || OrganicLevel < 80 || MoistureLevel < 80)
-                    State = GroundState.Dirt;
+                    State = 2;
                 break;
         }
+        return State ?? default(byte);
     }
-
 
     //Reveals attributes from a scale of 0 - 10
     public int MesGrain()
@@ -143,60 +113,4 @@ public class Land
     {
         return MoistureLevel / 10;
     }
-
-    public GroundState GetState()
-    {
-        return State;
-    }
-
-    /*
-    public void UpdateType()
-    {
-        float total = Sand + Silt + Clay;
-
-        float perSand = 0;
-        float perSilt = 0;
-        float perClay = 0;
-
-        if (total < 125)
-        {
-            Type = GroundType.Stone;
-        }
-        else
-        {
-            perSand = Sand / total;
-            perSilt = Silt / total;
-            perClay = Clay / total;
-
-            if (perClay >= 0.40)
-            {
-                Type = GroundType.Clay;
-            }
-            else if (perSilt >= 0.80)
-            {
-                Type = GroundType.Silt;
-            }
-            else if (perSand >= 0.90)
-            {
-                Type = GroundType.Sand;
-            }
-            else if ((perSilt < 0.30) && (perClay < 0.40 && perSand > 0.50))
-            {
-                Type = GroundType.SandyClay;
-            }
-            else if ((perSand < 0.30) && (perClay < 0.40 && perSilt > 0.50))
-            {
-                Type = GroundType.SiltyClay;
-            }
-            else if ((perClay < 0.10) && (perSilt > 0.30 && perSand < 0.70))
-            {
-                Type = GroundType.SandySilt;
-            }
-            else
-            {
-                Type = GroundType.Loam;
-            }
-        }
-    }
-    */
 }

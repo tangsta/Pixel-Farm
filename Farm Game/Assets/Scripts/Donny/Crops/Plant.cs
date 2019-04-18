@@ -14,7 +14,7 @@ public enum GrowthState
     Seedling, ThirstySeedling, Mature, ThirstyMature, Producing
 }
 
-public class CropStats
+public class Plant
 {
     public GrowthState State;
     public Crop Crop;
@@ -26,7 +26,7 @@ public class CropStats
     public float GrowthChance = 0.5f;      //Values [0, 1)
     public int Timer = 0;
 
-    public CropStats(Crop Crop)
+    public Plant(Crop Crop)
     {
         State = GrowthState.Seedling;
         this.Crop = Crop;
@@ -46,7 +46,7 @@ public class CropStats
         {
             if (CoolDown > 0 && Timer % CoolDown == 0)
             {
-                Trigger();
+                //Trigger aoe effect
             }
 
             if (ThirstTime > 0 && Timer % ThirstTime == 0)
@@ -77,11 +77,4 @@ public class CropStats
         }
     }
 
-    public void Trigger()
-    {
-        foreach (AOE aoe in Crop.Specials)
-        {
-            aoe.Trigger();
-        }
-    }
 }

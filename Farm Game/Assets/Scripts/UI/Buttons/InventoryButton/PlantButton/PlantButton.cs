@@ -44,7 +44,7 @@ public class PlantButton : MonoBehaviour
 			                                        Mathf.FloorToInt(PointClick.y), 0);
 
 			            // checks if a plant is in the same spot - true = no plant || false = plant
-			            if(Grid.GetComponent<CropHandler>().Plant(worldPoint, crop ))
+			            if(Grid.GetComponent<Map>().Plant(worldPoint, crop ))
 			            {
 			            	ScriptableInventory.DecreaseQuantityItem(1, itemInstance);
 			            }

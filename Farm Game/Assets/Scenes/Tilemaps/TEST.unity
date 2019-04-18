@@ -122,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 13381483}
   - component: {fileID: 13381482}
-  - component: {fileID: 13381481}
   - component: {fileID: 13381480}
   m_Layer: 0
   m_Name: Grid
@@ -140,31 +139,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 13381479}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ff2fd0458a0e0644ad3eb17204b7803, type: 3}
+  m_Script: {fileID: 11500000, guid: 160190a1a0a53704c9cb5441e79ef678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type:
-  - {fileID: 11400000, guid: 2a55428421fa26a42aaf195400d67271, type: 2}
-  - {fileID: 11400000, guid: cd3b28e4d03cc4142bdad4b3eb80333f, type: 2}
-  - {fileID: 11400000, guid: 8ae868a3f36167b4e96e86183b52447a, type: 2}
-  - {fileID: 11400000, guid: a5af1a9d9e66f6640b9217e1ebd9e63a, type: 2}
-  - {fileID: 11400000, guid: 7ca47b0759497a740aee3199aa84bda9, type: 2}
-  - {fileID: 11400000, guid: d4c5e4162e9ec8240bbc45c1d35ccb09, type: 2}
-  - {fileID: 11400000, guid: fdbfb25018f9d4547869437c07458f9a, type: 2}
-  - {fileID: 11400000, guid: 1e00d0066bb840b4a86545f0d8f43966, type: 2}
-  Map: {fileID: 0}
---- !u!114 &13381481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13381479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec52a32f47df2904784314dbf2eeddb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Height: 5
+  Width: 5
+  LandMap: {fileID: 1375635654}
 --- !u!156049354 &13381482
 Grid:
   m_ObjectHideFlags: 0
@@ -452,8 +432,10 @@ GameObject:
   - component: {fileID: 1375635652}
   - component: {fileID: 1375635650}
   - component: {fileID: 1375635651}
+  - component: {fileID: 1375635654}
+  - component: {fileID: 1375635653}
   m_Layer: 0
-  m_Name: Tilemap
+  m_Name: Land
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -857,3 +839,37 @@ Transform:
   m_Father: {fileID: 13381483}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1375635653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375635649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff2fd0458a0e0644ad3eb17204b7803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type:
+  - {fileID: 11400000, guid: 2a55428421fa26a42aaf195400d67271, type: 2}
+  - {fileID: 11400000, guid: cd3b28e4d03cc4142bdad4b3eb80333f, type: 2}
+  - {fileID: 11400000, guid: 1e00d0066bb840b4a86545f0d8f43966, type: 2}
+  - {fileID: 11400000, guid: a5af1a9d9e66f6640b9217e1ebd9e63a, type: 2}
+  Fog:
+  - {fileID: 11400000, guid: a6054f89356e99f45abe6e17ef2a4830, type: 2}
+  - {fileID: 11400000, guid: 67cc60e4d66fbe3428a1ae25dbbf5b83, type: 2}
+  - {fileID: 11400000, guid: 2b947ac7defaa9a4494140955850891e, type: 2}
+--- !u!114 &1375635654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375635649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87efe3560cc87943b6f9a799954eaf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GTilemap: {fileID: 1375635653}

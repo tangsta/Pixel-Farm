@@ -26,17 +26,10 @@ public class Actions : MonoBehaviour
             Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
                                         Mathf.FloorToInt(PointClick.y), 0);
 
-            // checks if a plant is in the same spot - true = no plant || false = plant
-            if(Grid.GetComponent<CropHandler>().CheckPlant(worldPoint)) // check if a plant is there
-            {
-            	// Debug.Log("Is plant");
-                Grid.GetComponent<CropHandler>().Water(worldPoint); // water function
-                Grid.GetComponent<CropHandler>().HarvestCrop(worldPoint); // harvest function
-            }
-            else
-            {
-            	// Do nothing because there is no plant
-            }
+            // Donny Edits - I built in the plant check into the structure 
+                Grid.GetComponent<Map>().Water(worldPoint); // water function
+                Grid.GetComponent<Map>().Harvest(worldPoint); // harvest function
+
 		}
     }
 }
