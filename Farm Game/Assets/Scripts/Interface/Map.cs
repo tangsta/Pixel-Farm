@@ -27,6 +27,11 @@ public class Map : MonoBehaviour
 
     }
 
+    public bool CheckPlant(Vector3Int pos)
+    {
+        return PlantMap.IsPlant(pos.x, pos.y);
+    }
+
     public bool Plant(Vector3Int pos, Crop crop)
     {
         return PlantMap.Plant(pos, crop);

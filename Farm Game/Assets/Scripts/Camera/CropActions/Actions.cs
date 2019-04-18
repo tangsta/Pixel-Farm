@@ -26,7 +26,7 @@ public class Actions : MonoBehaviour
             Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
                                         Mathf.FloorToInt(PointClick.y), 0);
 
-            // Donny Edits - I built in the plant check into the structure 
+            // Donny Edits - Plant check is done within structure 
                 Grid.GetComponent<Map>().Water(worldPoint); // water function
                 Grid.GetComponent<Map>().Harvest(worldPoint); // harvest function
 
