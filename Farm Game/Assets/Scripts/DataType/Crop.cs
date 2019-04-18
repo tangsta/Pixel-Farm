@@ -22,7 +22,6 @@ public class Crop : Item
 
 	[Header("Donny's Attributes")]
     public Tile[] Stages;
-    public AOE[] Specials;
 
     public int Produce;
     public int GrowthTime;
