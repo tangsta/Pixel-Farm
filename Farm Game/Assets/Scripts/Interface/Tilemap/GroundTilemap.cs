@@ -10,7 +10,6 @@
 *  CLASS PURPOSE:
 *      An interface to update tilemap
 */
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -26,32 +25,10 @@ public class GroundTilemap : MonoBehaviour
         Map = GetComponent<Tilemap>();
     }
 
-    public void Set(Vector3Int pos, byte? type)
+    public void Set(Vector3Int pos, byte type)
     {
-        if (type == null)
-        {
-            Vector3Int check = pos + Vector3Int.up;
-            if (IsSurface(check))
-            {
-                Map.SetTile(pos, Fog[0]);
-                check += (Vector3Int.down * 2);
-                if (!IsSurface(check))
-                {
-                    pos += Vector3Int.down;
-                    Map.SetTile(pos, Fog[1]);
-                    check += Vector3Int.down;
-                    if (!IsSurface(check))
-                    {
-                        pos += Vector3Int.down;
-                        Map.SetTile(pos, Fog[2]);
-                    }
-                }
-            }
-        }
-        else
-        {
-            Map.SetTile(pos, Type[type ?? default]);
-        }
+        if (type != 0)
+            Map.SetTile(pos, Type[type - 1]);
     }
 
     public void RenderFog(int width, int height)

@@ -11,7 +11,6 @@ public class DragClick : MonoBehaviour
     public Map Map;
 
 	void Start () {
-        Map = GetComponent<Map>();
         Vector3 mid = new Vector3(Map.Width / 2, Map.Height / 2, Camera.main.transform.position.z);
         Camera.main.transform.position = mid;
 		ResetCamera = Camera.main.transform.position;

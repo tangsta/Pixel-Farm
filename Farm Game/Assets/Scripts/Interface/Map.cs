@@ -20,10 +20,9 @@ public class Map : MonoBehaviour
     public void Start()
     {
         LandMap.InitMap(Width, Height);
-        LandMap.FillMap(0);
-
+        //LandMap.FillMap(0);
+        GenerateMap();
         PlantMap.InitMap(Width, Height);
-        //GenerateMap();
 
     }
 

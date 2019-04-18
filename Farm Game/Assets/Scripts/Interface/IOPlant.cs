@@ -85,12 +85,10 @@ public class IOPlant : MonoBehaviour
 
     public bool IsBound(int x, int y)
     {
-        if (x < 0 || 
-            x > PlantMap.GetLength(0) ||
-            y < 0 || 
-            y > PlantMap.GetLength(1))
-            return false;
-        return true;
+        if (x >= 0 && x < PlantMap.GetLength(0) &&
+            y >= 0 && y < PlantMap.GetLength(1))
+            return true;
+        return false;
     }
 
     public void InitMap(int width, int height)
