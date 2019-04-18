@@ -5,8 +5,13 @@
  *  
  *      
  *  CLASS PURPOSE:
- *      Keep track of all UI that the user can open so we can
- *			- Open close which one we want 
+ *      Keep track and switch between UI's (shop, inventory) 
+ *			- Open/close which one we want
+ *  
+ *  NOTES:
+ * 		You must have a *Button* under the Toolbar gameObject and a *UI panel/gameObject* under Container 		
+ *  
+ *       
  */
 
 using System.Collections;
