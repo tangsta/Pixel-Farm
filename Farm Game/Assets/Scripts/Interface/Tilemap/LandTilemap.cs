@@ -14,7 +14,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [AddComponentMenu("Tilemap/Ground Tilemap")]
-public class GroundTilemap : MonoBehaviour
+public class LandTilemap : MonoBehaviour
 {
     public Tile[] Type = new Tile[4];
     public AnimatedTile[] Fog = new AnimatedTile[3];
@@ -25,13 +25,35 @@ public class GroundTilemap : MonoBehaviour
         Map = GetComponent<Tilemap>();
     }
 
-    public void Set(Vector3Int pos, byte type)
+    public void Draw(Vector3Int pos, Land land)
     {
-        if (type != 0)
-            Map.SetTile(pos, Type[type - 1]);
+        if (land == null)
+        {
+            // Potentially does not work 
+            Vector3Int check = pos + Vector3Int.up;
+            if (IsSurface(check) && !IsSurface(pos))
+            {
+                Map.SetTile(pos, Fog[0]);
+                check += (Vector3Int.down * 2);
+                if (!IsSurface(check))
+                {
+                    pos += Vector3Int.down;
+                    Map.SetTile(pos, Fog[1]);
+                    check += Vector3Int.down;
+                    if (!IsSurface(check))
+                    {
+                        pos += Vector3Int.down;
+                        Map.SetTile(pos, Fog[2]);
+                    }
+                }
+            }
+            //Map.SetTile(pos, Fog[0]);
+        }
+        else
+            Map.SetTile(pos, Type[land.GetState()]);
     }
 
-    public void RenderFog(int width, int height)
+    public void DrawFog(int width, int height)
     {
         for (int x = -20; x < width + 20; x++)
             for (int y = -20; y < height + 20; y++)

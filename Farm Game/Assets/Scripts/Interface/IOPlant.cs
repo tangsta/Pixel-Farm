@@ -3,14 +3,14 @@
 public class IOPlant : MonoBehaviour
 {
     private Plant[,] PlantMap;
-    public CropTilemap CTilemap;
+    public PlantTilemap CTilemap;
 
     public bool Plant(Vector3Int pos, Crop crop)
     {
         if (IsBound(pos.x, pos.y))
         {
             PlantMap[pos.x, pos.y] = new Plant(crop);
-            CTilemap.Set(pos, crop, GrowthState.Seedling);
+            CTilemap.Draw(pos, PlantMap[pos.x, pos.y]);
             return true;
         }
         return false;
@@ -18,11 +18,11 @@ public class IOPlant : MonoBehaviour
 
     public Plant Harvest(Vector3Int pos)
     {
-        Plant plant = GetPlant(pos.x, pos.y);
+        Plant plant = GetPlant(pos);
         if (plant.State == GrowthState.Producing)
         {
             PlantMap[pos.x, pos.y] = null;
-            CTilemap.Clear(pos);
+            CTilemap.Erase(pos);
             return plant;
         }
         return null;
@@ -32,58 +32,52 @@ public class IOPlant : MonoBehaviour
     {
         for (int x = 0; x < PlantMap.GetLength(0); x++)
             for (int y = 0; y < PlantMap.GetLength(1); y++)
-                Grow(new Vector3Int(x, y, 0));
+            {
+                Vector3Int pos = new Vector3Int(x, y, 0);
+                if (GetPlant(pos) != null && PlantMap[pos.x, pos.y].Grow())
+                    CTilemap.Draw(pos, PlantMap[pos.x, pos.y]);
+            }
     }
 
     public void Grow(Vector3Int pos)
     {
-        if (IsPlant(pos.x, pos.y))
-        { 
-            Plant plant = PlantMap[pos.x, pos.y];
-            if (PlantMap[pos.x, pos.y].Grow())
-                CTilemap.Set(pos, plant.Crop, plant.State);
-        }
+        if (GetPlant(pos) != null && PlantMap[pos.x, pos.y].Grow())
+            CTilemap.Draw(pos, PlantMap[pos.x, pos.y]);
     }
 
     public void Water(Vector3Int pos)
     {
-        if (IsPlant(pos.x, pos.y))
+        if (GetPlant(pos) != null)
         {
             PlantMap[pos.x, pos.y].Water();
-            Plant plant = PlantMap[pos.x, pos.y];
-            CTilemap.Set(pos, plant.Crop, plant.State);
-            
+            CTilemap.Draw(pos, PlantMap[pos.x, pos.y]);     
         }
     }
 
-    public void UpdateRenderAll()
+    public void DrawAll()
     {
         for (int x = 0; x < PlantMap.GetLength(0); x++)
             for (int y = 0; y < PlantMap.GetLength(1); y++)
-                UpdateRender(new Vector3Int(x, y, 0));
+            {
+                Vector3Int pos = new Vector3Int(x, y, 0);
+                if (GetPlant(pos) != null)
+                    CTilemap.Draw(pos, PlantMap[pos.x, pos.y]);
+            }         
     }
 
-    public void UpdateRender(Vector3Int pos)
+    public void Draw(Vector3Int pos)
     {
-        Plant plant = GetPlant(pos.x, pos.y);
-        CTilemap.Set(pos, plant.Crop, plant.State);
+        CTilemap.Draw(pos, PlantMap[pos.x, pos.y]);
     }
 
-    public Plant GetPlant(int x, int y)
+    public Plant GetPlant(Vector3Int pos)
     {
-        if (IsPlant(x, y))
-            return PlantMap[x, y];
+        if (IsBound(pos.x, pos.y) && PlantMap[pos.x, pos.y] != null)
+            return PlantMap[pos.x, pos.y];
         return null;
     }
 
-    public bool IsPlant(int x, int y)
-    {
-        if (IsBound(x, y) && PlantMap[x, y] != null)
-            return true;
-        return false;
-    }
-
-    public bool IsBound(int x, int y)
+    private bool IsBound(int x, int y)
     {
         if (x >= 0 && x < PlantMap.GetLength(0) &&
             y >= 0 && y < PlantMap.GetLength(1))

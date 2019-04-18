@@ -20,20 +20,16 @@ public class Map : MonoBehaviour
     public void Start()
     {
         LandMap.InitMap(Width, Height);
-        //LandMap.FillMap(0);
         GenerateMap();
         PlantMap.InitMap(Width, Height);
 
     }
 
-    public bool CheckPlant(Vector3Int pos)
-    {
-        return PlantMap.IsPlant(pos.x, pos.y);
-    }
-
     public bool Plant(Vector3Int pos, Crop crop)
     {
-        return PlantMap.Plant(pos, crop);
+        if (LandMap.GetLand(pos) != null)
+            return PlantMap.Plant(pos, crop);
+        return false;
     }
 
     public Plant Harvest(Vector3Int pos)
@@ -58,28 +54,28 @@ public class Map : MonoBehaviour
 
     public Plant GetPlant(Vector3Int pos)
     {
-        return PlantMap.GetPlant(pos.x , pos.y);
+        return PlantMap.GetPlant(pos);
     }
 
     public Land GetLand(Vector3Int pos)
     {
-        return LandMap.GetLand(pos.x, pos.y);
+        return LandMap.GetLand(pos);
     }
 
     public void GenerateMap()
     {
-        LandMap.GenerateMap(0.335f, 0.455f, 12345, 54321, 0.5f, 50);
+        LandMap.GenerateMap(0.25f, 0.7);
     }
 
-    public void UpdateRenderAll()
+    public void DrawAll()
     {
-        LandMap.UpdateRenderAll();
-        PlantMap.UpdateRenderAll();
+        LandMap.DrawAll();
+        PlantMap.DrawAll();
     }
 
-    public void UpdateRender(Vector3Int pos)
+    public void Draw(Vector3Int pos)
     {
-        LandMap.UpdateRender(pos);
-        PlantMap.UpdateRender(pos);
+        LandMap.Draw(pos);
+        PlantMap.Draw(pos);
     }
 }

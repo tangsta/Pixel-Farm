@@ -16,11 +16,10 @@ public class Land
     private int MoistureLevel;            //Range 0 - 100
     private byte State;
     /*  Type List
-    *  0   -Air/Fog/DNE
-    *  1   -Stone
-    *  2   -Sand
-    *  3   -Dirt
-    *  4   -Water
+    *  0   -Stone
+    *  1   -Sand
+    *  2   -Dirt
+    *  3   -Water
     */
 
     public Land(int GrainAmount, int OrganicLevel, int MoistureLevel)
@@ -28,20 +27,20 @@ public class Land
         this.GrainAmount = GrainAmount;
         this.OrganicLevel = OrganicLevel;
         this.MoistureLevel = MoistureLevel;
-        State = UpdateState();
+        State = GetState();
     }
 
     public Land()
     {
-        GrainAmount = 5;
+        GrainAmount = 0;
         OrganicLevel = 0;
         MoistureLevel = 0;
         State = 0;
     }
 
-    public void GrainAdd(int val)
+    public void AddGrain(int val)
     {
-        if (GrainAmount + val < 5)
+        if (GrainAmount + val < 0)
             GrainAmount = 0;
         else if (GrainAmount + val > 4096)
             GrainAmount = 4096;
@@ -49,7 +48,7 @@ public class Land
             GrainAmount += val;
     }
 
-    public void OrganicAdd(int val)
+    public void AddOrg(int val)
     {
         if (OrganicLevel + val < 0)
             GrainAmount = 0;
@@ -59,7 +58,7 @@ public class Land
             GrainAmount += val;
     }
 
-    public void MoistureAdd(int val)
+    public void AddMoist(int val)
     {
         if (MoistureLevel + val < 0)
             MoistureLevel = 0;
@@ -69,37 +68,22 @@ public class Land
             MoistureLevel += val;
     }
 
-    public byte UpdateState()
+    public byte GetState()
     {
-        switch (State)
+        if (GrainAmount < 410)
+            State = 0;
+        else
         {
-            case 3:
-                if (GrainAmount < 410)
-                    State = 1;
-                else if (OrganicLevel < 20)
-                    State = 2;
-                else if (GrainAmount > 3891 && OrganicLevel > 80 && MoistureLevel > 80)
-                    State = 4;
-                break;
-            case 1:
-                if (GrainAmount >= 410)
-                    State = 2;
-                break;
-            case 2:
-                if (GrainAmount < 410)
-                    State = 1;
-                else if (OrganicLevel >= 20)
+            if (OrganicLevel >= 20)
+            {
+                if (GrainAmount > 3891 && OrganicLevel > 80 && MoistureLevel > 80)
                     State = 3;
-                break;
-            case 4:
-                if (GrainAmount < 3891 || OrganicLevel < 80 || MoistureLevel < 80)
-                    State = 3;
-                break;
-            case 0:
-                if (GrainAmount >= 5)
-                    State = 1;
-                break;
-        }            
+                else
+                    State = 2;
+            }
+            else
+                State = 1;
+        }
         return State;
     }
     
@@ -109,12 +93,12 @@ public class Land
         return (GrainAmount / 4096) * 10;
     }
 
-    public int MesOrganic()
+    public int MesOrg()
     {
         return OrganicLevel / 10;
     }
 
-    public int MesMoisture()
+    public int MesMoist()
     {
         return MoistureLevel / 10;
     }

@@ -3,105 +3,122 @@
 public class IOLand : MonoBehaviour
 {
     private Land[,] LandMap;
-    public GroundTilemap GTilemap;
+    public LandTilemap GTilemap;
 
-    public void UpdateRenderAll()
-    {
-        for (int x = 0; x < LandMap.GetLength(0); x++)
-            for (int y = 0; y < LandMap.GetLength(1); y++)
-                UpdateRender(new Vector3Int(x, y, 0));
-    }
-
-    public void UpdateRender(Vector3Int pos)
-    {
-        GTilemap.Set(pos, LandMap[pos.x, pos.y].UpdateState());
-    }
-
-    public int GetGrain(int x, int y)
-    {
-        if (IsLand(x, y))
-            return LandMap[x, y].MesGrain();
-        return -1;
-    }
-
-    public int GetOrganic(int x, int y)
-    {
-        if (IsLand(x, y))
-            return LandMap[x, y].MesOrganic();
-        return -1;
-    }
-
-    public int GetMoisture(int x, int y)
-    {
-        if (IsLand(x, y))
-            return LandMap[x, y].MesMoisture();
-        return -1;
-    }
-
-    public Land GetLand(int x, int y)
-    {
-        if (IsLand(x, y))
-            return LandMap[x, y];
-        return null;
-    }
-
-    public void GenerateMap(float xFreq, float yFreq, float xOffset, float yOffset,
-                            float Variance, float Amp)
+    public void DrawAll()
     {
         for (int x = 0; x < LandMap.GetLength(0); x++)
             for (int y = 0; y < LandMap.GetLength(1); y++)
             {
-                float xCord = x * xFreq + xOffset;
-                float yCord = y * yFreq + yOffset;
-                float val = Mathf.PerlinNoise(xCord, yCord) * Amp;
+                Vector3Int pos = new Vector3Int(x, y, 0);
+                GTilemap.Draw(pos, LandMap[pos.x, pos.y]);
+            }
+        GTilemap.DrawFog(LandMap.GetLength(0), LandMap.GetLength(1));
+    }
 
-                if (val > 20)
+    public void Draw(Vector3Int pos)
+    {
+        GTilemap.Draw(pos, LandMap[pos.x, pos.y]);
+    }
+
+    public void Draw(Vector3Int pos, Land land)
+    {
+        GTilemap.Draw(pos, land);
+    }
+
+    public int GetGrain(Vector3Int pos)
+    {
+        if (GetLand(pos) != null)
+            return LandMap[pos.x, pos.y].MesGrain();
+        return -1;
+    }
+
+    public int GetOrg(Vector3Int pos)
+    {
+        if (GetLand(pos) != null)
+            return LandMap[pos.x, pos.y].MesOrg();
+        return -1;
+    }
+
+    public int GetMoist(Vector3Int pos)
+    {
+        if (GetLand(pos) != null)
+            return LandMap[pos.x, pos.y].MesMoist();
+        return -1;
+    }
+
+    public void GenerateMap(float Variance, double density)
+    {
+        density = 1 - density;
+        for (int x = 0; x < LandMap.GetLength(0); x++)
+            for (int y = 0; y < LandMap.GetLength(1); y++)
+            {
+                float xCord = x * 0.335f + 12345;
+                float yCord = y * 0.335f + 54321;
+                float val = Mathf.PerlinNoise(xCord, yCord);
+
+                if (val > density)
                 {
                     int Grain = (int) Random.Range(5, Variance * 4096);
                     int Organic = (int) Random.Range(0, Variance * 100);
                     int Moisture = (int) Random.Range(0, Variance * 100);
 
                     LandMap[x, y] = new Land(Grain, Organic, Moisture);
-                    Debug.Log(LandMap[x, y].UpdateState());
-
-                    UpdateRender(new Vector3Int(x, y, 0));
                 }
             }
-        GTilemap.RenderFog(LandMap.GetLength(0), LandMap.GetLength(1));
+        DrawAll();
     }
 
-    public void GrainEffect(int x, int y, int radius, int val)
+    public void AddGrain(Vector3Int pos, int radius, int val)
     {
-        for (int xPos = x - radius; xPos < x + radius; xPos++)
-            for (int yPos = y - radius; yPos < y + radius; yPos++)
-                if (IsLand(xPos, yPos))
-                    LandMap[xPos, yPos].GrainAdd(val);
+        for (int xPos = pos.x - radius; xPos < pos.x + radius; xPos++)
+            for (int yPos = pos.y - radius; yPos < pos.y + radius; yPos++)
+                if (GetLand(new Vector3Int(xPos, yPos, 0)) != null)
+                    LandMap[xPos, yPos].AddGrain(val);
     }
 
-    public void OrganicEffect(int x, int y, int radius, int val)
+    public void AddGrain(Vector3Int pos, int val)
     {
-        for (int xPos = x - radius; xPos < x + radius; xPos++)
-            for (int yPos = y - radius; yPos < y + radius; yPos++)
-                if (IsLand(xPos, yPos))
-                    LandMap[xPos, yPos].OrganicAdd(val);
+        if(GetLand(pos) != null)
+            LandMap[pos.x, pos.y].AddGrain(val);
     }
 
-    public void MoistureEffect(int x, int y, int radius, int val)
+    public void AddOrg(Vector3Int pos, int radius, int val)
     {
-        for (int xPos = x - radius; xPos < x + radius; xPos++)
-            for (int yPos = y - radius; yPos < y + radius; yPos++)
-                if (IsLand(xPos, yPos))
-                    LandMap[xPos, yPos].MoistureAdd(val);
+        for (int xPos = pos.x - radius; xPos < pos.x + radius; xPos++)
+            for (int yPos = pos.y - radius; yPos < pos.y + radius; yPos++)
+                if (GetLand(new Vector3Int(xPos, yPos, 0)) != null)
+                    LandMap[xPos, yPos].AddOrg(val);
     }
 
-    public bool IsLand(int x, int y)
+    public void AddOrg(Vector3Int pos, int val)
     {
-        if (IsBound(x, y) && LandMap[x, y].UpdateState() != 0)
-            return true;
-        return false;
+        if (GetLand(pos) != null)
+            LandMap[pos.x, pos.y].AddOrg(val);
     }
 
-    public bool IsBound(int x, int y)
+    public void AddMoist(Vector3Int pos, int radius, int val)
+    {
+        for (int xPos = pos.x - radius; xPos < pos.x + radius; xPos++)
+            for (int yPos = pos.y - radius; yPos < pos.y + radius; yPos++)
+                if (GetLand(new Vector3Int(xPos, yPos, 0)) != null)
+                    LandMap[xPos, yPos].AddMoist(val);
+    }
+
+    public void AddMoist(Vector3Int pos, int val)
+    {
+        if (GetLand(pos) != null)
+            LandMap[pos.x, pos.y].AddMoist(val);
+    }
+
+    public Land GetLand(Vector3Int pos)
+    {
+        if (IsBound(pos.x, pos.y) && LandMap[pos.x, pos.y] != null)
+            return LandMap[pos.x, pos.y];
+        return null;
+    }
+
+    private bool IsBound(int x, int y)
     {
         if (x >= 0 && x < LandMap.GetLength(0) &&
             y >= 0 && y > LandMap.GetLength(1))
@@ -115,15 +132,15 @@ public class IOLand : MonoBehaviour
         LandMap = new Land[width, height];
     }
 
+    //Needs a new Land constructor to create specific types
     public void FillMap(byte type)
     {
         for (int x = 0; x < LandMap.GetLength(0); x++)
             for (int y = 0; y < LandMap.GetLength(1); y++)
             {
                 //LandMap[x, y] = new Land(type)
-                GTilemap.Set(new Vector3Int(x, y, 0), type);
+                Draw(new Vector3Int(x, y, 0));
             }
-        GTilemap.RenderFog(LandMap.GetLength(0), LandMap.GetLength(1));
-        
+        GTilemap.DrawFog(LandMap.GetLength(0), LandMap.GetLength(1)); 
     }
 }

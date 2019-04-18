@@ -13,7 +13,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [AddComponentMenu("Tilemap/Crop Tilemap")]
-public class CropTilemap : MonoBehaviour
+public class PlantTilemap : MonoBehaviour
 {
     private Tilemap Tilemap;
 
@@ -22,12 +22,12 @@ public class CropTilemap : MonoBehaviour
         Tilemap = GetComponent<Tilemap>();
     }
 
-    public void Set(Vector3Int pos, Crop crop, GrowthState state)
+    public void Draw(Vector3Int pos, Plant plant)
     { 
-        Tilemap.SetTile(pos, crop.Stages[(int)state]);
+        Tilemap.SetTile(pos, plant.Crop.Stages[(int)plant.State]);
     }
 
-    public void Clear(Vector3Int pos)
+    public void Erase(Vector3Int pos)
     {
         Tilemap.SetTile(pos, null);
     }
