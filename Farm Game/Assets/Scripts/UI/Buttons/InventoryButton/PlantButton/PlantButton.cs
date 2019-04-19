@@ -18,9 +18,6 @@ public class PlantButton : MonoBehaviour
 	public GameObject Grid; // used to get function
 	public Crop crop; // Crop 
 
-	//Donny's script idk what this does or need for 
-    private Land ground;
-
     public bool plantingMode = false;
 
     // optimize this later

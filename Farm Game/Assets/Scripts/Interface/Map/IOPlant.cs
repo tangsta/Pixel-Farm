@@ -10,7 +10,7 @@ public class IOPlant : MonoBehaviour
     {
         if (IsBound(pos.x, pos.y))
         {
-            PlantMap[pos.x, pos.y] = PlantID.GetPlant(type);
+            PlantMap[pos.x, pos.y] = new Plant(PlantID.GetPlant(type));
             CTilemap.Draw(pos, PlantMap[pos.x, pos.y]);
             return true;
         }
@@ -19,8 +19,7 @@ public class IOPlant : MonoBehaviour
 
     public int Harvest(Vector3Int pos)
     {
-        Plant plant = GetPlant(pos);
-        return plant.Harvest();
+        return GetPlant(pos).Harvest();
     }
 
     public void GrowAll()

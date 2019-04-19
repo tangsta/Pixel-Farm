@@ -4,9 +4,9 @@
 public class PlantHandler : ScriptableObject
 {
     [Header("Plant Type Definitions")]
-    public Plant[] Type;
+    public PlantDef[] Type;
     
-    public int GetID(Plant plant)
+    public int GetID(PlantDef plant)
     {
         for (int i = 0; i < Type.Length; i++)
             if (Type[i] == plant)
@@ -14,7 +14,7 @@ public class PlantHandler : ScriptableObject
         return -1;
     }
 
-    public Plant GetPlant(int id)
+    public PlantDef GetPlant(int id)
     {
         if (id >= 0 && id < Type.Length)
             return Type[id];

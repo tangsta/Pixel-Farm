@@ -63,7 +63,7 @@ public class Map : MonoBehaviour
 
     public void GenerateMap()
     {
-        LandMap.GenerateMap(0.25f, 0.7);
+        LandMap.GenerateMap(0.25f, 0.5);
     }
 
     public void DrawAll()

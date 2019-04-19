@@ -24,7 +24,7 @@ public class PlantTilemap : MonoBehaviour
 
     public void Draw(Vector3Int pos, Plant plant)
     { 
-        Tilemap.SetTile(pos, plant.Stage[plant.GetState()]);
+        Tilemap.SetTile(pos, plant.GetSprite());
     }
 
     public void Erase(Vector3Int pos)

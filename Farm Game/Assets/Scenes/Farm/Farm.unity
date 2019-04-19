@@ -3456,6 +3456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CTilemap: {fileID: 938877500}
+  PlantID: {fileID: 11400000, guid: 08b02c88250910b4bb72d2f9e650a8a1, type: 2}
 --- !u!1 &958300068
 GameObject:
   m_ObjectHideFlags: 0
@@ -4980,11 +4981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff2fd0458a0e0644ad3eb17204b7803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type:
-  - {fileID: 11400000, guid: 2a55428421fa26a42aaf195400d67271, type: 2}
-  - {fileID: 11400000, guid: cd3b28e4d03cc4142bdad4b3eb80333f, type: 2}
-  - {fileID: 11400000, guid: 1e00d0066bb840b4a86545f0d8f43966, type: 2}
-  - {fileID: 11400000, guid: a5af1a9d9e66f6640b9217e1ebd9e63a, type: 2}
+  LandID: {fileID: 11400000, guid: 8477cb41b9999fb4aabd51c90ee5a293, type: 2}
   Fog:
   - {fileID: 11400000, guid: a6054f89356e99f45abe6e17ef2a4830, type: 2}
   - {fileID: 11400000, guid: 67cc60e4d66fbe3428a1ae25dbbf5b83, type: 2}
@@ -6407,7 +6404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f08a6f40d2ec4de981f811bfc829f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TexturePixelsPerWorldUnit: 32
+  TexturePixelsPerWorldUnit: 64
 --- !u!1 &1572743715
 GameObject:
   m_ObjectHideFlags: 0

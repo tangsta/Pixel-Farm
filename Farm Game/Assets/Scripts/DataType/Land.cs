@@ -9,25 +9,21 @@
  *  CLASS PURPOSE:
  *      Determines the ground type and what it does in it states
  */
+using UnityEngine.Tilemaps;
+
 public class Land 
 {
     private int GrainAmount;              //Range 0 - 4096
     private int OrganicLevel;             //Range 0 - 100
     private int MoistureLevel;            //Range 0 - 100
-    private byte State;
-    /*  Type List
-    *  0   -Stone
-    *  1   -Sand
-    *  2   -Dirt
-    *  3   -Water
-    */
+    private byte ID;
 
     public Land(int GrainAmount, int OrganicLevel, int MoistureLevel)
     {
         this.GrainAmount = GrainAmount;
         this.OrganicLevel = OrganicLevel;
         this.MoistureLevel = MoistureLevel;
-        State = GetState();
+        ID = GetState();
     }
 
     public Land()
@@ -35,7 +31,6 @@ public class Land
         GrainAmount = 0;
         OrganicLevel = 0;
         MoistureLevel = 0;
-        State = 0;
     }
 
     public void AddGrain(int val)
@@ -71,20 +66,20 @@ public class Land
     public byte GetState()
     {
         if (GrainAmount < 410)
-            State = 0;
+            ID = 0;
         else
         {
             if (OrganicLevel >= 20)
             {
                 if (GrainAmount > 3891 && OrganicLevel > 80 && MoistureLevel > 80)
-                    State = 3;
+                    ID = 3;
                 else
-                    State = 2;
+                    ID = 2;
             }
             else
-                State = 1;
+                ID = 1;
         }
-        return State;
+        return ID;
     }
     
     //Reveals attributes from a scale of 0 - 10
@@ -102,4 +97,5 @@ public class Land
     {
         return MoistureLevel / 10;
     }
+
 }

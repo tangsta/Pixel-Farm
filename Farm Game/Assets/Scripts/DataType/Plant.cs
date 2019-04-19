@@ -1,44 +1,47 @@
-﻿using UnityEngine;
-using UnityEngine.Tilemaps;
+﻿using UnityEngine.Tilemaps;
+using UnityEngine;
 
-[CreateAssetMenu(menuName = "Plants/Plant", order = 1)]
-public class Plant : ScriptableObject
+public class Plant
 {
-    public Tile[] Stage;
-    //public Effect[] Consumers;
-    //public Effect[] Emitters;
-    public int Produce;
-    public PlantAlter Alter;
-    public PlantTime Time;
-    public float GrowthChance;
-
-    private float ModGrowth;
-    private float ModProduce;
+    private PlantDef Def;
     private int State;
     private int Clock;
 
+    private float ModGrowth;
+    private float ModProduce;
+
+    public Plant(PlantDef def)
+    {
+        Def = def;
+        State = 0;
+        Clock = 0;
+
+        ModGrowth = 0;
+        ModProduce = 0;
+    }
+
     public int Harvest()
     {
-        if (State == Stage.Length - 1)
-            return Produce + (int)(Produce * ModProduce);
+        if (State == Def.Stage.Length - 1)
+            return Def.Produce + (int)(Def.Produce * ModProduce);
         return -1;
     }
 
     public bool Grow()
     {
         Clock++;
-        if (State != Stage.Length - 1 && State % 2 == 0)
+        if (State != Def.Stage.Length - 1 && State % 2 == 0)
         {
-            if (Clock % Time.CoolDown == 0)
+            if (Clock % Def.Time.CoolDown == 0)
             {
                 Consume();
                 Emit();
             }
 
-            if (Clock % Time.ThirstTime == 0)
+            if (Clock % Def.Time.ThirstTime == 0)
                 State = State + 1;
 
-            if (Clock > (Time.GrowthTime * ModGrowth) && Random.value < GrowthChance)
+            if (Clock > Def.Time.GrowthTime + (Def.Time.GrowthTime * ModGrowth) && Random.value < Def.GrowthChance)
             {
                 State = State + 2;
                 Clock = 0;
@@ -58,21 +61,21 @@ public class Plant : ScriptableObject
         return false;
     }
 
+
     public void Consume()
     {
-        ModProduce -= Alter.ProDec;
-        ModGrowth -= Alter.GroInc;
+        ModProduce -= Def.Alter.ProDec;
+        ModGrowth -= Def.Alter.GroDec;
     }
 
     public void Emit()
     {
-        ModProduce += Alter.ProInc;
-        ModGrowth += Alter.GroInc;
+        ModProduce += Def.Alter.ProInc;
+        ModGrowth += Def.Alter.GroInc;
     }
 
-    public int GetState()
+    public Tile GetSprite()
     {
-        return State;
+        return Def.Stage[State];
     }
 }
-
