@@ -46,6 +46,8 @@ public class IOPlant : MonoBehaviour
             PlantMap[pos.x, pos.y].Water();
             CTilemap.Draw(pos, PlantMap[pos.x, pos.y]);     
         }
+        else
+            Debug.Log("PRINT WATER FAILED ");
     }
 
     public void DrawAll()

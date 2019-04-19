@@ -8,7 +8,9 @@ public class PlantDef : ScriptableObject
     //public Effect[] Consumers;
     //public Effect[] Emitters;
     public int Produce;
+    public float GrowthChance;
+
     public PlantAlter Alter;
     public PlantTime Time;
-    public float GrowthChance;
+    public Crop crop;
 }

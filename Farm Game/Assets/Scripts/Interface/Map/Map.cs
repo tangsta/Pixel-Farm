@@ -27,7 +27,9 @@ public class Map : MonoBehaviour
     public bool Plant(Vector3Int pos, int plant)
     {
         if (LandMap.GetLand(pos) != null)
+        {
             return PlantMap.Plant(pos, plant);
+        }
         return false;
     }
 

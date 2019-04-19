@@ -5,5 +5,8 @@ public class PlantTime : ScriptableObject
 {
     public int GrowthTime;
     public int ThirstTime;
-    public int CoolDown;
+    public int AbilityTime;
+
+    public int ThirstCoolDown;
+    public int AbilityCoolDown;
 }

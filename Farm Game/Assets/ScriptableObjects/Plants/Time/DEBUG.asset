@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrowthTime: 2
   ThirstTime: 1
-  CoolDown: 1
+  AbilityCoolDown: 1
+  ThirstCoolDown: 3
