@@ -121,7 +121,7 @@ public class IOLand : MonoBehaviour
     private bool IsBound(int x, int y)
     {
         if (x >= 0 && x < LandMap.GetLength(0) &&
-            y >= 0 && y > LandMap.GetLength(1))
+            y >= 0 && y < LandMap.GetLength(1))
             return true;
         return false;
     }
