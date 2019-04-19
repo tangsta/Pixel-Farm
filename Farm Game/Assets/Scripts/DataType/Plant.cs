@@ -1,62 +1,47 @@
-﻿/*  Last Edit:  [3/28/2019] - Donny
- *  Reason:     Simplify Timers and make it revolve around the Grow function
- * 
- *  POTENTIAL CAPABILITIES ARE:
- *    
- *      
- *  CLASS PURPOSE:
- *      Defines what are crops and what they can do.
- */
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Tilemaps;
 
-public enum GrowthState
+[CreateAssetMenu(menuName = "Plants/Plant", order = 1)]
+public class Plant : ScriptableObject
 {
-    Seedling, ThirstySeedling, Mature, ThirstyMature, Producing
-}
-
-public class Plant
-{
-    public GrowthState State;
-    public Crop Crop;
-
+    public Tile[] Stage;
+    //public Effect[] Consumers;
+    //public Effect[] Emitters;
     public int Produce;
-    public int GrowthTime = 2;          //Should be largest Value
-    public int ThirstTime = 1;          
-    public int CoolDown = 1;            
-    public float GrowthChance = 0.5f;      //Values [0, 1)
-    public int Timer = 0;
+    public PlantAlter Alter;
+    public PlantTime Time;
+    public float GrowthChance;
 
-    public Plant(Crop Crop)
+    private float ModGrowth;
+    private float ModProduce;
+    private int State;
+    private int Clock;
+
+    public int Harvest()
     {
-        State = GrowthState.Seedling;
-        this.Crop = Crop;
-
-        Produce = Crop.Produce;
-        GrowthTime = Crop.GrowthTime;
-        ThirstTime = Crop.ThirstTime;
-        CoolDown = Crop.CoolDown;
-        GrowthChance = Crop.GrowthChance;
+        if (State == Stage.Length - 1)
+            return Produce + (int)(Produce * ModProduce);
+        return -1;
     }
- 
-    //Updates the Crop 
+
     public bool Grow()
     {
-        Timer++;
-        if (State != GrowthState.Producing && (int)State % 2 == 0)
+        Clock++;
+        if (State != Stage.Length - 1 && State % 2 == 0)
         {
-            if (CoolDown > 0 && Timer % CoolDown == 0)
+            if (Clock % Time.CoolDown == 0)
             {
-                //Trigger aoe effect
+                Consume();
+                Emit();
             }
 
-            if (ThirstTime > 0 && Timer % ThirstTime == 0)
-            {
+            if (Clock % Time.ThirstTime == 0)
                 State = State + 1;
-            }
 
-            if ((int)State % 2 == 0 && ((State == GrowthState.Mature && Timer > GrowthTime) || State != GrowthState.Mature) && Random.value < GrowthChance)
+            if (Clock > (Time.GrowthTime * ModGrowth) && Random.value < GrowthChance)
             {
                 State = State + 2;
+                Clock = 0;
             }
             return true;
         }
@@ -65,16 +50,29 @@ public class Plant
 
     public bool Water()
     {
-        if ((int)State % 2 != 0)
+        if (State % 2 != 0)
         {
             State = State - 1;
             return true;
         }
-        else
-        {
-            Debug.Log("You cant water this");
-            return false;
-        }
+        return false;
     }
 
+    public void Consume()
+    {
+        ModProduce -= Alter.ProDec;
+        ModGrowth -= Alter.GroInc;
+    }
+
+    public void Emit()
+    {
+        ModProduce += Alter.ProInc;
+        ModGrowth += Alter.GroInc;
+    }
+
+    public int GetState()
+    {
+        return State;
+    }
 }
+

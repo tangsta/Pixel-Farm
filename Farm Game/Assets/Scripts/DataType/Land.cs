@@ -9,7 +9,7 @@
  *  CLASS PURPOSE:
  *      Determines the ground type and what it does in it states
  */
-public class Land
+public class Land 
 {
     private int GrainAmount;              //Range 0 - 4096
     private int OrganicLevel;             //Range 0 - 100

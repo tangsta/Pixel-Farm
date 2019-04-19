@@ -43,8 +43,10 @@ public class PlantButton : MonoBehaviour
 			            Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
 			                                        Mathf.FloorToInt(PointClick.y), 0);
 
-			            // checks if a plant is in the same spot - true = no plant || false = plant
-			            if(Grid.GetComponent<Map>().Plant(worldPoint, crop ))
+                        // checks if a plant is in the same spot - true = no plant || false = plant
+
+                        //DONNY EDITS PLEASE CHANGE FOR YOUR SYSTEM
+                        if (Grid.GetComponent<Map>().Plant(worldPoint, 0 ))
 			            {
 			            	ScriptableInventory.DecreaseQuantityItem(1, itemInstance);
 			            }

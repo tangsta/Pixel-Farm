@@ -20,19 +20,18 @@ public class Map : MonoBehaviour
     public void Start()
     {
         LandMap.InitMap(Width, Height);
-        GenerateMap();
         PlantMap.InitMap(Width, Height);
-
+        GenerateMap();
     }
 
-    public bool Plant(Vector3Int pos, Crop crop)
+    public bool Plant(Vector3Int pos, int plant)
     {
         if (LandMap.GetLand(pos) != null)
-            return PlantMap.Plant(pos, crop);
+            return PlantMap.Plant(pos, plant);
         return false;
     }
 
-    public Plant Harvest(Vector3Int pos)
+    public int Harvest(Vector3Int pos)
     {
         return PlantMap.Harvest(pos);
     }

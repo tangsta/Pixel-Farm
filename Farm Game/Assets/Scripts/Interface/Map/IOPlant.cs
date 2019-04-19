@@ -4,28 +4,23 @@ public class IOPlant : MonoBehaviour
 {
     private Plant[,] PlantMap;
     public PlantTilemap CTilemap;
+    public PlantHandler PlantID;
 
-    public bool Plant(Vector3Int pos, Crop crop)
+    public bool Plant(Vector3Int pos, int type)
     {
         if (IsBound(pos.x, pos.y))
         {
-            PlantMap[pos.x, pos.y] = new Plant(crop);
+            PlantMap[pos.x, pos.y] = PlantID.GetPlant(type);
             CTilemap.Draw(pos, PlantMap[pos.x, pos.y]);
             return true;
         }
         return false;
     }
 
-    public Plant Harvest(Vector3Int pos)
+    public int Harvest(Vector3Int pos)
     {
         Plant plant = GetPlant(pos);
-        if (plant.State == GrowthState.Producing)
-        {
-            PlantMap[pos.x, pos.y] = null;
-            CTilemap.Erase(pos);
-            return plant;
-        }
-        return null;
+        return plant.Harvest();
     }
 
     public void GrowAll()
