@@ -6,11 +6,6 @@ public class Actions : MonoBehaviour
 {
 
 	public GameObject Grid; // used to get function
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -27,8 +22,8 @@ public class Actions : MonoBehaviour
                                         Mathf.FloorToInt(PointClick.y), 0);
 
             // Donny Edits - Plant check is done within structure 
-                Grid.GetComponent<Map>().Water(worldPoint); // water function
-                Grid.GetComponent<Map>().Harvest(worldPoint); // harvest function
+            Grid.GetComponent<Map>().Water(worldPoint); // water function
+            Grid.GetComponent<Map>().Harvest(worldPoint); // harvest function
 
 		}
     }
