@@ -19,7 +19,10 @@ public class IOPlant : MonoBehaviour
 
     public int Harvest(Vector3Int pos)
     {
-        return GetPlant(pos).Harvest();
+        Plant plant = GetPlant(pos);
+        PlantMap[pos.x, pos.y] = null;
+        CTilemap.Draw(pos, null);
+        return plant.Harvest();
     }
 
     public void AgeAll()
@@ -52,8 +55,6 @@ public class IOPlant : MonoBehaviour
             PlantMap[pos.x, pos.y].Water();
             CTilemap.Draw(pos, PlantMap[pos.x, pos.y]);     
         }
-        else
-            Debug.Log("PRINT WATER FAILED ");
     }
 
     public void DrawAll()
