@@ -22,21 +22,27 @@ public class IOPlant : MonoBehaviour
         return GetPlant(pos).Harvest();
     }
 
-    public void GrowAll()
+    public void AgeAll()
     {
         for (int x = 0; x < PlantMap.GetLength(0); x++)
             for (int y = 0; y < PlantMap.GetLength(1); y++)
             {
                 Vector3Int pos = new Vector3Int(x, y, 0);
-                if (GetPlant(pos) != null && PlantMap[pos.x, pos.y].Grow())
+                if (GetPlant(pos) != null)
+                {
+                    PlantMap[pos.x, pos.y].Age(1);
                     CTilemap.Draw(pos, PlantMap[pos.x, pos.y]);
+                }
             }
     }
 
-    public void Grow(Vector3Int pos)
+    public void Age(Vector3Int pos)
     {
-        if (GetPlant(pos) != null && PlantMap[pos.x, pos.y].Grow())
+        if (GetPlant(pos) != null)
+        {
+            PlantMap[pos.x, pos.y].Age(1);
             CTilemap.Draw(pos, PlantMap[pos.x, pos.y]);
+        }
     }
 
     public void Water(Vector3Int pos)

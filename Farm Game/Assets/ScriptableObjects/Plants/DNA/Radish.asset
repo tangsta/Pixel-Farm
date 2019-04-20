@@ -9,10 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b13ee2b8f0462549ae0c39b06f4228f, type: 3}
-  m_Name: DEBUG
+  m_Script: {fileID: 11500000, guid: 8b922f2980a60bb449cffdff19f90475, type: 3}
+  m_Name: New Plant DNA
   m_EditorClassIdentifier: 
-  ProDec: 0.05
-  ProInc: 0.01
-  GroDec: 0.05
-  GroInc: 0.01
+  BaseProduce: 0
+  EvoChance: 0
+  EvoLength: 0
+  EvoPeriod: 0
+  ThirstPeriod: 0
+  AbilityPeriod: 0
+  DeathPeriod: 0
+  ProduceDec: 0
+  ProduceInc: 0
+  GrowthDec: 0
+  GrowthInc: 0

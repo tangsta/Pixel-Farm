@@ -9,7 +9,7 @@ public class PlantHandler : ScriptableObject
     public int GetID(Crop crop)
     {
         for (int i = 0; i < Type.Length; i++)
-            if (Type[i].crop == crop)
+            if (Type[i].Crop == crop)
                 return i;
         return -1;
     }

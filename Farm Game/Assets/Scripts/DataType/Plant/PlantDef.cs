@@ -1,16 +1,11 @@
 ﻿using UnityEngine;
-using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(menuName = "Plants/Plant", order = 1)]
 public class PlantDef : ScriptableObject
 {
-    public Tile[] Stage;
+    public PlantDNA DNA;
+    public PlantArt Art;
     //public Effect[] Consumers;
     //public Effect[] Emitters;
-    public int Produce;
-    public float GrowthChance;
-
-    public PlantAlter Alter;
-    public PlantTime Time;
-    public Crop crop;
+    public Crop Crop;
 }

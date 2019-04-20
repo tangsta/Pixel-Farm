@@ -38,14 +38,14 @@ public class Map : MonoBehaviour
         return PlantMap.Harvest(pos);
     }
 
-    public void GrowAll()
+    public void AgeAll()
     {
-        PlantMap.GrowAll();
+        PlantMap.AgeAll();
     }
 
     public void Grow(Vector3Int pos)
     {
-        PlantMap.Grow(pos);
+        PlantMap.Age(pos);
     }
 
     public void Water(Vector3Int pos)

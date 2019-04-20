@@ -16,8 +16,7 @@ public class Clock : MonoBehaviour
     {
         while (true)
         {
-            // Debug.Log("print.");
-            Map.GrowAll();
+            Map.AgeAll();
             // CMap.WaterAll();
 
             yield return new WaitForSeconds(waitTime);
