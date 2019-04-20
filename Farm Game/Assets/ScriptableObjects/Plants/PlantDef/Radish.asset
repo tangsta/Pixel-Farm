@@ -19,6 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1b749bfc0f387f34d923f5c52b6b0939, type: 2}
   - {fileID: 11400000, guid: c338ad3d335afcd42b13ea415960f78d, type: 2}
   Produce: 1
+  GrowthChance: 0.5
   Alter: {fileID: 11400000, guid: be7d0fdf67d86b04a84a90d4fb20d011, type: 2}
   Time: {fileID: 11400000, guid: 192ea5aa9b3f39b4f94c73084a57d2ba, type: 2}
-  GrowthChance: 0.5
+  crop: {fileID: 11400000, guid: bb3d72d5eaa8d4e4982b138b5efafe72, type: 2}

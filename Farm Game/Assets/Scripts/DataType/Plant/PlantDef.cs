@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Plants/Plant", order = 1)]
+[CreateAssetMenu(menuName = "Plants/PlantDef", order = 1)]
 public class PlantDef : ScriptableObject
 {
     public PlantDNA DNA;
