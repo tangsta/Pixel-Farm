@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseProduce: 1
   EvoChance: 0.5
-  EvoLength: 4
+  EvoLength: 5
   EvoPeriod: 4
   ThirstPeriod: 5
   AbilityPeriod: 4

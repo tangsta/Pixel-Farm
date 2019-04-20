@@ -24,7 +24,6 @@ public class Actions : MonoBehaviour
             // Donny Edits - Plant check is done within structure 
             Grid.GetComponent<Map>().Water(worldPoint); // water function
             Grid.GetComponent<Map>().Harvest(worldPoint); // harvest function
-
 		}
     }
 }
