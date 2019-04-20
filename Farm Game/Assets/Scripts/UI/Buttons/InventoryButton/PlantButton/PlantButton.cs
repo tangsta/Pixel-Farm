@@ -35,6 +35,7 @@ public class PlantButton : MonoBehaviour
 	        		itemInstance = new ItemInstance(item);
 	        		if(ScriptableInventory.FindItem(itemInstance))
 	        		{
+	        			
 	        			// below spawns the plant according to what was currently selected by the user from the inventory 
 						crop = (Crop) item;
 			            Vector3 PointClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);

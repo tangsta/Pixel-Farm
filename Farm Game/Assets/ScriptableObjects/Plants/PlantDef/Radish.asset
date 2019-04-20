@@ -12,14 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cec6717686104743a1678a67774955c, type: 3}
   m_Name: Radish
   m_EditorClassIdentifier: 
-  Stage:
-  - {fileID: 11400000, guid: 04ef50c5d4eae2f4dba93c857650bb99, type: 2}
-  - {fileID: 11400000, guid: 90d0a723d02a50349a1e9128eadb3cf3, type: 2}
-  - {fileID: 11400000, guid: 06cedf5581ab73443a95ecd0fad93dc6, type: 2}
-  - {fileID: 11400000, guid: 1b749bfc0f387f34d923f5c52b6b0939, type: 2}
-  - {fileID: 11400000, guid: c338ad3d335afcd42b13ea415960f78d, type: 2}
-  Produce: 1
-  GrowthChance: 0.5
-  Alter: {fileID: 11400000, guid: be7d0fdf67d86b04a84a90d4fb20d011, type: 2}
-  Time: {fileID: 11400000, guid: 192ea5aa9b3f39b4f94c73084a57d2ba, type: 2}
-  crop: {fileID: 11400000, guid: bb3d72d5eaa8d4e4982b138b5efafe72, type: 2}
+  DNA: {fileID: 11400000, guid: 8008556e0aabb8d44886ae1d69d1f5cd, type: 2}
+  Art: {fileID: 11400000, guid: 2b5f06518fdc51c469c280db6e11da13, type: 2}
+  Crop: {fileID: 11400000, guid: bb3d72d5eaa8d4e4982b138b5efafe72, type: 2}
