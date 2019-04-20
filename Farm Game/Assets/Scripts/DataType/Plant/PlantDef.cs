@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(menuName = "Plants/Plant", order = 1)]
+[CreateAssetMenu(menuName = "Plants/PlantDef", order = 1)]
 public class PlantDef : ScriptableObject
 {
     public Tile[] Stage;

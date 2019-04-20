@@ -12,6 +12,7 @@ public class PlantButton : MonoBehaviour
 
 	public GameObject Inventory; // reference to Inventory under ShopInventoryCanvas
 	public Item item; // store the currentSelectedItem into here 
+	public PlantHandler plantHandler;
 	private Inventory ScriptableInventory; //  Found under Inventory as one of its public variables 
 	private ItemInstance itemInstance; // create an ItemInstance so you can use Inventory functions
 
@@ -39,11 +40,10 @@ public class PlantButton : MonoBehaviour
 			            Vector3 PointClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			            Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
 			                                        Mathf.FloorToInt(PointClick.y), 0);
-
                         // checks if a plant is in the same spot - true = no plant || false = plant
 
                         //DONNY EDITS PLEASE CHANGE FOR YOUR SYSTEM
-                        if (Grid.GetComponent<Map>().Plant(worldPoint, 0 ))
+                        if (Grid.GetComponent<Map>().Plant(worldPoint, plantHandler.GetID(crop)))
 			            {
 			            	ScriptableInventory.DecreaseQuantityItem(1, itemInstance);
 			            }
