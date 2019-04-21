@@ -20,9 +20,14 @@ public class IOPlant : MonoBehaviour
     public int Harvest(Vector3Int pos)
     {
         Plant plant = GetPlant(pos);
-        PlantMap[pos.x, pos.y] = null;
-        CTilemap.Draw(pos, null);
-        return plant.Harvest();
+        if (plant != null && plant.Harvest() >= 0)
+        {
+            PlantMap[pos.x, pos.y] = null;
+            CTilemap.Erase(pos);
+            return plant.Harvest();
+        }
+        else
+            return -1;
     }
 
     public void AgeAll()
