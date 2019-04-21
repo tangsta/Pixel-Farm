@@ -14,17 +14,18 @@ public class AlternateBetweenUI : MonoBehaviour
 
     public void AlternateFunction()
     {
-    	// isShowing = !isShowing;
-		// thisButton.SetActive(isShowing) ;
-    	if(shopPanel.activeSelf)
-    	{
-    		shopPanel.SetActive(false);
-    		inventoryPanel.SetActive(true);
-    	}
-    	else
-    	{
-    		shopPanel.SetActive(true);
-    		inventoryPanel.SetActive(false);
-    	}
+        Vector3 zero = new Vector3(0, 0, 0);
+        Vector3 full = new Vector3(1, 1, 1);
+        if(shopPanel.transform.localScale == zero && inventoryPanel.transform.localScale == full)
+        {
+            shopPanel.transform.localScale = new Vector3(1, 1, 1);
+            inventoryPanel.transform.localScale = new Vector3(0, 0, 0);
+
+        }
+        else
+        {
+            shopPanel.transform.localScale = new Vector3(0, 0, 0);
+            inventoryPanel.transform.localScale = new Vector3(1, 1, 1);
+        } 
     }
 }
