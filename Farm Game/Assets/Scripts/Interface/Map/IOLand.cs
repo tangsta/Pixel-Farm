@@ -53,8 +53,8 @@ public class IOLand : MonoBehaviour
         for (int x = 0; x < LandMap.GetLength(0); x++)
             for (int y = 0; y < LandMap.GetLength(1); y++)
             {
-                float xCord = x * 0.335f + 12345;
-                float yCord = y * 0.335f + 54321;
+                float xCord = x * Random.Range(0.1f, 0.8f) + 12345;
+                float yCord = y * Random.Range(0.1f, 0.8f) + 54321;
                 float val = Mathf.PerlinNoise(xCord, yCord);
 
                 if (val > density)
@@ -141,6 +141,6 @@ public class IOLand : MonoBehaviour
                 //LandMap[x, y] = new Land(type)
                 Draw(new Vector3Int(x, y, 0));
             }
-        GTilemap.DrawFog(LandMap.GetLength(0), LandMap.GetLength(1)); 
+        //GTilemap.DrawFog(LandMap.GetLength(0), LandMap.GetLength(1)); 
     }
 }

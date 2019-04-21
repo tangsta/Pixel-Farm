@@ -20,7 +20,9 @@ public class IOPlant : MonoBehaviour
     public int Harvest(Vector3Int pos)
     {
         Plant plant = GetPlant(pos);
-        if (plant != null && plant.Harvest() >= 0)
+        if (plant != null)
+            Debug.Log(plant.Harvest());
+        if (plant != null && plant.Harvest() != -1)
         {
             PlantMap[pos.x, pos.y] = null;
             CTilemap.Erase(pos);

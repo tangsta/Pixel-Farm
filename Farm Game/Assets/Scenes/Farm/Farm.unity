@@ -4831,8 +4831,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160190a1a0a53704c9cb5441e79ef678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Height: 100
-  Width: 100
+  Height: 15
+  Width: 15
   LandMap: {fileID: 1308251076}
   PlantMap: {fileID: 938877501}
 --- !u!114 &1271806818

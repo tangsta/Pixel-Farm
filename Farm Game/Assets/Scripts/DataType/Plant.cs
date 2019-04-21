@@ -48,9 +48,9 @@ public class Plant
 
     private void Evolve(int moisture)
     {
-        if (ID.DNA.EvoPeriod < 0 || State >= ID.DNA.EvoLength - 1)
+        if (ID.DNA.EvoPeriod < 0 || State >= ID.DNA.EvoLength)
             return;
-        if (EvoClock <= 0 && State % 2 == 0 && !(State >= ID.DNA.EvoLength))
+        if (EvoClock <= 0 && State % 2 == 0)
         {
             if (Random.value > ID.DNA.EvoChance - (ID.DNA.EvoChance * ModEvo))
             {
@@ -72,7 +72,7 @@ public class Plant
 
     private void Thirst(int moisture)
     {
-        if (ID.DNA.ThirstPeriod < 0 || State >= ID.DNA.EvoLength - 1)
+        if (ID.DNA.ThirstPeriod < 0 || State >= ID.DNA.EvoLength)
             return;
         if (ThirstClock <= 0 && State % 2 == 0)
         {

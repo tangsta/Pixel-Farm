@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseProduce: 1
   EvoChance: 0.5
-  EvoLength: 5
+  EvoLength: 4
   EvoPeriod: 4
   ThirstPeriod: 5
   AbilityPeriod: 4
-  DeathPeriod: 100
+  DeathPeriod: 10
   ProduceDec: 0.2
   ProduceInc: 0.1
   GrowthDec: 0.2

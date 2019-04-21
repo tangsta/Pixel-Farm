@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb353ba213c2f744aab01e1eba3f606, type: 3}
   m_Name: Dirt
   m_EditorClassIdentifier: 
-  Sprite: []
+  Sprite:
+  - {fileID: 11400000, guid: 1e00d0066bb840b4a86545f0d8f43966, type: 2}

@@ -29,7 +29,6 @@ public class LandTilemap : MonoBehaviour
     {
         if (land == null)
         {
-            // Potentially does not work 
             Vector3Int check = pos + Vector3Int.up;
             if (IsSurface(check) && !IsSurface(pos))
             {
@@ -47,7 +46,6 @@ public class LandTilemap : MonoBehaviour
                     }
                 }
             }
-            //Map.SetTile(pos, Fog[0]);
         }
         else
         {

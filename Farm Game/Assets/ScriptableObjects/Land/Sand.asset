@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb353ba213c2f744aab01e1eba3f606, type: 3}
   m_Name: Sand
   m_EditorClassIdentifier: 
-  Sprite: []
+  Sprite:
+  - {fileID: 11400000, guid: cd3b28e4d03cc4142bdad4b3eb80333f, type: 2}
