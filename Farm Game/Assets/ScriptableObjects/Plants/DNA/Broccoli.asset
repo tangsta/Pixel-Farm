@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b922f2980a60bb449cffdff19f90475, type: 3}
-  m_Name: Radish
+  m_Name: Broccoli
   m_EditorClassIdentifier: 
-  BaseProduce: 1
-  EvoChance: 0.4
+  BaseProduce: 5
+  EvoChance: 0.25
   EvoLength: 4
-  EvoPeriod: 5
-  ThirstPeriod: 4
+  EvoPeriod: 10
+  ThirstPeriod: 2
   AbilityPeriod: 0
   DeathPeriod: 0
   ProduceDec: 0

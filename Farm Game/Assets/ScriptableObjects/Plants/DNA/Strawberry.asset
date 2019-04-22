@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b922f2980a60bb449cffdff19f90475, type: 3}
-  m_Name: Radish
+  m_Name: Strawberry
   m_EditorClassIdentifier: 
-  BaseProduce: 1
-  EvoChance: 0.4
+  BaseProduce: 5
+  EvoChance: 0.35
   EvoLength: 4
-  EvoPeriod: 5
-  ThirstPeriod: 4
+  EvoPeriod: 7
+  ThirstPeriod: 3
   AbilityPeriod: 0
   DeathPeriod: 0
   ProduceDec: 0
-  ProduceInc: 0.1
+  ProduceInc: 0.25
   GrowthDec: 0
-  GrowthInc: 0.1
+  GrowthInc: 0.2

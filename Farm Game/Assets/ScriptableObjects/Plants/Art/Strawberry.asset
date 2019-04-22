@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0039d4061b37c154da1f4defa4ad0790, type: 3}
+  m_Name: Strawberry
+  m_EditorClassIdentifier: 
+  TileState:
+  - {fileID: 11400000, guid: 8b886ea0ba09eca4b9fe49d1d500e272, type: 2}
+  - {fileID: 11400000, guid: c873062e30c2c0046b888933b129e601, type: 2}
+  - {fileID: 11400000, guid: 0b15cca231319564dbaa748e8a33a326, type: 2}
+  - {fileID: 11400000, guid: 779e5b811303f004cb6ab4d55943f29d, type: 2}
+  - {fileID: 11400000, guid: d4cdfb1cc9270ac4ba502fdc8ce9a647, type: 2}
