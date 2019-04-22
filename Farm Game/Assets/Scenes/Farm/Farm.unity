@@ -6654,6 +6654,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Grid: {fileID: 1271806814}
+  plantHandler: {fileID: 11400000, guid: 08b02c88250910b4bb72d2f9e650a8a1, type: 2}
+  ProduceInventory: {fileID: 11400000, guid: 16abef044dbd9134888fd887e4f1188b, type: 2}
 --- !u!1 &1572743715
 GameObject:
   m_ObjectHideFlags: 0
