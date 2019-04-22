@@ -140,4 +140,9 @@ public class Plant
     {
         return ID.Art.TileState[State];
     }
+
+    public PlantDef GetPlantDef()
+    {
+        return ID;
+    }
 }
