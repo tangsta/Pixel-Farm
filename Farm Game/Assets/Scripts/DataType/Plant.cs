@@ -100,7 +100,6 @@ public class Plant
             }
             ThirstClock--;
         }
-        Debug.Log(State);
     }
 
     private void Ability()

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlantHandler
   m_EditorClassIdentifier: 
   Type:
+  - {fileID: 11400000, guid: 80fa2e9cd594a7d4582a51ea58558db6, type: 2}
+  - {fileID: 11400000, guid: b039ad0949aae3446b0a8e282056c09e, type: 2}
   - {fileID: 11400000, guid: 04591619218ff8c47b520a000ffb929f, type: 2}
-  - {fileID: 11400000, guid: 80fa2e9cd594a7d4582a51ea58558db6, type: 2}
-  - {fileID: 11400000, guid: 80fa2e9cd594a7d4582a51ea58558db6, type: 2}
-  - {fileID: 11400000, guid: 80fa2e9cd594a7d4582a51ea58558db6, type: 2}
+  - {fileID: 11400000, guid: f8819bead70ad434394262710a49868a, type: 2}

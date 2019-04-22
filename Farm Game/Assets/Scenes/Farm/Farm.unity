@@ -1548,7 +1548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory: {fileID: 1644404580}
   item: {fileID: 0}
-  plantHandler: {fileID: 11400000, guid: 08b02c88250910b4bb72d2f9e650a8a1, type: 2}
+  plantHandler: {fileID: 11400000, guid: d24c3d19f5592104b9a202ef4ee3d525, type: 2}
   Grid: {fileID: 1271806814}
   crop: {fileID: 0}
   plantingMode: 0
@@ -3532,7 +3532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CTilemap: {fileID: 938877500}
-  PlantID: {fileID: 11400000, guid: 08b02c88250910b4bb72d2f9e650a8a1, type: 2}
+  PlantID: {fileID: 11400000, guid: d24c3d19f5592104b9a202ef4ee3d525, type: 2}
 --- !u!1 &958300068
 GameObject:
   m_ObjectHideFlags: 0
@@ -6654,7 +6654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Grid: {fileID: 1271806814}
-  plantHandler: {fileID: 11400000, guid: 08b02c88250910b4bb72d2f9e650a8a1, type: 2}
+  plantHandler: {fileID: 0}
   ProduceInventory: {fileID: 11400000, guid: 16abef044dbd9134888fd887e4f1188b, type: 2}
 --- !u!1 &1572743715
 GameObject:
