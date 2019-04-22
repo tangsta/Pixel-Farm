@@ -8,7 +8,7 @@ public class IOPlant : MonoBehaviour
 
     public bool Plant(Vector3Int pos, int type)
     {
-        if (IsBound(pos.x, pos.y))
+        if (GetPlant(pos) == null)
         {
             PlantMap[pos.x, pos.y] = new Plant(PlantID.GetPlant(type));
             CTilemap.Draw(pos, PlantMap[pos.x, pos.y]);
