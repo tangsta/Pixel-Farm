@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7faa05fd4e3bf24bb7cc7f3a56b1944, type: 3}
-  m_Name: PlantTypes
+  m_Name: PlantHandler
   m_EditorClassIdentifier: 
   Type:
   - {fileID: 11400000, guid: 04591619218ff8c47b520a000ffb929f, type: 2}
