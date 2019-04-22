@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0039d4061b37c154da1f4defa4ad0790, type: 3}
+  m_Name: Broccoli
+  m_EditorClassIdentifier: 
+  TileState:
+  - {fileID: 11400000, guid: 9b1e7e0617c82a14ba202828a25b6ebf, type: 2}
+  - {fileID: 11400000, guid: a0a51cd7f94f45c43b5e52d8e3420216, type: 2}
+  - {fileID: 11400000, guid: 90be429f4b0744e4b961f13df3d6633e, type: 2}
+  - {fileID: 11400000, guid: 8cd6ed8f8a38e044ba3348a8d71b5184, type: 2}
+  - {fileID: 11400000, guid: e7254e5d4d33c36408940d1243dd85d5, type: 2}

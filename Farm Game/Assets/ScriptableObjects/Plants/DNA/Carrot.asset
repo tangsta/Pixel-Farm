@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b922f2980a60bb449cffdff19f90475, type: 3}
+  m_Name: Carrot
+  m_EditorClassIdentifier: 
+  BaseProduce: 1
+  EvoChance: 0.75
+  EvoLength: 4
+  EvoPeriod: 4
+  ThirstPeriod: 3
+  AbilityPeriod: 0
+  DeathPeriod: 0
+  ProduceDec: 0
+  ProduceInc: 0
+  GrowthDec: 0
+  GrowthInc: 0.4

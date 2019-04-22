@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0039d4061b37c154da1f4defa4ad0790, type: 3}
+  m_Name: Radish
+  m_EditorClassIdentifier: 
+  TileState:
+  - {fileID: 11400000, guid: 04ef50c5d4eae2f4dba93c857650bb99, type: 2}
+  - {fileID: 11400000, guid: 90d0a723d02a50349a1e9128eadb3cf3, type: 2}
+  - {fileID: 11400000, guid: 06cedf5581ab73443a95ecd0fad93dc6, type: 2}
+  - {fileID: 11400000, guid: 1b749bfc0f387f34d923f5c52b6b0939, type: 2}
+  - {fileID: 11400000, guid: c338ad3d335afcd42b13ea415960f78d, type: 2}

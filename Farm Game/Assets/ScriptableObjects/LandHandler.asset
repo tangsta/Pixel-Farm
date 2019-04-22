@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855c7828488ea7d408b9f33688a66c0c, type: 3}
+  m_Name: LandHandler
+  m_EditorClassIdentifier: 
+  Type:
+  - {fileID: 11400000, guid: cc0106a804135404f9a5d89e65787298, type: 2}
+  - {fileID: 11400000, guid: fc410c9854d60854495a7695418fb2d8, type: 2}
+  - {fileID: 11400000, guid: 2ad917157251f494c833ca01dbd63b11, type: 2}

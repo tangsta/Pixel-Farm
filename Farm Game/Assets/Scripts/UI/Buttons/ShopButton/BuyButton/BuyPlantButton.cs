@@ -3,60 +3,55 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BuyPlantButton : MonoBehaviour
-{	
-	/*
-		Script works in pairs with PlantDisplay component
-		that means this script and PlantDisplay have to be on the same
-		buy button
-	*/
-	Plant plantInfo;
-	private int maxInventorySize;
+{
+    // add a conditional where the golds cost can not be highest than the golds currently
+	
 
-	void Start()
-	{
-		plantInfo = this.gameObject.GetComponent<PlantDisplay>().plant;
-		maxInventorySize = GameObject.Find("GameManager").GetComponent<InventoryScript>().maxInventorySize;
-	}
+	// get itemInstance from shopcontrol
+	// get inventory from shop control
+	// check for null	
+	
+	public ShopControl shopcontrol;
+	private ItemInstance itemInstance;
+	private Inventory goalInventory;
 
-
-	// add a conditional where the gold cost can not be highest than the gold currently
-	// issues here - we can referencing alot so runtime might slow down
 	public void BuyPlant()
 	{
-		if(plantInfo.goldCost <= GameObject.Find("GameManager").GetComponent<PlayerData>().gold)
-		{	
-			// calculate new gold
-			GameObject.Find("GameManager").GetComponent<PlayerData>().gold -= plantInfo.goldCost;
+		shopcontrol = transform.parent.gameObject.GetComponent<ShopControl>();
+		itemInstance = shopcontrol.currentSelectedItem;
+		goalInventory = shopcontrol.goalInventory;
 
 
-			// // adding seed to inventory 
-			List<Plant> plantInventory = GameObject.Find("GameManager").GetComponent<InventoryScript>().plantInventory;
-
-			// // this is correct 
-	    	Plant plant = this.gameObject.GetComponent<PlantDisplay>().plant;
-	    	string plantName = plant.name;
-
-	        if(plantInventory.Find(plantObj => plantObj == plant))
-	        {
-	        	// Debug.Log("inside "+plantInventory.Find(plantObj => plant.name == plantName));
-	        	plantInventory.Find(plantObj => plantObj == plant).amount++;
-
-	        }
-	        else if(plantInventory.Count < maxInventorySize)
-	        {
-	        	plantInventory.Add(plant);
-	        	Debug.Log("New plant added");
-	        }
-	        else
-	        {
-	        	Debug.Log("Sorry you are out of space");
-	        }
-
-	        GameObject.Find("GameManager").GetComponent<InventoryScript>().plantInventory = plantInventory;
+		// calculates if the cost of this plant is higher than the amount the player has
+		if(itemInstance != null && goalInventory != null)
+		{
+			if(itemInstance.item.goldCost <= GameObject.Find("GameManager").GetComponent<PlayerData>().gold)
+			{	
+				// calculate new golds
+				if(goalInventory.FindItem(itemInstance))
+				{
+					GameObject.Find("GameManager").GetComponent<PlayerData>().gold -= itemInstance.item.goldCost;
+					goalInventory.IncreaseQuantityItem(1,itemInstance);
+					// also increase the amount of seeds the user has
+				}
+				// check if the user ran out of room or add new plant to inventory
+				// DOESN'T CHECK IF USER RAN OUT OF ROOM YET 
+				else
+				{
+					goalInventory.InsertItem(itemInstance);
+					goalInventory.IncreaseQuantityItem(1,itemInstance);
+					GameObject.Find("GameManager").GetComponent<PlayerData>().gold -= itemInstance.item.goldCost;
+				}
+			}
+			else
+			{
+				// here tell the user that he does not have enough golds
+				Debug.Log("Not enough golds");
+			}
 		}
 		else
 		{
-			Debug.Log("Sorry you do not have enough");
+			Debug.Log("You didn't select an item to buy yet");
 		}
 	}
 }
