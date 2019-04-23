@@ -23,11 +23,7 @@ public class SellButton : MonoBehaviour
     			inventoryUI.userInventory.DecreaseQuantityItem( 1, currentItemInstance );
     			GameManager.GetComponent<PlayerData>().gold += currentSelectedItem.sellPrice;
     		}
-    		else
-    		{
-    			this.gameObject.transform.parent.GetComponent<InventoryUI>().UpdateUI();
-    			// currentSelectedItem = null;
-    		}
+    		this.gameObject.transform.parent.GetComponent<InventoryUI>().UpdateUI();
     	}
     	else
     	{
