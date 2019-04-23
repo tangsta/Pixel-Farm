@@ -15,18 +15,7 @@ MonoBehaviour:
   itemName: Radish
   artwork: {fileID: 21300000, guid: 3243228297c81d04694e101907a178d4, type: 3}
   goldCost: 10
+  sellPrice: 10
   description: 
   requriedLevel: 0
   amount: 1
-  Stages:
-  - {fileID: 11400000, guid: 04ef50c5d4eae2f4dba93c857650bb99, type: 2}
-  - {fileID: 11400000, guid: 90d0a723d02a50349a1e9128eadb3cf3, type: 2}
-  - {fileID: 11400000, guid: 06cedf5581ab73443a95ecd0fad93dc6, type: 2}
-  - {fileID: 11400000, guid: 1b749bfc0f387f34d923f5c52b6b0939, type: 2}
-  - {fileID: 11400000, guid: c338ad3d335afcd42b13ea415960f78d, type: 2}
-  Specials: []
-  Produce: 3
-  GrowthTime: 10
-  ThirstTime: 4
-  CoolDown: 1
-  GrowthChance: 0.2

@@ -360,6 +360,7 @@ GameObject:
   - component: {fileID: 75375558}
   - component: {fileID: 75375557}
   - component: {fileID: 75375556}
+  - component: {fileID: 75375559}
   m_Layer: 8
   m_Name: SellButton
   m_TagString: Untagged
@@ -466,6 +467,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75375554}
   m_CullTransparentMesh: 0
+--- !u!114 &75375559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75375554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df011be870e1cb419b7902f8079a4f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManager: {fileID: 1794975187840549028}
 --- !u!1 &100599998
 GameObject:
   m_ObjectHideFlags: 0
@@ -10120,7 +10134,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1706347818205933306}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7303032946054203749}
+        m_MethodName: Sell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &5625187094607842981
@@ -10303,7 +10328,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 563557534}
         m_MethodName: StopPlanting
         m_Mode: 1
         m_Arguments:
@@ -10768,6 +10793,7 @@ GameObject:
   - component: {fileID: 2580446428900441087}
   - component: {fileID: 1706347818205933306}
   - component: {fileID: 5544536296189454417}
+  - component: {fileID: 7303032946054203749}
   m_Layer: 8
   m_Name: SellButton
   m_TagString: Untagged
@@ -10775,6 +10801,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7303032946054203749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7303032946054203748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df011be870e1cb419b7902f8079a4f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManager: {fileID: 1794975187840549028}
 --- !u!1 &7309759753475200705
 GameObject:
   m_ObjectHideFlags: 0

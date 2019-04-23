@@ -15,18 +15,7 @@ MonoBehaviour:
   itemName: Strawberry
   artwork: {fileID: 21300000, guid: 9297a3a9211202c4f8b0e19a55b2a9d5, type: 3}
   goldCost: 10
+  sellPrice: 10
   description: 
   requriedLevel: 0
   amount: 1
-  Stages:
-  - {fileID: 11400000, guid: 8b886ea0ba09eca4b9fe49d1d500e272, type: 2}
-  - {fileID: 11400000, guid: c873062e30c2c0046b888933b129e601, type: 2}
-  - {fileID: 11400000, guid: 0b15cca231319564dbaa748e8a33a326, type: 2}
-  - {fileID: 11400000, guid: 779e5b811303f004cb6ab4d55943f29d, type: 2}
-  - {fileID: 11400000, guid: d4cdfb1cc9270ac4ba502fdc8ce9a647, type: 2}
-  Specials: []
-  Produce: 5
-  GrowthTime: 20
-  ThirstTime: 8
-  CoolDown: 1
-  GrowthChance: 0.1

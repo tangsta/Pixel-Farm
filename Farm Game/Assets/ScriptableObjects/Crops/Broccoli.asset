@@ -15,18 +15,7 @@ MonoBehaviour:
   itemName: Broccoli
   artwork: {fileID: 21300000, guid: 93766bc9e3297f74e874105f625a6b19, type: 3}
   goldCost: 10
+  sellPrice: 10
   description: 
   requriedLevel: 0
   amount: 1
-  Stages:
-  - {fileID: 11400000, guid: 9b1e7e0617c82a14ba202828a25b6ebf, type: 2}
-  - {fileID: 11400000, guid: a0a51cd7f94f45c43b5e52d8e3420216, type: 2}
-  - {fileID: 11400000, guid: 90be429f4b0744e4b961f13df3d6633e, type: 2}
-  - {fileID: 11400000, guid: 8cd6ed8f8a38e044ba3348a8d71b5184, type: 2}
-  - {fileID: 11400000, guid: e7254e5d4d33c36408940d1243dd85d5, type: 2}
-  Specials: []
-  Produce: 3
-  GrowthTime: 20
-  ThirstTime: 5
-  CoolDown: 1
-  GrowthChance: 0.15
