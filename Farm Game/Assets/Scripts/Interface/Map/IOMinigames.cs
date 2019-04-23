@@ -26,7 +26,7 @@ public class IOMinigames : MonoBehaviour
 
     public void SpawnGame(Vector3Int pos)
     {
-        if (NumGames > 0)
+        if (NumGames > 0 && !GameMap.ContainsKey(pos))
         {
             GameMap.Add(pos, Minigames.GetGame(Random.Range(0, Minigames.Type.Length)));
             Map.Draw(pos);
@@ -38,13 +38,19 @@ public class IOMinigames : MonoBehaviour
     {
         if (Random.value > chance)
         {
-            foreach (Vector3Int pos in GameMap.Keys)
+            Vector3Int[] Arr = new Vector3Int[GameMap.Count];
+            int i = 0;
+
+            foreach (Vector3Int x in GameMap.Keys)
             {
-                GameMap.Remove(pos);
-                Map.Erase(pos);
-                NumGames++;
-                break;
+                Arr[i] = x;
+                i++;
             }
+
+            Vector3Int pos = Arr[Random.Range(0, Arr.Length-1)];
+            GameMap.Remove(pos);
+            Map.Erase(pos);
+            NumGames++;
         }
     }
 

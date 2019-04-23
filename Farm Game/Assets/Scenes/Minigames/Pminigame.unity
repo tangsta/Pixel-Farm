@@ -246,10 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 500, y: 480}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -335,8 +335,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ea09b142121e9d6498bc0c75e571291e, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 541e4df2a9c037e4c90771e7d5044d10, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
   m_Spacing: {x: 10, y: 10}
-  m_Constraint: 0
+  m_Constraint: 2
   m_ConstraintCount: 2
 --- !u!1 &1375735106
 GameObject:
@@ -434,8 +434,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a84bb1ed8dd3d4db65dd7f11e16ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgImage: {fileID: 21300000, guid: 59fd327384067624fabfa2e35e9e44d2, type: 3}
-  puzzles: []
+  bgImage: {fileID: 21300000, guid: b485e8ef168ebdd4f8b4cc2bef86fbf6, type: 3}
+  puzzles:
+  - {fileID: 21300000, guid: 93766bc9e3297f74e874105f625a6b19, type: 3}
+  - {fileID: 21300000, guid: 6aff83c5897d1794297dac3c3489e83c, type: 3}
+  - {fileID: 21300000, guid: 3243228297c81d04694e101907a178d4, type: 3}
+  - {fileID: 21300000, guid: 9297a3a9211202c4f8b0e19a55b2a9d5, type: 3}
   gamePuzzles: []
   btns: []
 --- !u!1 &1966698272

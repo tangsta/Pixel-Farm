@@ -22,10 +22,6 @@ public class GameController : MonoBehaviour
 
 
     public List<Button> btns = new List<Button>();
-    private void Awake()
-    {
-       puzzles = Resources.LoadAll<Sprite>("Sprites/plants");
-    }
 
     void Start()
     {
