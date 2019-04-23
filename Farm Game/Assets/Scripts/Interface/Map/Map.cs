@@ -16,7 +16,7 @@ public class Map : MonoBehaviour
 
     public IOLand LandMap;
     public IOPlant PlantMap;
-    public IOMinigames GameMap;
+    public IOMinigame GameMap;
 
     public void Start()
     {

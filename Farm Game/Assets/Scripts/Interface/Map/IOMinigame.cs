@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class IOMinigames : MonoBehaviour
+public class IOMinigame : MonoBehaviour
 {
-    private Dictionary<Vector3Int, MiniGame> GameMap;
+    private Dictionary<Vector3Int, Minigame> GameMap;
     public MinigameHandler Minigames;
     public MinigameTilemap Map;
 
@@ -12,7 +12,7 @@ public class IOMinigames : MonoBehaviour
 
     public void Awake()
     {
-        GameMap = new Dictionary<Vector3Int, MiniGame>();
+        GameMap = new Dictionary<Vector3Int, Minigame>();
     }
 
     public int Play(Vector3Int pos)

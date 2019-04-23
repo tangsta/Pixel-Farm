@@ -3,9 +3,9 @@
 [CreateAssetMenu(fileName = "MinigameHandler", menuName = "ScriptableObjects/MinigameHandler")]
 public class MinigameHandler : ScriptableObject
 {
-    public MiniGame[] Type;
+    public Minigame[] Type;
 
-    public int GetID(MiniGame x)
+    public int GetID(Minigame x)
     {
         for (int i = 0; i < Type.Length; i++)
             if (Type[i] == x)
@@ -13,7 +13,7 @@ public class MinigameHandler : ScriptableObject
         return -1;
     }
 
-    public MiniGame GetGame(int id)
+    public Minigame GetGame(int id)
     {
         if (id >= 0 && id < Type.Length)
             return Type[id];

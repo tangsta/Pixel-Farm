@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Minigame", menuName = "Minigame")]
-public class MiniGame : ScriptableObject
+public class Minigame : ScriptableObject
 {
     public int GameScene;
     public int Gold;
