@@ -9,7 +9,7 @@
  */
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "Items/Crop", order = 1)]
 public class Crop : Item
 {
 	[Header("Plant Attributes")]

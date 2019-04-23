@@ -8,4 +8,5 @@ public class PlantDef : ScriptableObject
     //public Effect[] Consumers;
     //public Effect[] Emitters;
     public Crop Crop;
+    public Seed Seed;
 }
