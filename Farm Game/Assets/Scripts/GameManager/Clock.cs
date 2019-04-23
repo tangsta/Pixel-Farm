@@ -17,6 +17,7 @@ public class Clock : MonoBehaviour
         while (true)
         {
             Map.AgeAll();
+            Map.UpdateGames();
             // CMap.WaterAll();
 
             yield return new WaitForSeconds(waitTime);

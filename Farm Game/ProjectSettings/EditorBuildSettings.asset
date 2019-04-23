@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/MainMenu.unity
     guid: 8e621e994d873fe4e9ea36cf314831b2
   - enabled: 1
+    path: Assets/Scenes/Menu/Settings.unity
+    guid: 9d5260a9e0f63004f9c64ab80fda5300
+  - enabled: 1
     path: Assets/Scenes/Farm/Farm.unity
     guid: 3b04031b3dbdcf74f8d9dbeae8166c22
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Pminigame.unity
+    guid: 79cad3f60e868374dabf508f6013d752
   m_configObjects: {}

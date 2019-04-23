@@ -16,12 +16,18 @@ public class Map : MonoBehaviour
 
     public IOLand LandMap;
     public IOPlant PlantMap;
+    public IOMinigames GameMap;
 
     public void Start()
     {
         LandMap.InitMap(Width, Height);
         PlantMap.InitMap(Width, Height);
         GenerateMap();
+    }
+
+    public int Play(Vector3Int pos)
+    {
+        return GameMap.Play(pos);
     }
 
     public bool Plant(Vector3Int pos, int plant)
@@ -61,6 +67,26 @@ public class Map : MonoBehaviour
     public Land GetLand(Vector3Int pos)
     {
         return LandMap.GetLand(pos);
+    }
+
+    public void UpdateGames()
+    {
+        Vector3 curr = Camera.main.transform.position;
+        Vector3Int pos = new Vector3Int((int)curr.x, (int)curr.y, 0);
+
+        int x = Random.Range(pos.x - GameMap.Range, pos.x + GameMap.Range);
+        int y = Random.Range(pos.y - GameMap.Range, pos.y + GameMap.Range);
+
+        pos = new Vector3Int(x, y, 0);
+
+        if (Random.value > 0.5f && GetPlant(pos) == null)
+        {
+            GameMap.SpawnGame(pos);
+        }
+        else
+        {
+            GameMap.DespawnGame(0.5f);
+        }
     }
 
     public void GenerateMap()

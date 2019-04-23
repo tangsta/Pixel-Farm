@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -120,6 +121,7 @@ public class GameController : MonoBehaviour
         {
             Debug.Log("Game FInished");
             Debug.Log("It took you " + countCorrectGuesses + "many tries to finish the game ");
+            SceneManager.LoadScene(2);
         }
     }
     
