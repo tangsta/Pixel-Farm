@@ -6,7 +6,7 @@ public class SellButton : MonoBehaviour
 {
 	private InventoryUI inventoryUI;
 	public GameObject GameManager;
-	private Item currentSelectedItem;
+	public Item currentSelectedItem;
     // Start is called before the first frame update
 
     public void Sell()
