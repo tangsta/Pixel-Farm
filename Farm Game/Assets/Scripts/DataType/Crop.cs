@@ -12,9 +12,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Items/Crop", order = 1)]
 public class Crop : Item
 {
-	[Header("Plant Attributes")]
+	// [Header("Plant Attributes")]
 	// required level to buy/plant?
-	public string description;
-	public int requriedLevel;
-	public int amount;
+	// public string description;
+	// public int requriedLevel;
+	// public int amount;
 }

@@ -95,10 +95,8 @@ public class Inventory : ScriptableObject
             }    
             if(x == inventory.Length-1)
             {
-                Debug.Log("x has reached its limit");
                 if(InsertItem(itemInstance) != -1)
                 {
-                    Debug.Log("Inserted new item");
                     IncreaseQuantityItem(1, itemInstance);
                 }
             }

@@ -7,4 +7,6 @@ public class Seed : Item
 {
 	// left intentionally empty bc item has all the variable seed needs for now 
 	// you may change this later
+	// [Header("Seed Attributes")]
+	// public string description;
 }
