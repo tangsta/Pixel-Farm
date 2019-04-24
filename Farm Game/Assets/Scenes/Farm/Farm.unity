@@ -6945,6 +6945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Map: {fileID: 1271806817}
+  FIX: {fileID: 11400000, guid: be0eca298c8784d4e935c60fc4677c7a, type: 2}
 --- !u!114 &1271806819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8117,6 +8118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Map: {fileID: 1271806817}
+  fix: {fileID: 11400000, guid: be0eca298c8784d4e935c60fc4677c7a, type: 2}
 --- !u!114 &1558716466
 MonoBehaviour:
   m_ObjectHideFlags: 0
