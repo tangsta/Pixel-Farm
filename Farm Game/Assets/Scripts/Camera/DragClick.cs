@@ -29,7 +29,7 @@ public class DragClick : MonoBehaviour
 		if (Drag == true && !fix.FIX){
             Vector3 result = Origin - Diference;
             if (result.x >= -2 && result.x <= Map.Width+2 && result.y >= -2 && result.y <= Map.Height+2)
-            {
+            { 
                 Camera.main.transform.position = result;
             }
 		}

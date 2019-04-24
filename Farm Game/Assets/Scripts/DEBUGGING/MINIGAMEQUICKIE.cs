@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MINIGAMEQUICKIE : MonoBehaviour
+[CreateAssetMenu(fileName = ("QUICKFIX"))]
+public class MINIGAMEQUICKIE : ScriptableObject
 {
     public bool FIX = false;
 
