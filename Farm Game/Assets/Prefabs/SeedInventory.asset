@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: SeedInventory
   m_EditorClassIdentifier: 
   inventory:
-  - item: {fileID: 0}
-    Quantity: 0
-  - item: {fileID: 0}
-    Quantity: 0
-  - item: {fileID: 0}
-    Quantity: 0
+  - item: {fileID: 11400000, guid: 855c49c3780a78b43a7b02571ccf2d9c, type: 2}
+    Quantity: 11
+  - item: {fileID: 11400000, guid: 6a5e96a08770cc64a9c0004d3842a56f, type: 2}
+    Quantity: 1
+  - item: {fileID: 11400000, guid: 6d69ca9e2c7513e47ba7157b2b9612b6, type: 2}
+    Quantity: 5
   - item: {fileID: 0}
     Quantity: 0
   - item: {fileID: 0}

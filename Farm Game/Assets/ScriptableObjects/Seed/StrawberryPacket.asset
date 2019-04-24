@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51de84f0e3d4793429e800a4eba2aa6d, type: 3}
   m_Name: StrawberryPacket
   m_EditorClassIdentifier: 
-  itemName: 
-  artwork: {fileID: 0}
-  goldCost: 0
-  sellPrice: 0
+  itemName: StrawberryPacket
+  description: baby red berries
+  artwork: {fileID: 21300000, guid: ecace2673957d034f9cb5d87d7c97d35, type: 3}
+  goldCost: 10
+  sellPrice: 5

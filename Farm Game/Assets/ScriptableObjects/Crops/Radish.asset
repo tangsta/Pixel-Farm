@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Radish
   m_EditorClassIdentifier: 
   itemName: Radish
+  description: i don't even know what this is
   artwork: {fileID: 21300000, guid: 3243228297c81d04694e101907a178d4, type: 3}
   goldCost: 10
   sellPrice: 10
-  description: 
-  requriedLevel: 0
-  amount: 1

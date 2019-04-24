@@ -15,3 +15,4 @@ MonoBehaviour:
   DNA: {fileID: 11400000, guid: 51d9c686c06f9ad44b78c5c9fc5ab5c1, type: 2}
   Art: {fileID: 11400000, guid: 2838058b758034442b9c4045789c857d, type: 2}
   Crop: {fileID: 11400000, guid: c1770282fcbe5f049a7dc14df40707fb, type: 2}
+  Seed: {fileID: 11400000, guid: aab08afc971cd874f8be70bdd9648b11, type: 2}

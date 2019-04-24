@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51de84f0e3d4793429e800a4eba2aa6d, type: 3}
   m_Name: BroccoliPacket
   m_EditorClassIdentifier: 
-  itemName: 
-  artwork: {fileID: 0}
-  goldCost: 0
-  sellPrice: 0
+  itemName: BroccoliPacket
+  description: a forest to be grown
+  artwork: {fileID: 21300000, guid: 222cabf3c6af1ab4b9026af49400b7a9, type: 3}
+  goldCost: 10
+  sellPrice: 5
