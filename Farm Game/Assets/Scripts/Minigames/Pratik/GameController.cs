@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField]
-    private Sprite bgImage;
+    public Sprite bgImage;
     public Sprite[] puzzles;
     public List<Sprite> gamePuzzles = new List<Sprite>();
     private bool firstGuess, secondGuess;
