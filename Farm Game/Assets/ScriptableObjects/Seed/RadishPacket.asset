@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51de84f0e3d4793429e800a4eba2aa6d, type: 3}
   m_Name: RadishPacket
   m_EditorClassIdentifier: 
-  itemName: RadishPacket
+  itemName: Radish Packet
   description: grows into something
   artwork: {fileID: 21300000, guid: ea1595dfec31a874ab87acd5a621eaf3, type: 3}
   goldCost: 10
