@@ -20,11 +20,17 @@ public class HideToggleUIButton : MonoBehaviour
         if(gameobjectToHideShow.transform.localScale == zero)
         {
             gameobjectToHideShow.transform.localScale = new Vector3(1, 1, 1);
-            FIX.FIX = true;
+            if(FIX != null)
+            {
+            	FIX.FIX = true;
+            }
         }
         else
         {
-            FIX.FIX = false;
+            if(FIX != null)
+            {
+            	FIX.FIX = false;
+            }
             gameobjectToHideShow.transform.localScale = new Vector3(0, 0, 0);
 
         }    		
