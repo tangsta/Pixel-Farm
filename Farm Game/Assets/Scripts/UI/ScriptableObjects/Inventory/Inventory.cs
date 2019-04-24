@@ -130,6 +130,23 @@ public class Inventory : ScriptableObject
         return false; // false means item wasn't found or the Quantity was 0
     }
 
+    // Increase the Quanity of an item 
+    public int GetQuantity(ItemInstance itemInstance)
+    {
+        for(int x = 0; x < inventory.Length; x++)
+        {
+            if(!SlotEmpty(x))
+            {
+                if(inventory[x].item.itemName == itemInstance.item.itemName)
+                {
+                    // Debug.Log(inventory[x].item.itemName);
+                    return inventory[x].Quantity; 
+                }
+            }    
+        }
+        return 0;
+    }
+
     // Get an item if it exists.
     public bool GetItem(int index, out ItemInstance item) 
     {
