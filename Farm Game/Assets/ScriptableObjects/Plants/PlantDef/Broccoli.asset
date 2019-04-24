@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cec6717686104743a1678a67774955c, type: 3}
   m_Name: Broccoli
   m_EditorClassIdentifier: 
-  DNA: {fileID: 11400000, guid: 8008556e0aabb8d44886ae1d69d1f5cd, type: 2}
-  Art: {fileID: 11400000, guid: 2b5f06518fdc51c469c280db6e11da13, type: 2}
+  DNA: {fileID: 11400000, guid: f7b44269275685440a329e195049771c, type: 2}
+  Art: {fileID: 11400000, guid: aabc035f694f2224f89ab06c3fab6952, type: 2}
   Crop: {fileID: 11400000, guid: eee8b6c6340dd5b459193135cf40c5c9, type: 2}
+  Seed: {fileID: 0}

@@ -36,7 +36,7 @@ public class IOMinigame : MonoBehaviour
 
     public void DespawnGame(float chance)
     {
-        if (Random.value > chance)
+        if (Random.value > chance && GameMap.Count != 0)
         {
             Vector3Int[] Arr = new Vector3Int[GameMap.Count];
             int i = 0;
@@ -46,12 +46,10 @@ public class IOMinigame : MonoBehaviour
                 Arr[i] = x;
                 i++;
             }
-
-            Vector3Int pos = Arr[Random.Range(0, Arr.Length-1)];
+            Vector3Int pos = Arr[Random.Range(0, GameMap.Count)];
             GameMap.Remove(pos);
             Map.Erase(pos);
             NumGames++;
         }
     }
-
 }

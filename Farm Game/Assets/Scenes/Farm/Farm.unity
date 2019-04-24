@@ -2029,7 +2029,7 @@ MonoBehaviour:
   Minigames: {fileID: 11400000, guid: 4e69925d04ce2d64f8968d0aeb3b2be6, type: 2}
   Map: {fileID: 508467490}
   NumGames: 3
-  Range: 5
+  Range: 3
 --- !u!114 &508467490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6474,8 +6474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160190a1a0a53704c9cb5441e79ef678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Height: 15
-  Width: 15
+  Height: 20
+  Width: 20
   LandMap: {fileID: 1308251076}
   PlantMap: {fileID: 938877501}
   GameMap: {fileID: 508467489}

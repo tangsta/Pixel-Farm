@@ -79,7 +79,7 @@ public class Map : MonoBehaviour
 
         pos = new Vector3Int(x, y, 0);
 
-        if (Random.value > 0.5f && GetPlant(pos) == null)
+        if (Random.value > 0.5f && GetPlant(pos) == null && GetLand(pos) != null)
         {
             GameMap.SpawnGame(pos);
         }

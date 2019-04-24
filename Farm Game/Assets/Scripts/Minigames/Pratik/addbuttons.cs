@@ -5,11 +5,9 @@ using UnityEngine;
 public class addbuttons : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField]
-    private Transform puzzlefield;
+    public Transform puzzlefield;
 
-    [SerializeField]
-    private GameObject btn;
+    public GameObject btn;
 
     // Update is called once per frame
     void Awake()
