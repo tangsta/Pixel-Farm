@@ -11,8 +11,7 @@ public class TestClick : MonoBehaviour
             Vector3 PointClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
                                         Mathf.FloorToInt(PointClick.y), 0);
-            var ray = Camera.main.ScreenPointToRay(worldPoint);
-            if (!Physics.Raycast(ray))
+           // if ()
                 Map.Play(worldPoint);
             //Obtains from SoilPlot Dictionary
             /*

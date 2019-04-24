@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class MINIGAMEQUICKIE : MonoBehaviour
 {
-    public bool FIX;
+    public bool FIX = false;
 
-    public void Switch()
+    public void SetFIX(bool x)
     {
-        if (FIX)
-        {
-            FIX = false;
-        }
-        else
-        {
-            FIX = true;
-        }
+        FIX = x;
     }
 }

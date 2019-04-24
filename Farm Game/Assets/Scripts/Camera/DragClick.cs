@@ -9,6 +9,7 @@ public class DragClick : MonoBehaviour
     private Vector3 Diference;
 	private bool Drag = false;
     public Map Map;
+    public MINIGAMEQUICKIE fix;
 
 	void Start () {
         Vector3 mid = new Vector3(Map.Width / 2, Map.Height / 2, Camera.main.transform.position.z);
@@ -16,7 +17,7 @@ public class DragClick : MonoBehaviour
 		ResetCamera = Camera.main.transform.position;
 	}
 	void LateUpdate () {
-		if (Input.GetMouseButton (0)) {
+		if (Input.GetMouseButton (0) && !fix.FIX) {
 			Diference = (Camera.main.ScreenToWorldPoint (Input.mousePosition))- Camera.main.transform.position;
 			if (Drag == false){
 				Drag = true;
@@ -25,7 +26,7 @@ public class DragClick : MonoBehaviour
 		} else {
 			Drag = false;
 		}
-		if (Drag == true){
+		if (Drag == true && !fix.FIX){
             Vector3 result = Origin - Diference;
             if (result.x >= -2 && result.x <= Map.Width+2 && result.y >= -2 && result.y <= Map.Height+2)
             {
