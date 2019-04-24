@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DisplayItemStats : MonoBehaviour
+public class DisplayItemInInventory : MonoBehaviour
 {
 	// Place this script on the panel that has all the text objects ex/ SeedInfoPanel
 

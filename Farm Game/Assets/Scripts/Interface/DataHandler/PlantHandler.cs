@@ -14,6 +14,14 @@ public class PlantHandler : ScriptableObject
         return -1;
     }
 
+    public int GetID(Seed seed)
+    {
+        for (int i = 0; i < Type.Length; i++)
+            if (Type[i].Seed == seed)
+                return i;
+        return -1;
+    }
+
     public int GetID(PlantDef plant)
     {
         for (int i = 0; i < Type.Length; i++)

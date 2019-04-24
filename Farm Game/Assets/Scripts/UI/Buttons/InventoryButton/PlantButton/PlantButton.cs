@@ -17,7 +17,7 @@ public class PlantButton : MonoBehaviour
 	private ItemInstance itemInstance; // create an ItemInstance so you can use Inventory functions
 
 	public GameObject Grid; // used to get function
-	public Crop crop; // Crop 
+	public Seed seed; // Crop 
 
     public bool plantingMode = false;
 
@@ -37,13 +37,13 @@ public class PlantButton : MonoBehaviour
 	        		{
 	        			
 	        			// below spawns the plant according to what was currently selected by the user from the inventory 
-						crop = (Crop) item;
+						seed = (Seed) item;
 			            Vector3 PointClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			            Vector3Int worldPoint = new Vector3Int(Mathf.FloorToInt(PointClick.x),
 			                                        Mathf.FloorToInt(PointClick.y), 0);
                         // checks if a plant is in the same spot - true = no plant || false = plant
 
-                        if (Grid.GetComponent<Map>().Plant(worldPoint, plantHandler.GetID(crop)))
+                        if (Grid.GetComponent<Map>().Plant(worldPoint, plantHandler.GetID(seed)))
 			            {
 			            	ScriptableInventory.DecreaseQuantityItem(1, itemInstance);
 			            }

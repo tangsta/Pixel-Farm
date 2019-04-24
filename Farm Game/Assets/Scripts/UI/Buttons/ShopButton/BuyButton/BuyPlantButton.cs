@@ -27,12 +27,12 @@ public class BuyPlantButton : MonoBehaviour
 		{
 			if(itemInstance.item.goldCost <= GameObject.Find("GameManager").GetComponent<PlayerData>().gold)
 			{	
-				// calculate new golds
+				// Debug.Log(itemInstance.item);
 				if(goalInventory.FindItem(itemInstance))
 				{
+					// Debug.Log(itemInstance.item);
 					GameObject.Find("GameManager").GetComponent<PlayerData>().gold -= itemInstance.item.goldCost;
 					goalInventory.IncreaseQuantityItem(1,itemInstance);
-					// also increase the amount of seeds the user has
 				}
 				// check if the user ran out of room or add new plant to inventory
 				// DOESN'T CHECK IF USER RAN OUT OF ROOM YET 
@@ -45,7 +45,6 @@ public class BuyPlantButton : MonoBehaviour
 			}
 			else
 			{
-				// here tell the user that he does not have enough golds
 				Debug.Log("Not enough golds");
 			}
 		}
