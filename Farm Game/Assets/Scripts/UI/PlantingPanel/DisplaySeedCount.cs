@@ -19,6 +19,7 @@ public class DisplaySeedCount : MonoBehaviour
 			if(seedInventory.FindItem(ItemInstance))
 			{
 				this.gameObject.transform.GetChild(0).GetComponent<Text>().text = ""+seedInventory.GetQuantity(ItemInstance);
+				this.gameObject.transform.GetChild(1).GetComponent<Image>().sprite = ItemInstance.item.artwork;
 			}
 		}
 	}
