@@ -3595,6 +3595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameobjectToHideShow: {fileID: 7005036659875899745}
+  FIX: {fileID: 0}
 --- !u!114 &563557536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12969,6 +12970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameobjectToHideShow: {fileID: 7005036659875899745}
+  FIX: {fileID: 0}
 --- !u!1 &1604392154037929447
 GameObject:
   m_ObjectHideFlags: 0
@@ -15236,6 +15238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameobjectToHideShow: {fileID: 3058202833689053618}
+  FIX: {fileID: 11400000, guid: be0eca298c8784d4e935c60fc4677c7a, type: 2}
 --- !u!222 &8244941027799959257
 CanvasRenderer:
   m_ObjectHideFlags: 0

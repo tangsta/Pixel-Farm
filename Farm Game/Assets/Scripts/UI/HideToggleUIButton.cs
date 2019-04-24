@@ -12,6 +12,7 @@ public class HideToggleUIButton : MonoBehaviour
 		shopButton - requires you to link the shop canvas to toggle the button
 	*/
 	public GameObject gameobjectToHideShow;
+    public MINIGAMEQUICKIE FIX;
     public void HideToggleFunction()
     {
         Vector3 zero = new Vector3(0, 0, 0);
@@ -19,9 +20,11 @@ public class HideToggleUIButton : MonoBehaviour
         if(gameobjectToHideShow.transform.localScale == zero)
         {
             gameobjectToHideShow.transform.localScale = new Vector3(1, 1, 1);
+            FIX.FIX = true;
         }
         else
         {
+            FIX.FIX = false;
             gameobjectToHideShow.transform.localScale = new Vector3(0, 0, 0);
 
         }    		
