@@ -25,24 +25,27 @@ public class DisplayItemInInventory : MonoBehaviour
 		
 
 		// Get each Image gameobject so later we can look at their child's Text ****************
-    	int numChildren = this.gameObject.transform.childCount;
-    	ImageGameObjects = new GameObject[numChildren];
-
-		for (int i = 0; i < numChildren; i++)
+		if(currentSelectedItem != null)
 		{
-			ImageGameObjects[i] = this.gameObject.transform.GetChild(i).gameObject;
-			// Debug.Log(ImageGameObjects[i]);
+	    	int numChildren = this.gameObject.transform.childCount;
+	    	ImageGameObjects = new GameObject[numChildren];
+
+			for (int i = 0; i < numChildren; i++)
+			{
+				ImageGameObjects[i] = this.gameObject.transform.GetChild(i).gameObject;
+				// Debug.Log(ImageGameObjects[i]);
+			}
+			// ************* Setup complete ***************************
+
+			// Set the name HARD CODED OUT OF ITS MIND - ASK HENRY FOR MAINTENCE 
+			textBox = ImageGameObjects[0].transform.GetChild(1).GetComponent<Text>(); // gets the second gameobject which is text of the three gameobjects we saved
+			textBox.text = currentSelectedItem.name; 
+
+			textBox = ImageGameObjects[1].transform.GetChild(1).GetComponent<Text>(); // gets the second gameobject which is text of the three gameobjects we saved
+			textBox.text = currentSelectedItem.description; 
+
+			textBox = ImageGameObjects[2].transform.GetChild(1).GetComponent<Text>(); // gets the second gameobject which is text of the three gameobjects we saved
+			textBox.text = ""+currentSelectedItem.sellPrice + "g"; 
 		}
-		// ************* Setup complete ***************************
-
-		// Set the name HARD CODED OUT OF ITS MIND - ASK HENRY FOR MAINTENCE 
-		textBox = ImageGameObjects[0].transform.GetChild(1).GetComponent<Text>(); // gets the second gameobject which is text of the three gameobjects we saved
-		textBox.text = currentSelectedItem.name; 
-
-		textBox = ImageGameObjects[1].transform.GetChild(1).GetComponent<Text>(); // gets the second gameobject which is text of the three gameobjects we saved
-		textBox.text = currentSelectedItem.description; 
-
-		textBox = ImageGameObjects[2].transform.GetChild(1).GetComponent<Text>(); // gets the second gameobject which is text of the three gameobjects we saved
-		textBox.text = ""+currentSelectedItem.sellPrice + "g"; 
 	}
 }
