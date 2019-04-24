@@ -27,11 +27,7 @@ public class DragClick : MonoBehaviour
 		}
 		if (Drag == true){
             Vector3 result = Origin - Diference;
-            if ((result.x < 0 || result.x > Map.Width) && (result.y < 0 || result.y > Map.Height))
-            {
-                Debug.Log("You cannot drag any further");
-            }
-            else
+            if (result.x >= -2 && result.x <= Map.Width+2 && result.y >= -2 && result.y <= Map.Height+2)
             {
                 Camera.main.transform.position = result;
             }
