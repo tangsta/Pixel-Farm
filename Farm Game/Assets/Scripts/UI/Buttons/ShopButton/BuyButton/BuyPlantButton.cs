@@ -38,7 +38,7 @@ public class BuyPlantButton : MonoBehaviour
 				// DOESN'T CHECK IF USER RAN OUT OF ROOM YET 
 				else
 				{
-					goalInventory.InsertItem(itemInstance);
+					// goalInventory.InsertItem(itemInstance);
 					goalInventory.IncreaseQuantityItem(1,itemInstance);
 					GameObject.Find("GameManager").GetComponent<PlayerData>().gold -= itemInstance.item.goldCost;
 				}
