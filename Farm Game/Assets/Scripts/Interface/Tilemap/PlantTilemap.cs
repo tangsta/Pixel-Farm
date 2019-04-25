@@ -15,20 +15,20 @@ using UnityEngine.Tilemaps;
 [AddComponentMenu("Tilemap/Crop Tilemap")]
 public class PlantTilemap : MonoBehaviour
 {
-    private Tilemap Tilemap;
+    private Tilemap Map;
 
     public void Awake()
     {
-        Tilemap = GetComponent<Tilemap>();
+        Map = GetComponent<Tilemap>();
     }
 
     public void Draw(Vector3Int pos, Plant plant)
     { 
-        Tilemap.SetTile(pos, plant.GetSprite());
+        Map.SetTile(pos, plant.GetSprite());
     }
 
     public void Erase(Vector3Int pos)
     {
-        Tilemap.SetTile(pos, null);
+        Map.SetTile(pos, null);
     }
 }

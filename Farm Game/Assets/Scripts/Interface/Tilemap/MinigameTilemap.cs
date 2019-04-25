@@ -3,21 +3,21 @@ using UnityEngine.Tilemaps;
 
 public class MinigameTilemap : MonoBehaviour
 {
-    private Tilemap Tilemap;
-    public Tile img;
+    private Tilemap Map;
+    public Tile Img;
 
     public void Awake()
     {
-        Tilemap = GetComponent<Tilemap>();
+        Map = GetComponent<Tilemap>();
     }
 
     public void Draw(Vector3Int pos)
     {
-        Tilemap.SetTile(pos, img);
+        Map.SetTile(pos, Img);
     }
 
     public void Erase(Vector3Int pos)
     {
-        Tilemap.SetTile(pos, null);
+        Map.SetTile(pos, null);
     }
 }

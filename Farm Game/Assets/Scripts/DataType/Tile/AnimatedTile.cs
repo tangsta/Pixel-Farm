@@ -14,30 +14,30 @@ namespace UnityEngine.Tilemaps
     [CreateAssetMenu(fileName = "New Animated Tile", menuName = "Tiles/Animated Tile")]
     public class AnimatedTile : TileBase
     {
-        public Sprite[] m_AnimatedSprites;
+        public Sprite[] Sprites;
         public float m_MinSpeed = 1f;
         public float m_MaxSpeed = 1f;
-        public float m_AnimationStartTime;
-        public Tile.ColliderType m_TileColliderType;
+        public float StartTime;
+        public Tile.ColliderType Collider;
 
         public override void GetTileData(Vector3Int location, ITilemap tileMap, ref TileData tileData)
         {
             tileData.transform = Matrix4x4.identity;
             tileData.color = Color.white;
-            if (m_AnimatedSprites != null && m_AnimatedSprites.Length > 0)
+            if (Sprites != null && Sprites.Length > 0)
             {
-                tileData.sprite = m_AnimatedSprites[m_AnimatedSprites.Length - 1];
-                tileData.colliderType = m_TileColliderType;
+                tileData.sprite = Sprites[Sprites.Length - 1];
+                tileData.colliderType = Collider;
             }
         }
 
         public override bool GetTileAnimationData(Vector3Int location, ITilemap tileMap, ref TileAnimationData tileAnimationData)
         {
-            if (m_AnimatedSprites.Length > 0)
+            if (Sprites.Length > 0)
             {
-                tileAnimationData.animatedSprites = m_AnimatedSprites;
+                tileAnimationData.animatedSprites = Sprites;
                 tileAnimationData.animationSpeed = Random.Range(m_MinSpeed, m_MaxSpeed);
-                tileAnimationData.animationStartTime = m_AnimationStartTime;
+                tileAnimationData.animationStartTime = StartTime;
                 return true;
             }
             return false;
@@ -53,13 +53,13 @@ namespace UnityEngine.Tilemaps
         public override void OnInspectorGUI()
         {
             EditorGUI.BeginChangeCheck();
-            int count = EditorGUILayout.DelayedIntField("Number of Animated Sprites", tile.m_AnimatedSprites != null ? tile.m_AnimatedSprites.Length : 0);
+            int count = EditorGUILayout.DelayedIntField("Number of Animated Sprites", tile.Sprites != null ? tile.Sprites.Length : 0);
             if (count < 0)
                 count = 0;
 
-            if (tile.m_AnimatedSprites == null || tile.m_AnimatedSprites.Length != count)
+            if (tile.Sprites == null || tile.Sprites.Length != count)
             {
-                Array.Resize<Sprite>(ref tile.m_AnimatedSprites, count);
+                Array.Resize<Sprite>(ref tile.Sprites, count);
             }
 
             if (count == 0)
@@ -70,7 +70,7 @@ namespace UnityEngine.Tilemaps
 
             for (int i = 0; i < count; i++)
             {
-                tile.m_AnimatedSprites[i] = (Sprite)EditorGUILayout.ObjectField("Sprite " + (i + 1), tile.m_AnimatedSprites[i], typeof(Sprite), false, null);
+                tile.Sprites[i] = (Sprite)EditorGUILayout.ObjectField("Sprite " + (i + 1), tile.Sprites[i], typeof(Sprite), false, null);
             }
 
             float minSpeed = EditorGUILayout.FloatField("Minimum Speed", tile.m_MinSpeed);
@@ -87,8 +87,8 @@ namespace UnityEngine.Tilemaps
             tile.m_MinSpeed = minSpeed;
             tile.m_MaxSpeed = maxSpeed;
 
-            tile.m_AnimationStartTime = EditorGUILayout.FloatField("Start Time", tile.m_AnimationStartTime);
-            tile.m_TileColliderType = (Tile.ColliderType)EditorGUILayout.EnumPopup("Collider Type", tile.m_TileColliderType);
+            tile.StartTime = EditorGUILayout.FloatField("Start Time", tile.StartTime);
+            tile.Collider = (Tile.ColliderType)EditorGUILayout.EnumPopup("Collider Type", tile.Collider);
             if (EditorGUI.EndChangeCheck())
                 EditorUtility.SetDirty(tile);
         }
