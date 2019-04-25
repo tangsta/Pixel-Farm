@@ -103,7 +103,7 @@ public class GameController : MonoBehaviour
         countCorrectGuesses++;
         if (countCorrectGuesses == gameGuesses)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
     }
     

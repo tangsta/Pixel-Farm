@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a5d1492e5974a4fb6ff13efeac22bb, type: 3}
   m_Name: Match
   m_EditorClassIdentifier: 
-  GameScene: 3
+  GameScene: 4
   Gold: 10

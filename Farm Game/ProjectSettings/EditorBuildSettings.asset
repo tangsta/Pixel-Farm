@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Settings.unity
     guid: 9d5260a9e0f63004f9c64ab80fda5300
   - enabled: 1
+    path: Assets/Scenes/Menu/Credits.unity
+    guid: 70fa4ff679e204b43853d45447b748ea
+  - enabled: 1
     path: Assets/Scenes/Farm/Farm.unity
     guid: 3b04031b3dbdcf74f8d9dbeae8166c22
   - enabled: 1
