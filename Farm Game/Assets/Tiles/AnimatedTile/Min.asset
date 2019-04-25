@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd685a893311684a894a4b7fd5979c3, type: 3}
   m_Name: Min
   m_EditorClassIdentifier: 
-  m_AnimatedSprites:
+  Sprites:
   - {fileID: 21300000, guid: dcfc84d80c12d82408a75a9316f71c96, type: 3}
   - {fileID: 21300000, guid: dbc82416669a58944a2af11c0187b080, type: 3}
   - {fileID: 21300000, guid: 7f974a9f354dbe84c9872ecbe61703ec, type: 3}
@@ -78,5 +78,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4b520011a0ff19449a2c55ab2821cd4a, type: 3}
   m_MinSpeed: 30
   m_MaxSpeed: 30
-  m_AnimationStartTime: 0
-  m_TileColliderType: 0
+  StartTime: 0
+  Collider: 0
