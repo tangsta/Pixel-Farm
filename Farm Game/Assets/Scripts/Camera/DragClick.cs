@@ -32,6 +32,10 @@ public class DragClick : MonoBehaviour
             { 
                 Camera.main.transform.position = result;
             }
+            else
+            {
+                Drag = false;
+            }
 		}
 		//RESET CAMERA TO STARTING POSITION WITH RIGHT CLICK
 		if (Input.GetMouseButton (1)) {

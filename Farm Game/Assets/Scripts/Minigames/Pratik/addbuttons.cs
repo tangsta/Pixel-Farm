@@ -12,7 +12,7 @@ public class addbuttons : MonoBehaviour
     // Update is called once per frame
     void Awake()
     {
-        for(int i=0; i < 8; i++)
+        for(int i=0; i < 18; i++)
         {
             GameObject button = Instantiate(btn);
             button.name = "" + i;

@@ -17,10 +17,6 @@ public class GameController : MonoBehaviour
     private string firstGuessPuzzle, secondGuessPuzzle;
     private int firstGuessIndex, secondGuessIndex;
 
-
-
-
-
     public List<Button> btns = new List<Button>();
 
     void Start()
@@ -68,55 +64,45 @@ public class GameController : MonoBehaviour
     public void PickAPuzzle()
     {
         string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
-        //Debug.Log("You have to click a Button"+name);
 
         if (!firstGuess)
         {
             firstGuess = true;
-            firstGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+            firstGuessIndex = int.Parse(name);
             firstGuessPuzzle = gamePuzzles[firstGuessIndex].name;
             btns[firstGuessIndex].image.sprite = gamePuzzles[firstGuessIndex];
         }
-        else if (!secondGuess)
+        else if (!secondGuess && (firstGuessIndex != int.Parse(name)))
         {
             secondGuess = true;
-            secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+            secondGuessIndex = int.Parse(name);
             secondGuessPuzzle = gamePuzzles[secondGuessIndex].name;
             btns[secondGuessIndex].image.sprite = gamePuzzles[secondGuessIndex];
-            StartCoroutine(CheckIfThePuzzlesMatch());
-            
         }
-    }
-     
-
-    IEnumerator CheckIfThePuzzlesMatch()
-    {
-
-        yield return new WaitForSeconds(1f);
-        if (firstGuessPuzzle == secondGuessPuzzle)
+        else if (secondGuess && firstGuess)
         {
-            yield return new WaitForSeconds(0.5f);
-            btns[firstGuessIndex].interactable = false;
-            btns[secondGuessIndex].interactable = false;
-
-            btns[firstGuessIndex].image.color = new Color(0, 0, 0, 0);
-            btns[secondGuessIndex].image.color = new Color(0, 0, 0, 0);
-            CheckIfTheGameIsFinished();
+            if (firstGuessPuzzle == secondGuessPuzzle)
+            {
+                btns[firstGuessIndex].image.color = new Color(0, 0, 0, 0);
+                btns[secondGuessIndex].image.color = new Color(0, 0, 0, 0);
+                btns[firstGuessIndex].interactable = false;
+                btns[secondGuessIndex].interactable = false;
+                CheckIfTheGameIsFinished();
+            }
+            else
+            {
+                btns[firstGuessIndex].image.sprite = bgImage;
+                btns[secondGuessIndex].image.sprite = bgImage;
+            }
+            firstGuess = secondGuess = false;
         }
-        else {
-            btns[firstGuessIndex].image.sprite = bgImage;
-            btns[secondGuessIndex].image.sprite = bgImage;
-        }
-        yield return new WaitForSeconds(0.5f);
-        firstGuess = secondGuess = false;
     }
+
     void CheckIfTheGameIsFinished()
     {
         countCorrectGuesses++;
         if (countCorrectGuesses == gameGuesses)
         {
-            Debug.Log("Game FInished");
-            Debug.Log("It took you " + countCorrectGuesses + "many tries to finish the game ");
             SceneManager.LoadScene(2);
         }
     }
