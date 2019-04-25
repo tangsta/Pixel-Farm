@@ -39,7 +39,7 @@ public class DisplayItemFromInventory : MonoBehaviour
 
 			// Set the name HARD CODED OUT OF ITS MIND - ASK HENRY FOR MAINTENCE 
 			textBox = ImageGameObjects[0].transform.GetChild(1).GetComponent<Text>(); // gets the second gameobject which is text of the three gameobjects we saved
-			textBox.text = currentSelectedItem.name; 
+			textBox.text = currentSelectedItem.itemName; 
 
 			textBox = ImageGameObjects[1].transform.GetChild(1).GetComponent<Text>(); // gets the second gameobject which is text of the three gameobjects we saved
 			textBox.text = currentSelectedItem.description; 
