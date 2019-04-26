@@ -6,49 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Inventory.asset", menuName = "Items/Inventory")]
 public class Inventory : ScriptableObject 
 {
-    // Saving using unity dev example.
-    private static Inventory _instance;
-    public static Inventory Instance 
-    {
-        get 
-        {
-            if (!_instance) 
-            {
-                Inventory[] tmp = Resources.FindObjectsOfTypeAll<Inventory>();
-                if (tmp.Length > 0) 
-                {
-                    _instance = tmp[0];
-                    Debug.Log("Found inventory as: " + _instance);
-                } else 
-                {
-                    Debug.Log("Did not find inventory, loading from file or template.");
-                    SaveManager.LoadOrInitializeInventory();
-                }
-            }
-            return _instance;
-        }
-    }
-
-    public static void InitializeFromDefault() 
-    {
-        if (_instance) DestroyImmediate(_instance);
-        _instance = Instantiate((Inventory) Resources.Load("InventoryTemplate"));
-        _instance.hideFlags = HideFlags.HideAndDontSave;
-    }
-
-    public static void LoadFromJSON(string path) 
-    {
-        if (_instance) DestroyImmediate(_instance);
-        _instance = ScriptableObject.CreateInstance<Inventory>();
-        JsonUtility.FromJsonOverwrite(System.IO.File.ReadAllText(path), _instance);
-        _instance.hideFlags = HideFlags.HideAndDontSave;
-    }
-
-    public void SaveToJSON(string path) 
-    {
-        Debug.LogFormat("Saving inventory to {0}", path);
-        System.IO.File.WriteAllText(path, JsonUtility.ToJson(this, true));
-    }
 
     /* Inventory START */
     	// honestly I just make a new object and store it into the array
@@ -191,9 +148,5 @@ public class Inventory : ScriptableObject
         return -1;
     }
 
-    // Simply save.
-    private void Save() 
-    {
-        SaveManager.SaveInventory();
-    }
+
 }

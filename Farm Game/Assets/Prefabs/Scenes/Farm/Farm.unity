@@ -7098,8 +7098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160190a1a0a53704c9cb5441e79ef678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Height: 40
-  Width: 40
+  Height: 8
+  Width: 8
   LandMap: {fileID: 1308251076}
   PlantMap: {fileID: 938877501}
   GameMap: {fileID: 508467489}
